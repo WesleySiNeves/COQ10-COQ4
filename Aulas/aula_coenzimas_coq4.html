@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula: Coenzimas, CoQ10 e COQ4 - Guia Completo</title>
+    <style>
+        /* Reset e configurações básicas */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255,255,255,0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+        
+        /* Navegação */
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .nav-btn {
+            padding: 12px 24px;
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .nav-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        /* Seções principais */
+        .section {
+            background: rgba(255,255,255,0.95);
+            margin: 30px 0;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            display: none;
+        }
+        
+        .section.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section h2 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .section h3 {
+            color: #34495e;
+            font-size: 1.5em;
+            margin: 25px 0 15px 0;
+        }
+        
+        .section h4 {
+            color: #7f8c8d;
+            font-size: 1.2em;
+            margin: 15px 0 10px 0;
+        }
+        
+        /* Cards informativos */
+        .info-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 5px solid #3498db;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        
+        .info-card.warning {
+            border-left-color: #f39c12;
+            background: linear-gradient(135deg, #fef9e7 0%, #fcf3cf 100%);
+        }
+        
+        .info-card.success {
+            border-left-color: #27ae60;
+            background: linear-gradient(135deg, #eafaf1 0%, #d5f4e6 100%);
+        }
+        
+        .info-card.danger {
+            border-left-color: #e74c3c;
+            background: linear-gradient(135deg, #fdedec 0%, #fadbd8 100%);
+        }
+        
+        /* Visualizações 3D */
+        .molecule-3d {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            perspective: 1000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .molecule {
+            width: 150px;
+            height: 150px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotate3d 10s infinite linear;
+        }
+        
+        .atom {
+            position: absolute;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+        
+        .atom.carbon {
+            width: 30px;
+            height: 30px;
+            background: radial-gradient(circle, #2c3e50, #34495e);
+        }
+        
+        .atom.oxygen {
+            width: 25px;
+            height: 25px;
+            background: radial-gradient(circle, #e74c3c, #c0392b);
+        }
+        
+        .atom.hydrogen {
+            width: 15px;
+            height: 15px;
+            background: radial-gradient(circle, #ecf0f1, #bdc3c7);
+        }
+        
+        @keyframes rotate3d {
+            0% { transform: rotateX(0deg) rotateY(0deg); }
+            100% { transform: rotateX(360deg) rotateY(360deg); }
+        }
+        
+        /* Diagramas de vias */
+        .pathway-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 25px;
+            background: linear-gradient(135deg, #f1f2f6 0%, #ddd6fe 100%);
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        
+        .pathway-step {
+            padding: 15px 20px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 10px;
+            font-weight: bold;
+            text-align: center;
+            min-width: 120px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .pathway-step:hover {
+            transform: scale(1.05);
+        }
+        
+        .pathway-arrow {
+            font-size: 24px;
+            color: #34495e;
+            font-weight: bold;
+        }
+        
+        /* Tabelas */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .data-table th {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        .data-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .data-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .data-table tr:hover {
+            background: #e3f2fd;
+        }
+        
+        /* Botões interativos */
+        .interactive-btn {
+            background: linear-gradient(45deg, #27ae60, #229954);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .interactive-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        /* Quiz */
+        .quiz-container {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .quiz-question {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .quiz-options {
+            display: grid;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .quiz-option {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .quiz-option:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.5);
+        }
+        
+        .quiz-option.selected {
+            background: rgba(255,255,255,0.3);
+            border-color: white;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .pathway-diagram {
+                flex-direction: column;
+            }
+            
+            .pathway-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🧬 Coenzimas, CoQ10 e COQ4</h1>
+            <p>Guia Completo sobre Coenzimas, Funções, Vias de Transporte e Alternativas</p>
+        </div>
+        
+        <!-- Navegação -->
+        <div class="nav-menu">
+            <button class="nav-btn" onclick="showSection('coenzimas')">🔬 Coenzimas</button>
+            <button class="nav-btn" onclick="showSection('tipos')">📊 Tipos</button>
+            <button class="nav-btn" onclick="showSection('coq10')">⚡ CoQ10</button>
+            <button class="nav-btn" onclick="showSection('alelos')">🧬 Alelos</button>
+            <button class="nav-btn" onclick="showSection('coq4')">🔧 COQ4</button>
+            <button class="nav-btn" onclick="showSection('vias')">🛤️ Vias</button>
+            <button class="nav-btn" onclick="showSection('bypass')">🔄 Bypass</button>
+            <button class="nav-btn" onclick="showSection('quiz')">🎯 Quiz</button>
+        </div>
+        
+        <!-- Seção: Coenzimas -->
+        <div id="coenzimas" class="section active">
+            <h2>🔬 O que são Coenzimas?</h2>
+            
+            <div class="info-card">
+                <h3>📚 Definição Simples</h3>
+                <p><strong>Coenzimas</strong> são moléculas pequenas que ajudam as enzimas a funcionar. Pense nelas como "assistentes" que as enzimas precisam para fazer seu trabalho corretamente.</p>
+            </div>
+            
+            <h3>🔍 Características Principais</h3>
+            <ul>
+                <li><strong>Não são proteínas:</strong> São moléculas orgânicas menores</li>
+                <li><strong>Reutilizáveis:</strong> Podem ser usadas várias vezes</li>
+                <li><strong>Essenciais:</strong> Sem elas, muitas reações não acontecem</li>
+                <li><strong>Específicas:</strong> Cada coenzima tem funções particulares</li>
+            </ul>
+            
+            <div class="molecule-3d">
+                <div class="molecule">
+                    <div class="atom carbon" style="top: 50%; left: 50%; transform: translate(-50%, -50%)"></div>
+                    <div class="atom oxygen" style="top: 20%; left: 30%; transform: translate(-50%, -50%)"></div>
+                    <div class="atom oxygen" style="top: 80%; left: 70%; transform: translate(-50%, -50%)"></div>
+                    <div class="atom hydrogen" style="top: 10%; left: 60%; transform: translate(-50%, -50%)"></div>
+                    <div class="atom hydrogen" style="top: 90%; left: 40%; transform: translate(-50%, -50%)"></div>
+                </div>
+            </div>
+            
+            <div class="info-card success">
+                <h4>💡 Analogia Simples</h4>
+                <p>Se a enzima fosse um carro, a coenzima seria a chave. O carro (enzima) existe, mas sem a chave (coenzima), ele não consegue funcionar!</p>
+            </div>
+        </div>
+        
+        <!-- Seção: Tipos de Coenzimas -->
+        <div id="tipos" class="section">
+            <h2>📊 Tipos de Coenzimas</h2>
+            
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Coenzima</th>
+                        <th>Função Principal</th>
+                        <th>Onde Atua</th>
+                        <th>Importância</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>NAD+/NADH</strong></td>
+                        <td>Transporte de elétrons</td>
+                        <td>Respiração celular</td>
+                        <td>Produção de energia</td>
+                    </tr>
+                    <tr>
+                        <td><strong>FAD/FADH₂</strong></td>
+                        <td>Transporte de elétrons</td>
+                        <td>Ciclo de Krebs</td>
+                        <td>Metabolismo energético</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CoQ10</strong></td>
+                        <td>Cadeia respiratória</td>
+                        <td>Mitocôndrias</td>
+                        <td>ATP e antioxidante</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ATP</strong></td>
+                        <td>Armazenamento de energia</td>
+                        <td>Todas as células</td>
+                        <td>"Moeda" energética</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Acetil-CoA</strong></td>
+                        <td>Transporte de grupos acetil</td>
+                        <td>Metabolismo</td>
+                        <td>Síntese e degradação</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="info-card warning">
+                <h3>⚠️ Classificação por Função</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 15px;">
+                    <div>
+                        <h4>🔋 Energéticas</h4>
+                        <p>ATP, NAD+, FAD, CoQ10</p>
+                    </div>
+                    <div>
+                        <h4>🔄 Transferência</h4>
+                        <p>Acetil-CoA, Biotina</p>
+                    </div>
+                    <div>
+                        <h4>🛡️ Antioxidantes</h4>
+                        <p>CoQ10, Glutationa</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Seção: CoQ10 -->
+        <div id="coq10" class="section">
+            <h2>⚡ Coenzima Q10 (CoQ10)</h2>
+            
+            <div class="info-card">
+                <h3>🎯 O que é a CoQ10?</h3>
+                <p>A <strong>Coenzima Q10</strong> é uma molécula essencial para a produção de energia nas células. Ela atua como um "transportador de elétrons" na cadeia respiratória mitocondrial.</p>
+            </div>
+            
+            <h3>🔧 Funções Principais</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div class="info-card success">
+                    <h4>⚡ Produção de ATP</h4>
+                    <p>Facilita a transferência de elétrons entre os Complexos I/II e III da cadeia respiratória</p>
+                </div>
+                <div class="info-card success">
+                    <h4>🛡️ Antioxidante</h4>
+                    <p>Protege as células contra danos causados pelos radicais livres</p>
+                </div>
+                <div class="info-card success">
+                    <h4>🔄 Regeneração</h4>
+                    <p>Pode ser reciclada entre suas formas oxidada (ubiquinona) e reduzida (ubiquinol)</p>
+                </div>
+            </div>
+            
+            <h3>📍 Localização e Concentração</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Órgão/Tecido</th>
+                        <th>Concentração</th>
+                        <th>Importância</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Coração</td>
+                        <td>Muito Alta</td>
+                        <td>Alto gasto energético</td>
+                    </tr>
+                    <tr>
+                        <td>Fígado</td>
+                        <td>Alta</td>
+                        <td>Metabolismo intenso</td>
+                    </tr>
+                    <tr>
+                        <td>Rins</td>
+                        <td>Alta</td>
+                        <td>Filtração constante</td>
+                    </tr>
+                    <tr>
+                        <td>Músculos</td>
+                        <td>Moderada</td>
+                        <td>Contração muscular</td>
+                    </tr>
+                    <tr>
+                        <td>Cérebro</td>
+                        <td>Moderada</td>
+                        <td>Atividade neuronal</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="info-card danger">
+                <h3>🚨 Deficiência de CoQ10</h3>
+                <p><strong>Consequências:</strong></p>
+                <ul>
+                    <li>Redução na produção de ATP</li>
+                    <li>Aumento do lactato sérico</li>
+                    <li>Disfunção mitocondrial</li>
+                    <li>Fadiga e fraqueza muscular</li>
+                    <li>Problemas cardíacos</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Seção: Alelos -->
+        <div id="alelos" class="section">
+            <h2>🧬 Alelos e Genética</h2>
+            
+            <div class="info-card">
+                <h3>📚 O que são Alelos?</h3>
+                <p><strong>Alelos</strong> são diferentes versões de um mesmo gene. Cada pessoa herda dois alelos para cada gene - um do pai e um da mãe.</p>
+            </div>
+            
+            <h3>🔍 Tipos de Alelos</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div class="info-card success">
+                    <h4>✅ Alelo Normal (Wild-type)</h4>
+                    <p>Versão "padrão" do gene que funciona normalmente</p>
+                </div>
+                <div class="info-card warning">
+                    <h4>⚠️ Alelo Variante</h4>
+                    <p>Versão modificada que pode ou não afetar a função</p>
+                </div>
+                <div class="info-card danger">
+                    <h4>❌ Alelo Mutante</h4>
+                    <p>Versão alterada que causa problemas na função</p>
+                </div>
+            </div>
+            
+            <h3>🧬 Herança Genética</h3>
+            <div class="pathway-diagram">
+                <div class="pathway-step">Pai<br>(Alelo A)</div>
+                <div class="pathway-arrow">+</div>
+                <div class="pathway-step">Mãe<br>(Alelo B)</div>
+                <div class="pathway-arrow">→</div>
+                <div class="pathway-step">Filho<br>(Alelos A + B)</div>
+            </div>
+            
+            <div class="info-card">
+                <h3>🎯 Relação com CoQ10</h3>
+                <p>Mutações em genes relacionados à síntese de CoQ10 podem resultar em:</p>
+                <ul>
+                    <li><strong>Deficiência primária:</strong> Genes COQ1-COQ9</li>
+                    <li><strong>Deficiência secundária:</strong> Outros fatores (idade, medicamentos)</li>
+                    <li><strong>Variações na eficiência:</strong> Polimorfismos genéticos</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Seção: COQ4 -->
+        <div id="coq4" class="section">
+            <h2>🔧 Gene COQ4</h2>
+            
+            <div class="info-card">
+                <h3>📍 O que é o COQ4?</h3>
+                <p>O <strong>COQ4</strong> é um gene que codifica uma proteína essencial para a síntese da Coenzima Q10. É como uma "peça da fábrica" que produz CoQ10 nas células.</p>
+            </div>
+            
+            <h3>🔧 Função do COQ4</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div class="info-card success">
+                    <h4>🏭 Síntese de CoQ10</h4>
+                    <p>Participa da via de biossíntese da Coenzima Q10 nas mitocôndrias</p>
+                </div>
+                <div class="info-card success">
+                    <h4>🔗 Estabilização</h4>
+                    <p>Ajuda a estabilizar o complexo de síntese de CoQ10</p>
+                </div>
+                <div class="info-card success">
+                    <h4>⚙️ Regulação</h4>
+                    <p>Participa da regulação da produção de CoQ10</p>
+                </div>
+            </div>
+            
+            <h3>🧬 Mutações no COQ4</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Tipo de Mutação</th>
+                        <th>Efeito</th>
+                        <th>Consequência Clínica</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Deleção</td>
+                        <td>Perda de função</td>
+                        <td>Deficiência severa de CoQ10</td>
+                    </tr>
+                    <tr>
+                        <td>Mutação pontual</td>
+                        <td>Função reduzida</td>
+                        <td>Deficiência moderada</td>
+                    </tr>
+                    <tr>
+                        <td>Inserção</td>
+                        <td>Proteína alterada</td>
+                        <td>Variável</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="info-card danger">
+                <h3>🚨 Manifestações Clínicas</h3>
+                <p><strong>Mutações no COQ4 podem causar:</strong></p>
+                <ul>
+                    <li>Encefalopatia mitocondrial</li>
+                    <li>Cardiomiopatia</li>
+                    <li>Nefropatia</li>
+                    <li>Ataxia cerebelar</li>
+                    <li>Retardo do desenvolvimento</li>
+                </ul>
+            </div>
+            
+            <button class="interactive-btn" onclick="showCOQ4Details()">🔬 Ver Detalhes Moleculares</button>
+        </div>
+        
+        <!-- Seção: Vias de Transporte -->
+        <div id="vias" class="section">
+            <h2>🛤️ Vias de Transporte e Função</h2>
+            
+            <h3>🔄 Via Principal de Síntese</h3>
+            <div class="pathway-diagram">
+                <div class="pathway-step">Tirosina</div>
+                <div class="pathway-arrow">→</div>
+                <div class="pathway-step">4-HB</div>
+                <div class="pathway-arrow">→</div>
+                <div class="pathway-step">CoQ10</div>
+            </div>
+            
+            <div class="info-card">
+                <h3>🏭 Etapas da Síntese</h3>
+                <ol>
+                    <li><strong>Formação do anel quinona:</strong> A partir da tirosina</li>
+                    <li><strong>Adição da cadeia isopreno:</strong> 10 unidades isopreno</li>
+                    <li><strong>Modificações finais:</strong> Metilação e hidroxilação</li>
+                    <li><strong>Produto final:</strong> Coenzima Q10 ativa</li>
+                </ol>
+            </div>
+            
+            <h3>📍 Localização Celular</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div class="info-card">
+                    <h4>🏭 Síntese</h4>
+                    <p><strong>Local:</strong> Mitocôndrias<br>
+                    <strong>Enzimas:</strong> COQ1-COQ9</p>
+                </div>
+                <div class="info-card">
+                    <h4>🚚 Transporte</h4>
+                    <p><strong>Meio:</strong> Membranas lipídicas<br>
+                    <strong>Forma:</strong> Lipossolúvel</p>
+                </div>
+                <div class="info-card">
+                    <h4>⚡ Função</h4>
+                    <p><strong>Local:</strong> Cadeia respiratória<br>
+                    <strong>Ação:</strong> Transporte de elétrons</p>
+                </div>
+            </div>
+            
+            <h3>🔄 Ciclo de Oxidação-Redução</h3>
+            <div class="pathway-diagram">
+                <div class="pathway-step">Ubiquinona<br>(Oxidada)</div>
+                <div class="pathway-arrow">⇄</div>
+                <div class="pathway-step">Ubiquinol<br>(Reduzida)</div>
+            </div>
+            
+            <div class="info-card success">
+                <h4>💡 Importância do Ciclo</h4>
+                <p>Este ciclo permite que a CoQ10 transporte elétrons repetidamente, sendo essencial para a produção contínua de ATP.</p>
+            </div>
+        </div>
+        
+        <!-- Seção: Vias Alternativas (Bypass) -->
+        <div id="bypass" class="section">
+            <h2>🔄 Vias Alternativas (Bypass)</h2>
+            
+            <div class="info-card warning">
+                <h3>⚠️ Quando são Necessárias?</h3>
+                <p>As vias alternativas (bypass) são ativadas quando há deficiência de CoQ10 ou problemas na cadeia respiratória principal.</p>
+            </div>
+            
+            <h3>🛤️ Tipos de Bypass</h3>
+            
+            <div class="info-card">
+                <h4>1️⃣ Bypass do Complexo I</h4>
+                <div class="pathway-diagram">
+                    <div class="pathway-step">NADH</div>
+                    <div class="pathway-arrow">→</div>
+                    <div class="pathway-step">Alt-NADH<br>Desidrogenase</div>
+                    <div class="pathway-arrow">→</div>
+                    <div class="pathway-step">CoQ10</div>
+                </div>
+                <p><strong>Função:</strong> Contorna problemas no Complexo I</p>
+            </div>
+            
+            <div class="info-card">
+                <h4>2️⃣ Bypass do Complexo III</h4>
+                <div class="pathway-diagram">
+                    <div class="pathway-step">CoQ10</div>
+                    <div class="pathway-arrow">→</div>
+                    <div class="pathway-step">Alt-Oxidase</div>
+                    <div class="pathway-arrow">→</div>
+                    <div class="pathway-step">O₂</div>
+                </div>
+                <p><strong>Função:</strong> Via alternativa para consumo de oxigênio</p>
+            </div>
+            
+            <h3>💊 Suplementação como Bypass</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Estratégia</th>
+                        <th>Mecanismo</th>
+                        <th>Eficácia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CoQ10 oral</td>
+                        <td>Reposição direta</td>
+                        <td>Moderada</td>
+                    </tr>
+                    <tr>
+                        <td>Ubiquinol</td>
+                        <td>Forma reduzida ativa</td>
+                        <td>Alta</td>
+                    </tr>
+                    <tr>
+                        <td>Precursores</td>
+                        <td>Estimula síntese endógena</td>
+                        <td>Variável</td>
+                    </tr>
+                    <tr>
+                        <td>Análogos</td>
+                        <td>Moléculas similares</td>
+                        <td>Experimental</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="info-card success">
+                <h3>🎯 Estratégias Terapêuticas</h3>
+                <ul>
+                    <li><strong>Suplementação precoce:</strong> Antes dos sintomas</li>
+                    <li><strong>Doses altas:</strong> Para superar deficiências genéticas</li>
+                    <li><strong>Combinação:</strong> CoQ10 + outros antioxidantes</li>
+                    <li><strong>Monitoramento:</strong> Níveis plasmáticos regulares</li>
+                </ul>
+            </div>
+            
+            <button class="interactive-btn" onclick="showBypassAnimation()">🎬 Ver Animação das Vias</button>
+        </div>
+        
+        <!-- Seção: Quiz -->
+        <div id="quiz" class="section">
+            <div class="quiz-container">
+                <h2>🎯 Quiz: Teste seus Conhecimentos</h2>
+                
+                <div id="question1" class="quiz-question-container">
+                    <div class="quiz-question">1. O que são coenzimas?</div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectOption(this, false)">A) Proteínas grandes que catalisam reações</div>
+                        <div class="quiz-option" onclick="selectOption(this, true)">B) Moléculas pequenas que ajudam enzimas a funcionar</div>
+                        <div class="quiz-option" onclick="selectOption(this, false)">C) Vitaminas que não são absorvidas</div>
+                        <div class="quiz-option" onclick="selectOption(this, false)">D) Hormônios produzidos no fígado</div>
+                    </div>
+                </div>
+                
+                <div id="question2" class="quiz-question-container" style="display: none;">
+                    <div class="quiz-question">2. Qual é a principal função da CoQ10?</div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectOption(this, false)">A) Digestão de proteínas</div>
+                        <div class="quiz-option" onclick="selectOption(this, true)">B) Transporte de elétrons na cadeia respiratória</div>
+                        <div class="quiz-option" onclick="selectOption(this, false)">C) Síntese de DNA</div>
+                        <div class="quiz-option" onclick="selectOption(this, false)">D) Regulação hormonal</div>
+                    </div>
+                </div>
+                
+                <div id="question3" class="quiz-question-container" style="display: none;">
+                    <div class="quiz-question">3. O gene COQ4 é responsável por:</div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectOption(this, true)">A) Síntese da Coenzima Q10</div>
+                        <div class="quiz-option" onclick="selectOption(this, false)">B) Digestão de lipídios</div>
+                        <div class="quiz-option" onclick="selectOption(this, false)">C) Produção de insulina</div>
+                        <div class="quiz-option" onclick="selectOption(this, false)">D) Formação de hemoglobina</div>
+                    </div>
+                </div>
+                
+                <div id="quizResult" style="display: none;">
+                    <h3>🎉 Parabéns! Você completou o quiz!</h3>
+                    <p id="scoreText"></p>
+                    <button class="interactive-btn" onclick="restartQuiz()">🔄 Refazer Quiz</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Variáveis globais para o quiz
+        let currentQuestion = 1;
+        let score = 0;
+        let totalQuestions = 3;
+        
+        // Função para mostrar seções
+        function showSection(sectionId) {
+            // Esconder todas as seções
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Mostrar a seção selecionada
+            document.getElementById(sectionId).classList.add('active');
+        }
+        
+        // Função para mostrar detalhes do COQ4
+        function showCOQ4Details() {
+            alert('🧬 Detalhes Moleculares do COQ4:\n\n' +
+                  '• Localização: Cromossomo 9q34.11\n' +
+                  '• Tamanho: 6 éxons\n' +
+                  '• Proteína: 207 aminoácidos\n' +
+                  '• Função: Estabilização do complexo de síntese\n' +
+                  '• Expressão: Todos os tecidos (maior no coração)');
+        }
+        
+        // Função para mostrar animação das vias bypass
+        function showBypassAnimation() {
+            alert('🎬 Animação das Vias Bypass:\n\n' +
+                  '1. Via Normal: NADH → Complexo I → CoQ10 → Complexo III\n' +
+                  '2. Bypass Complexo I: NADH → Alt-NADH Desidrogenase → CoQ10\n' +
+                  '3. Bypass Complexo III: CoQ10 → Alt-Oxidase → O₂\n\n' +
+                  'Essas vias permitem manter a produção de energia mesmo com deficiências!');
+        }
+        
+        // Funções do Quiz
+        function selectOption(element, isCorrect) {
+            // Remover seleção anterior
+            const options = element.parentNode.querySelectorAll('.quiz-option');
+            options.forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            // Selecionar a opção clicada
+            element.classList.add('selected');
+            
+            // Aguardar um pouco e processar resposta
+            setTimeout(() => {
+                if (isCorrect) {
+                    score++;
+                    element.style.background = 'rgba(46, 204, 113, 0.3)';
+                } else {
+                    element.style.background = 'rgba(231, 76, 60, 0.3)';
+                    // Destacar a resposta correta
+                    options.forEach(option => {
+                        if (option.onclick.toString().includes('true')) {
+                            option.style.background = 'rgba(46, 204, 113, 0.3)';
+                        }
+                    });
+                }
+                
+                // Próxima pergunta após 2 segundos
+                setTimeout(() => {
+                    nextQuestion();
+                }, 2000);
+            }, 500);
+        }
+        
+        function nextQuestion() {
+            // Esconder pergunta atual
+            document.getElementById('question' + currentQuestion).style.display = 'none';
+            
+            currentQuestion++;
+            
+            if (currentQuestion <= totalQuestions) {
+                // Mostrar próxima pergunta
+                document.getElementById('question' + currentQuestion).style.display = 'block';
+            } else {
+                // Mostrar resultado final
+                showQuizResult();
+            }
+        }
+        
+        function showQuizResult() {
+            const percentage = Math.round((score / totalQuestions) * 100);
+            let message = '';
+            
+            if (percentage >= 80) {
+                message = '🌟 Excelente! Você domina o assunto!';
+            } else if (percentage >= 60) {
+                message = '👍 Bom trabalho! Continue estudando!';
+            } else {
+                message = '📚 Revise o conteúdo e tente novamente!';
+            }
+            
+            document.getElementById('scoreText').textContent = 
+                `Sua pontuação: ${score}/${totalQuestions} (${percentage}%) - ${message}`;
+            document.getElementById('quizResult').style.display = 'block';
+        }
+        
+        function restartQuiz() {
+            // Resetar variáveis
+            currentQuestion = 1;
+            score = 0;
+            
+            // Esconder resultado
+            document.getElementById('quizResult').style.display = 'none';
+            
+            // Resetar todas as perguntas
+            for (let i = 1; i <= totalQuestions; i++) {
+                const questionDiv = document.getElementById('question' + i);
+                questionDiv.style.display = i === 1 ? 'block' : 'none';
+                
+                // Resetar opções
+                const options = questionDiv.querySelectorAll('.quiz-option');
+                options.forEach(option => {
+                    option.classList.remove('selected');
+                    option.style.background = 'rgba(255,255,255,0.1)';
+                });
+            }
+        }
+        
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🧬 Aula sobre Coenzimas, CoQ10 e COQ4 carregada com sucesso!');
+        });
+    </script>
+</body>
+</html>
