@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 2: CoQ10 - Estrutura Molecular e Biossíntese</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            margin-bottom: 30px;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .section h3 {
+            color: #34495e;
+            font-size: 1.5em;
+            margin: 25px 0 15px 0;
+            padding-left: 15px;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .card {
+            background: #f8f9fa;
+            border-left: 5px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card.important {
+            border-left-color: #e74c3c;
+            background: #fdf2f2;
+        }
+
+        .card.gene {
+            border-left-color: #27ae60;
+            background: #f0f9f4;
+        }
+
+        .molecular-structure {
+            background: #2c3e50;
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .molecular-structure::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(52, 152, 219, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .coq10-structure {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .structure-part {
+            background: rgba(52, 152, 219, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #3498db;
+            transition: all 0.3s ease;
+        }
+
+        .structure-part:hover {
+            background: rgba(52, 152, 219, 0.2);
+            transform: scale(1.05);
+        }
+
+        .gene-pathway {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .gene-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .gene-card:hover {
+            transform: translateY(-5px) scale(1.02);
+        }
+
+        .gene-card h4 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .pathway-diagram {
+            background: #ecf0f1;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .pathway-step {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 25px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .pathway-step::after {
+            content: '→';
+            position: absolute;
+            right: -25px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #2c3e50;
+            font-size: 1.5em;
+        }
+
+        .pathway-step:last-child::after {
+            display: none;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 5px solid #ff6b6b;
+        }
+
+        .function-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .function-card {
+            background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .function-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .function-card h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .interdependence {
+            background: #f39c12;
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 15px 0;
+        }
+
+        .interdependence h4 {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .coq10-structure {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Cabeçalho -->
+        <div class="header">
+            <h1>🧬 Aula 2: CoQ10 - Estrutura Molecular e Biossíntese</h1>
+            <p>Compreendendo a Coenzima Q10: Da Molécula aos Genes</p>
+        </div>
+
+        <!-- Navegação -->
+        <div class="navigation">
+            <a href="#coq10-intro" class="nav-btn">O que é CoQ10</a>
+            <a href="#estrutura" class="nav-btn">Estrutura Molecular</a>
+            <a href="#funcoes" class="nav-btn">Funções</a>
+            <a href="#processos-celulares" class="nav-btn">Processos Celulares</a>
+            <a href="#processos-bioquimicos" class="nav-btn">Processos Bioquímicos</a>
+            <a href="#genes" class="nav-btn">Genes da Biossíntese</a>
+            <a href="#interdependencia" class="nav-btn">Interdependência</a>
+        </div>
+
+        <!-- Seção 1: O que é CoQ10 -->
+        <div id="coq10-intro" class="section">
+            <h2>🔬 O que é a Coenzima Q10 (CoQ10)?</h2>
+            
+            <div class="card important">
+                <h3>Definição</h3>
+                <p><strong>Coenzima Q10 (CoQ10)</strong> é uma molécula essencial presente em todas as células do corpo humano, especialmente concentrada nas mitocôndrias. É também conhecida como <strong>ubiquinona</strong> devido à sua presença ubíqua (em todos os lugares) nas células.</p>
+            </div>
+
+            <div class="highlight">
+                <h4>🎯 Características Principais:</h4>
+                <ul>
+                    <li><strong>Lipossolúvel:</strong> Dissolve-se em gorduras e óleos</li>
+                    <li><strong>Antioxidante:</strong> Protege as células contra danos oxidativos</li>
+                    <li><strong>Transportador de elétrons:</strong> Fundamental na produção de energia</li>
+                    <li><strong>Essencial para a vida:</strong> Sem ela, as células não conseguem produzir energia adequadamente</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Seção 2: Estrutura Molecular -->
+        <div id="estrutura" class="section">
+            <h2>⚛️ Estrutura Molecular da CoQ10</h2>
+            
+            <div class="molecular-structure">
+                <h3>Estrutura Química da CoQ10</h3>
+                <div class="coq10-structure">
+                    <div class="structure-part">
+                        <h4>🔵 Anel Benzoquinona</h4>
+                        <p>Parte "cabeça" da molécula</p>
+                        <p>Responsável pela atividade redox</p>
+                    </div>
+                    <div class="structure-part">
+                        <h4>🔗 Cadeia Isoprenil</h4>
+                        <p>10 unidades isoprenóides</p>
+                        <p>Parte "cauda" lipofílica</p>
+                    </div>
+                    <div class="structure-part">
+                        <h4>🟡 Grupos Metoxil</h4>
+                        <p>2 grupos -OCH₃</p>
+                        <p>Estabilizam a molécula</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Fórmula Molecular</h3>
+                <p><strong>C₅₉H₉₀O₄</strong></p>
+                <p>Peso molecular: <strong>863.34 g/mol</strong></p>
+            </div>
+
+            <div class="highlight">
+                <h4>🔄 Estados de Oxidação:</h4>
+                <ul>
+                    <li><strong>Ubiquinona (oxidada):</strong> Forma que aceita elétrons</li>
+                    <li><strong>Ubiquinol (reduzida):</strong> Forma que doa elétrons</li>
+                    <li><strong>Semiquinona:</strong> Forma intermediária com um elétron</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Seção 3: Importância e Funções -->
+        <div id="funcoes" class="section">
+            <h2>⚡ Importância e Funções da CoQ10</h2>
+            
+            <div class="function-grid">
+                <div class="function-card">
+                    <h4>🔋 Produção de Energia</h4>
+                    <p>Transporta elétrons na cadeia respiratória mitocondrial, essencial para a síntese de ATP</p>
+                </div>
+                <div class="function-card">
+                    <h4>🛡️ Proteção Antioxidante</h4>
+                    <p>Protege membranas celulares contra danos causados por radicais livres</p>
+                </div>
+                <div class="function-card">
+                    <h4>💊 Estabilização de Membranas</h4>
+                    <p>Mantém a integridade das membranas mitocondriais e celulares</p>
+                </div>
+                <div class="function-card">
+                    <h4>🔄 Regeneração de Antioxidantes</h4>
+                    <p>Ajuda a regenerar vitamina E e outros antioxidantes</p>
+                </div>
+            </div>
+
+            <div class="pathway-diagram">
+                <h3>Via de Produção de Energia</h3>
+                <div class="pathway-step">Complexo I</div>
+                <div class="pathway-step">CoQ10</div>
+                <div class="pathway-step">Complexo III</div>
+                <div class="pathway-step">Citocromo c</div>
+                <div class="pathway-step">Complexo IV</div>
+                <div class="pathway-step">ATP</div>
+            </div>
+        </div>
+
+        <!-- Seção 4: Processos Celulares Fundamentais -->
+        <div id="processos-celulares" class="section">
+            <h2>🔬 Processos Celulares Fundamentais</h2>
+            
+            <!-- Danos Oxidativos -->
+            <div class="card important">
+                <h3>⚠️ O que são Danos Oxidativos?</h3>
+                <p><strong>Danos oxidativos</strong> são lesões causadas às células quando moléculas instáveis chamadas <strong>radicais livres</strong> atacam componentes celulares importantes como DNA, proteínas e membranas.</p>
+            </div>
+
+            <div class="highlight">
+                <h4>🎯 Exemplos de Danos Oxidativos:</h4>
+                <ul>
+                    <li><strong>Envelhecimento da pele:</strong> Rugas e manchas causadas por radicais livres</li>
+                    <li><strong>Aterosclerose:</strong> Oxidação do colesterol LDL nas artérias</li>
+                    <li><strong>Catarata:</strong> Oxidação das proteínas do cristalino do olho</li>
+                    <li><strong>Doenças neurodegenerativas:</strong> Alzheimer e Parkinson</li>
+                    <li><strong>Câncer:</strong> Mutações no DNA causadas por oxidação</li>
+                    <li><strong>Fadiga muscular:</strong> Danos às mitocôndrias durante exercício intenso</li>
+                </ul>
+            </div>
+
+            <!-- Transportadores de Elétrons -->
+            <div class="card">
+                <h3>⚡ O que são Transportadores de Elétrons?</h3>
+                <p><strong>Transportadores de elétrons</strong> são moléculas especializadas que "passam" elétrons de uma para outra, como uma corrente humana passando baldes de água. Este processo é fundamental para a produção de energia celular.</p>
+            </div>
+
+            <div class="molecular-structure">
+                <h3>Cadeia de Transporte de Elétrons</h3>
+                <div class="pathway-diagram" style="background: #2c3e50; color: white;">
+                    <div class="pathway-step" style="background: #e74c3c;">NADH</div>
+                    <div class="pathway-step" style="background: #f39c12;">Complexo I</div>
+                    <div class="pathway-step" style="background: #27ae60;">CoQ10</div>
+                    <div class="pathway-step" style="background: #3498db;">Complexo III</div>
+                    <div class="pathway-step" style="background: #9b59b6;">Citocromo c</div>
+                    <div class="pathway-step" style="background: #e67e22;">Complexo IV</div>
+                    <div class="pathway-step" style="background: #1abc9c;">H₂O + ATP</div>
+                </div>
+            </div>
+
+            <div class="function-grid">
+                <div class="function-card">
+                    <h4>🔋 Importância dos Transportadores</h4>
+                    <p><strong>Produção de ATP:</strong> Sem eles, as células não conseguiriam produzir energia suficiente para sobreviver</p>
+                </div>
+                <div class="function-card">
+                    <h4>🎯 Eficiência Energética</h4>
+                    <p><strong>Controle do fluxo:</strong> Regulam a velocidade de produção de energia conforme a necessidade</p>
+                </div>
+                <div class="function-card">
+                    <h4>🛡️ Proteção Celular</h4>
+                    <p><strong>Prevenção de vazamentos:</strong> Evitam que elétrons "escapem" e formem radicais livres</p>
+                </div>
+                <div class="function-card">
+                    <h4>🔄 Reciclagem Molecular</h4>
+                    <p><strong>Regeneração:</strong> Permitem que as moléculas sejam reutilizadas continuamente</p>
+                </div>
+            </div>
+
+            <!-- Radicais Livres -->
+            <div class="card important">
+                <h3>💥 O que são Radicais Livres?</h3>
+                <p><strong>Radicais livres</strong> são moléculas instáveis que possuem elétrons "solitários" (não pareados). Como estão "desesperadas" para encontrar um parceiro para seu elétron, atacam outras moléculas, causando danos.</p>
+            </div>
+
+            <div class="interdependence">
+                <h4>🔥 Principais Radicais Livres:</h4>
+                <ul>
+                    <li><strong>Superóxido (O₂⁻):</strong> Formado durante a respiração celular</li>
+                    <li><strong>Peróxido de hidrogênio (H₂O₂):</strong> "Água oxigenada" natural do corpo</li>
+                    <li><strong>Radical hidroxil (OH•):</strong> O mais reativo e perigoso</li>
+                    <li><strong>Óxido nítrico (NO•):</strong> Importante para vasodilatação</li>
+                </ul>
+            </div>
+
+            <div class="highlight">
+                <h4>⚔️ Danos Causados por Radicais Livres:</h4>
+                <ul>
+                    <li><strong>Peroxidação lipídica:</strong> Destroem membranas celulares</li>
+                    <li><strong>Oxidação de proteínas:</strong> Enzimas perdem sua função</li>
+                    <li><strong>Danos ao DNA:</strong> Mutações que podem causar câncer</li>
+                    <li><strong>Inflamação crônica:</strong> Ativação constante do sistema imune</li>
+                    <li><strong>Envelhecimento acelerado:</strong> Acúmulo de danos ao longo do tempo</li>
+                </ul>
+            </div>
+
+            <!-- Oxidação -->
+            <div class="card">
+                <h3>🔄 O que é Oxidação?</h3>
+                <p><strong>Oxidação</strong> é um processo químico onde uma molécula <strong>perde elétrons</strong>. É como "enferrujar" - o ferro perde elétrons para o oxigênio e forma ferrugem. No corpo, a oxidação pode ser benéfica (produção de energia) ou prejudicial (danos celulares).</p>
+            </div>
+
+            <div class="coq10-structure">
+                <div class="structure-part">
+                    <h4>🍎 Exemplo Cotidiano</h4>
+                    <p><strong>Maçã cortada:</strong> Escurece devido à oxidação</p>
+                    <p>Enzimas + oxigênio = escurecimento</p>
+                </div>
+                <div class="structure-part">
+                    <h4>🔥 No Corpo Humano</h4>
+                    <p><strong>Respiração celular:</strong> Oxidação controlada</p>
+                    <p>Glicose + oxigênio = energia + CO₂</p>
+                </div>
+                <div class="structure-part">
+                    <h4>⚖️ Equilíbrio Vital</h4>
+                    <p><strong>Oxidação vs Antioxidação:</strong> Balanço essencial</p>
+                    <p>CoQ10 ajuda a manter este equilíbrio</p>
+                </div>
+            </div>
+
+            <div class="pathway-diagram">
+                <h3>Processo de Oxidação e Redução</h3>
+                <div class="pathway-step">Molécula Normal</div>
+                <div class="pathway-step">Perde Elétron (Oxidação)</div>
+                <div class="pathway-step">Radical Livre</div>
+                <div class="pathway-step">Antioxidante Doa Elétron</div>
+                <div class="pathway-step">Molécula Estabilizada</div>
+            </div>
+
+            <div class="card gene">
+                <h3>🛡️ Como a CoQ10 Protege Contra Oxidação</h3>
+                <p><strong>Mecanismo de Proteção:</strong></p>
+                <ul>
+                    <li><strong>Doação de elétrons:</strong> CoQ10 "sacrifica" seus elétrons para estabilizar radicais livres</li>
+                    <li><strong>Regeneração:</strong> Pode ser "recarregada" por outros antioxidantes</li>
+                    <li><strong>Localização estratégica:</strong> Presente nas membranas onde ocorrem mais danos</li>
+                    <li><strong>Dupla função:</strong> Produz energia E protege contra oxidação</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Seção 5: Processos Bioquímicos Fundamentais -->
+        <div id="processos-bioquimicos" class="section">
+            <h2>⚗️ Processos Bioquímicos Fundamentais</h2>
+            
+            <!-- Metilação -->
+            <div class="card important">
+                <h3>🔬 O que é Metilação?</h3>
+                <p><strong>Metilação</strong> é um processo bioquímico onde um grupo metil (-CH₃) é adicionado a uma molécula. Na biossíntese da CoQ10, a metilação é essencial para formar os grupos metoxil que estabilizam a molécula.</p>
+            </div>
+
+            <div class="molecular-structure">
+                <h3>Processo de Metilação na CoQ10</h3>
+                <div class="pathway-diagram" style="background: #2c3e50; color: white;">
+                    <div class="pathway-step" style="background: #e74c3c;">Precursor</div>
+                    <div class="pathway-step" style="background: #f39c12;">+ Grupo Metil (-CH₃)</div>
+                    <div class="pathway-step" style="background: #27ae60;">Enzima Metiltransferase</div>
+                    <div class="pathway-step" style="background: #3498db;">Produto Metilado</div>
+                </div>
+            </div>
+
+            <div class="highlight">
+                <h4>🎯 Importância da Metilação na CoQ10:</h4>
+                <ul>
+                    <li><strong>Estabilização molecular:</strong> Os grupos metoxil (-OCH₃) tornam a molécula mais estável</li>
+                    <li><strong>Solubilidade:</strong> Afeta como a CoQ10 se dissolve em membranas lipídicas</li>
+                    <li><strong>Atividade biológica:</strong> Essencial para a função antioxidante</li>
+                    <li><strong>Regulação gênica:</strong> Controla a expressão dos genes COQ</li>
+                </ul>
+            </div>
+
+            <div class="function-grid">
+                <div class="function-card">
+                    <h4>🧬 Enzimas Envolvidas</h4>
+                    <p><strong>COQ3:</strong> Metiltransferase que adiciona o primeiro grupo metil</p>
+                    <p><strong>COQ7:</strong> Metiltransferase que adiciona o segundo grupo metil</p>
+                </div>
+                <div class="function-card">
+                    <h4>🔄 Doador de Metil</h4>
+                    <p><strong>S-adenosilmetionina (SAM):</strong> Principal doador de grupos metil</p>
+                    <p>Essencial para todas as reações de metilação</p>
+                </div>
+            </div>
+
+            <!-- Hidroxilação -->
+            <div class="card">
+                <h3>💧 O que é Hidroxilação?</h3>
+                <p><strong>Hidroxilação</strong> é a adição de um grupo hidroxil (-OH) a uma molécula. Na síntese da CoQ10, este processo é crucial para formar a estrutura do anel benzoquinona e suas propriedades redox.</p>
+            </div>
+
+            <div class="coq10-structure">
+                <div class="structure-part">
+                    <h4>⚡ Enzima COQ6</h4>
+                    <p><strong>Hidroxilase:</strong> Adiciona grupos -OH</p>
+                    <p>Essencial para formar a quinona</p>
+                </div>
+                <div class="structure-part">
+                    <h4>🌊 Cofatores</h4>
+                    <p><strong>NADPH:</strong> Fornece elétrons</p>
+                    <p><strong>O₂:</strong> Fonte de oxigênio</p>
+                </div>
+                <div class="structure-part">
+                    <h4>🎯 Resultado</h4>
+                    <p><strong>Grupos hidroxil:</strong> Permitem oxidação/redução</p>
+                    <p>Base da atividade antioxidante</p>
+                </div>
+            </div>
+
+            <div class="interdependence">
+                <h4>🔄 Processo de Hidroxilação:</h4>
+                <ul>
+                    <li><strong>Substrato:</strong> Precursor aromático da CoQ10</li>
+                    <li><strong>Enzima:</strong> Hidroxilase (COQ6) com ferro como cofator</li>
+                    <li><strong>Cofatores:</strong> NADPH (doador de elétrons) e O₂ (fonte de oxigênio)</li>
+                    <li><strong>Produto:</strong> Molécula com grupos -OH que pode ser oxidada/reduzida</li>
+                </ul>
+            </div>
+
+            <!-- Anel Benzoquinona -->
+            <div class="card gene">
+                <h3>💍 O que é o Anel Benzoquinona?</h3>
+                <p><strong>Anel benzoquinona</strong> é a parte "cabeça" da molécula de CoQ10, responsável por sua atividade redox (capacidade de ganhar e perder elétrons). É formado por um anel de 6 carbonos com dois grupos carbonil (C=O).</p>
+            </div>
+
+            <div class="molecular-structure">
+                <h3>Estrutura do Anel Benzoquinona</h3>
+                <div class="coq10-structure">
+                    <div class="structure-part">
+                        <h4>🔴 Grupos Carbonil</h4>
+                        <p><strong>C=O:</strong> Dois grupos que aceitam elétrons</p>
+                        <p>Responsáveis pela oxidação</p>
+                    </div>
+                    <div class="structure-part">
+                        <h4>🟡 Grupos Metoxil</h4>
+                        <p><strong>-OCH₃:</strong> Dois grupos estabilizadores</p>
+                        <p>Resultado da metilação</p>
+                    </div>
+                    <div class="structure-part">
+                        <h4>🔵 Anel Aromático</h4>
+                        <p><strong>C₆:</strong> Base estrutural</p>
+                        <p>Permite conjugação eletrônica</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pathway-diagram">
+                <h3>Estados do Anel Benzoquinona</h3>
+                <div class="pathway-step">Ubiquinona (Oxidada)</div>
+                <div class="pathway-step">+ 1 elétron</div>
+                <div class="pathway-step">Semiquinona (Radical)</div>
+                <div class="pathway-step">+ 1 elétron</div>
+                <div class="pathway-step">Ubiquinol (Reduzida)</div>
+            </div>
+
+            <div class="highlight">
+                <h4>⚡ Propriedades do Anel Benzoquinona:</h4>
+                <ul>
+                    <li><strong>Reversibilidade:</strong> Pode alternar entre oxidado e reduzido</li>
+                    <li><strong>Estabilidade:</strong> Grupos metoxil impedem degradação</li>
+                    <li><strong>Transporte de elétrons:</strong> Aceita e doa elétrons facilmente</li>
+                    <li><strong>Atividade antioxidante:</strong> Neutraliza radicais livres</li>
+                    <li><strong>Solubilidade:</strong> Parte hidrofílica da molécula</li>
+                </ul>
+            </div>
+
+            <div class="function-grid">
+                <div class="function-card">
+                    <h4>🔋 Na Cadeia Respiratória</h4>
+                    <p>O anel benzoquinona aceita elétrons do Complexo I e II, transportando-os para o Complexo III</p>
+                </div>
+                <div class="function-card">
+                    <h4>🛡️ Como Antioxidante</h4>
+                    <p>Na forma ubiquinol, o anel doa elétrons para neutralizar radicais livres perigosos</p>
+                </div>
+                <div class="function-card">
+                    <h4>🔄 Regeneração</h4>
+                    <p>Pode ser "recarregado" por enzimas celulares, permitindo uso contínuo</p>
+                </div>
+                <div class="function-card">
+                    <h4>📍 Localização</h4>
+                    <p>Fica na interface entre a parte aquosa e lipídica das membranas</p>
+                </div>
+            </div>
+
+            <div class="card important">
+                <h3>🔗 Interconexão dos Processos</h3>
+                <p><strong>Metilação + Hidroxilação = Anel Benzoquinona Funcional</strong></p>
+                <ul>
+                    <li><strong>Hidroxilação:</strong> Cria os grupos -OH que serão oxidados para formar C=O</li>
+                    <li><strong>Metilação:</strong> Adiciona grupos -OCH₃ que estabilizam o anel</li>
+                    <li><strong>Resultado:</strong> Anel benzoquinona com capacidade redox otimizada</li>
+                    <li><strong>Função:</strong> Transporte de elétrons e proteção antioxidante</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Seção 6: O que é um Gene -->
+        <div id="genes" class="section">
+            <h2>🧬 O que é um Gene?</h2>
+            
+            <div class="card important">
+                <h3>Definição de Gene</h3>
+                <p>Um <strong>gene</strong> é uma sequência específica de DNA que contém as instruções para produzir uma proteína ou RNA funcional. É a unidade básica da hereditariedade.</p>
+            </div>
+
+            <div class="highlight">
+                <h4>🔍 Características dos Genes:</h4>
+                <ul>
+                    <li><strong>Localização:</strong> Encontrados nos cromossomos</li>
+                    <li><strong>Função:</strong> Codificam proteínas específicas</li>
+                    <li><strong>Expressão:</strong> Podem ser "ligados" ou "desligados"</li>
+                    <li><strong>Mutações:</strong> Alterações podem causar doenças</li>
+                </ul>
+            </div>
+
+            <h3>🔬 Genes Envolvidos na Biossíntese da CoQ10</h3>
+            <p>A produção de CoQ10 envolve pelo menos <strong>10 genes principais</strong>, cada um codificando enzimas específicas:</p>
+
+            <div class="gene-pathway">
+                <div class="gene-card">
+                    <h4>COQ1 (PDSS1)</h4>
+                    <p><strong>Função:</strong> Síntese do precursor poliprenil difosfato</p>
+                    <p><strong>Localização:</strong> Cromossomo 10</p>
+                    <p><strong>Enzima:</strong> Poliprenil difosfato sintase</p>
+                </div>
+
+                <div class="gene-card">
+                    <h4>COQ2 (PDSS2)</h4>
+                    <p><strong>Função:</strong> Síntese do precursor poliprenil difosfato</p>
+                    <p><strong>Localização:</strong> Cromossomo 6</p>
+                    <p><strong>Enzima:</strong> Poliprenil difosfato sintase subunidade 2</p>
+                </div>
+
+                <div class="gene-card">
+                    <h4>COQ3</h4>
+                    <p><strong>Função:</strong> Primeira etapa da via biossintética</p>
+                    <p><strong>Localização:</strong> Cromossomo 6</p>
+                    <p><strong>Enzima:</strong> Hexaprenil difosfato sintase</p>
+                </div>
+
+                <div class="gene-card">
+                    <h4>COQ4</h4>
+                    <p><strong>Função:</strong> Estabilização do complexo biossintético</p>
+                    <p><strong>Localização:</strong> Cromossomo 9</p>
+                    <p><strong>Enzima:</strong> Proteína COQ4 homóloga</p>
+                </div>
+
+                <div class="gene-card">
+                    <h4>COQ5</h4>
+                    <p><strong>Função:</strong> Metilação da CoQ10</p>
+                    <p><strong>Localização:</strong> Cromossomo 12</p>
+                    <p><strong>Enzima:</strong> 2-metóxi-6-poliprenil-1,4-benzoquinona metiltransferase</p>
+                </div>
+
+                <div class="gene-card">
+                    <h4>COQ6</h4>
+                    <p><strong>Função:</strong> Hidroxilação da CoQ10</p>
+                    <p><strong>Localização:</strong> Cromossomo 14</p>
+                    <p><strong>Enzima:</strong> Ubiquinona biossíntese monoxigenase</p>
+                </div>
+
+                <div class="gene-card">
+                    <h4>COQ7</h4>
+                    <p><strong>Função:</strong> Hidroxilação final</p>
+                    <p><strong>Localização:</strong> Cromossomo 16</p>
+                    <p><strong>Enzima:</strong> Ubiquinona biossíntese hidroxilase</p>
+                </div>
+
+                <div class="gene-card">
+                    <h4>COQ8A (ADCK3)</h4>
+                    <p><strong>Função:</strong> Regulação da biossíntese</p>
+                    <p><strong>Localização:</strong> Cromossomo 1</p>
+                    <p><strong>Enzima:</strong> AarF domain containing kinase 3</p>
+                </div>
+
+                <div class="gene-card">
+                    <h4>COQ8B (ADCK4)</h4>
+                    <p><strong>Função:</strong> Regulação da biossíntese</p>
+                    <p><strong>Localização:</strong> Cromossomo 19</p>
+                    <p><strong>Enzima:</strong> AarF domain containing kinase 4</p>
+                </div>
+
+                <div class="gene-card">
+                    <h4>COQ9</h4>
+                    <p><strong>Função:</strong> Estabilização do complexo</p>
+                    <p><strong>Localização:</strong> Cromossomo 16</p>
+                    <p><strong>Enzima:</strong> Ubiquinona biossíntese proteína COQ9</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção 5: Interdependência dos Genes -->
+        <div id="interdependencia" class="section">
+            <h2>🔗 Interdependência dos Genes na Biossíntese da CoQ10</h2>
+            
+            <div class="card important">
+                <h3>Conceito de Interdependência</h3>
+                <p>Os genes da biossíntese da CoQ10 trabalham como uma <strong>orquestra molecular</strong>. Cada gene produz uma enzima específica, e todas devem funcionar em sequência para produzir CoQ10 funcional.</p>
+            </div>
+
+            <div class="interdependence">
+                <h4>🎼 Sequência da Biossíntese:</h4>
+                <ol>
+                    <li><strong>COQ1 + COQ2:</strong> Criam o "esqueleto" da molécula (cadeia isoprenil)</li>
+                    <li><strong>COQ3:</strong> Inicia a formação do anel benzoquinona</li>
+                    <li><strong>COQ4 + COQ9:</strong> Estabilizam o complexo enzimático</li>
+                    <li><strong>COQ5:</strong> Adiciona grupos metil (-CH₃)</li>
+                    <li><strong>COQ6:</strong> Adiciona grupos hidroxil (-OH)</li>
+                    <li><strong>COQ7:</strong> Finaliza a hidroxilação</li>
+                    <li><strong>COQ8A + COQ8B:</strong> Regulam todo o processo</li>
+                </ol>
+            </div>
+
+            <div class="highlight">
+                <h4>⚠️ Consequências da Disfunção:</h4>
+                <ul>
+                    <li><strong>Mutação em qualquer gene:</strong> Pode causar deficiência de CoQ10</li>
+                    <li><strong>Efeito dominó:</strong> Falha de um gene afeta toda a via</li>
+                    <li><strong>Gravidade variável:</strong> Depende do gene afetado e tipo de mutação</li>
+                    <li><strong>Manifestações clínicas:</strong> Problemas neurológicos, musculares e renais</li>
+                </ul>
+            </div>
+
+            <div class="card gene">
+                <h3>🔄 Exemplo de Interdependência: Gene COQ4</h3>
+                <p><strong>Função Principal:</strong> O COQ4 não catalisa reações químicas diretamente, mas é essencial para manter a estabilidade do complexo multienzimático.</p>
+                <p><strong>Interdependência:</strong></p>
+                <ul>
+                    <li>Sem COQ4 → Complexo instável → Outras enzimas não funcionam adequadamente</li>
+                    <li>COQ4 defeituoso → Redução de 80-90% na produção de CoQ10</li>
+                    <li>Afeta especialmente COQ6 e COQ7 (enzimas de hidroxilação)</li>
+                </ul>
+            </div>
+
+            <div class="pathway-diagram">
+                <h3>Fluxo de Interdependência</h3>
+                <div class="pathway-step">Gene Normal</div>
+                <div class="pathway-step">Enzima Funcional</div>
+                <div class="pathway-step">Reação Bioquímica</div>
+                <div class="pathway-step">Produto Intermediário</div>
+                <div class="pathway-step">CoQ10 Final</div>
+            </div>
+
+            <div class="card important">
+                <h3>💡 Implicações Clínicas</h3>
+                <p>Compreender a interdependência dos genes é crucial para:</p>
+                <ul>
+                    <li><strong>Diagnóstico:</strong> Identificar qual gene está mutado</li>
+                    <li><strong>Prognóstico:</strong> Prever a gravidade da doença</li>
+                    <li><strong>Tratamento:</strong> Suplementação com CoQ10 pode compensar deficiências</li>
+                    <li><strong>Aconselhamento genético:</strong> Orientar famílias sobre riscos hereditários</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <div class="section">
+            <h2>📚 Resumo da Aula</h2>
+            <div class="highlight">
+                <h4>Pontos-Chave Aprendidos:</h4>
+                <ul>
+                    <li>CoQ10 é uma coenzima essencial para produção de energia e proteção antioxidante</li>
+                    <li>Sua estrutura inclui anel benzoquinona e cadeia isoprenil com 10 unidades</li>
+                    <li>10 genes principais controlam sua biossíntese em sequência coordenada</li>
+                    <li>Genes trabalham de forma interdependente - falha de um afeta todos</li>
+                    <li>Mutações genéticas podem causar deficiência primária de CoQ10</li>
+                    <li>Compreender a genética é fundamental para diagnóstico e tratamento</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Adiciona interatividade aos elementos
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling para navegação
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // Efeito hover nos cards de genes
+            document.querySelectorAll('.gene-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.05)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(-5px) scale(1.02)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

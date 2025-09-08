@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 1: Enzimas e Coenzimas - Guia Completo</title>
+    <style>
+        /* Reset e configurações básicas */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255,255,255,0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.3em;
+        }
+        
+        /* Navegação */
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .nav-btn {
+            padding: 12px 24px;
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .nav-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .nav-btn.active {
+            background: linear-gradient(45deg, #27ae60, #229954);
+        }
+        
+        /* Seções principais */
+        .section {
+            background: rgba(255,255,255,0.95);
+            margin: 30px 0;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            display: none;
+        }
+        
+        .section.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section h2 {
+            color: #2c3e50;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .section h3 {
+            color: #34495e;
+            font-size: 1.6em;
+            margin: 25px 0 15px 0;
+        }
+        
+        .section h4 {
+            color: #7f8c8d;
+            font-size: 1.3em;
+            margin: 15px 0 10px 0;
+        }
+        
+        /* Cards informativos */
+        .info-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 5px solid #3498db;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .info-card.definition {
+            border-left-color: #9b59b6;
+            background: linear-gradient(135deg, #f4f1fb 0%, #e8ddf0 100%);
+        }
+        
+        .info-card.example {
+            border-left-color: #27ae60;
+            background: linear-gradient(135deg, #eafaf1 0%, #d5f4e6 100%);
+        }
+        
+        .info-card.warning {
+            border-left-color: #f39c12;
+            background: linear-gradient(135deg, #fef9e7 0%, #fcf3cf 100%);
+        }
+        
+        .info-card.important {
+            border-left-color: #e74c3c;
+            background: linear-gradient(135deg, #fdedec 0%, #fadbd8 100%);
+        }
+        
+        /* Glossário de termos médicos */
+        .medical-term {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            cursor: pointer;
+            margin: 2px;
+            transition: all 0.3s ease;
+        }
+        
+        .medical-term:hover {
+            transform: scale(1.05);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        
+        .tooltip {
+            position: relative;
+        }
+        
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 300px;
+            background-color: #2c3e50;
+            color: white;
+            text-align: left;
+            border-radius: 8px;
+            padding: 10px;
+            position: absolute;
+            z-index: 1000;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -150px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        /* Visualizações 3D */
+        .enzyme-3d {
+            width: 300px;
+            height: 300px;
+            margin: 30px auto;
+            perspective: 1000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .enzyme-model {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotate3d 15s infinite linear;
+        }
+        
+        .enzyme-part {
+            position: absolute;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+        
+        .active-site {
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle, #e74c3c, #c0392b);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 2s infinite;
+        }
+        
+        .protein-chain {
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, #3498db, #2980b9);
+        }
+        
+        .substrate {
+            width: 25px;
+            height: 25px;
+            background: radial-gradient(circle, #f39c12, #e67e22);
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes rotate3d {
+            0% { transform: rotateX(0deg) rotateY(0deg); }
+            100% { transform: rotateX(360deg) rotateY(360deg); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.2); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Diagramas de reações */
+        .reaction-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 30px;
+            background: linear-gradient(135deg, #f1f2f6 0%, #ddd6fe 100%);
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+        
+        .reaction-step {
+            padding: 15px 20px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 10px;
+            font-weight: bold;
+            text-align: center;
+            min-width: 120px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .reaction-step:hover {
+            transform: scale(1.05);
+        }
+        
+        .reaction-arrow {
+            font-size: 28px;
+            color: #34495e;
+            font-weight: bold;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        /* Tabelas comparativas */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        .comparison-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .comparison-table tr:hover {
+            background: #e3f2fd;
+            transform: scale(1.01);
+            transition: all 0.3s ease;
+        }
+        
+        /* Contadores animados */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            animation: countUp 2s ease-out;
+        }
+        
+        .stat-label {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Botões interativos */
+        .interactive-btn {
+            background: linear-gradient(45deg, #27ae60, #229954);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            font-size: 1em;
+        }
+        
+        .interactive-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        /* Quiz interativo */
+        .quiz-container {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .quiz-question {
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .quiz-options {
+            display: grid;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .quiz-option {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .quiz-option:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.5);
+        }
+        
+        .quiz-option.selected {
+            background: rgba(255,255,255,0.3);
+            border-color: white;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2em;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .reaction-diagram {
+                flex-direction: column;
+            }
+            
+            .reaction-arrow {
+                transform: rotate(90deg);
+            }
+            
+            .enzyme-3d {
+                width: 250px;
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🧬 Aula 1: Enzimas e Coenzimas</h1>
+            <p>Guia Completo e Didático para Iniciantes</p>
+        </div>
+        
+        <!-- Navegação -->
+        <div class="nav-menu">
+            <button class="nav-btn active" onclick="showSection('introducao')">🏠 Introdução</button>
+            <button class="nav-btn" onclick="showSection('enzimas')">⚗️ Enzimas</button>
+            <button class="nav-btn" onclick="showSection('tipos-enzimas')">📊 Tipos de Enzimas</button>
+            <button class="nav-btn" onclick="showSection('coenzimas')">🔬 Coenzimas</button>
+            <button class="nav-btn" onclick="showSection('tipos-coenzimas')">📋 Tipos de Coenzimas</button>
+            <button class="nav-btn" onclick="showSection('comparacao')">⚖️ Comparação</button>
+            <button class="nav-btn" onclick="showSection('metabolismo')">🔬 Metabolismo Celular</button>
+            <button class="nav-btn" onclick="showSection('quiz')">🎯 Quiz</button>
+        </div>
+        
+        <!-- Seção: Introdução -->
+        <div id="introducao" class="section active">
+            <h2>🏠 Bem-vindo à Aula sobre Enzimas e Coenzimas!</h2>
+            
+            <div class="info-card">
+                <h3>🎯 O que você vai aprender hoje:</h3>
+                <ul>
+                    <li><strong>Enzimas:</strong> O que são, como funcionam e seus tipos</li>
+                    <li><strong>Coenzimas:</strong> Seus "assistentes" especiais</li>
+                    <li><strong>Diferenças:</strong> Como distinguir enzimas de coenzimas</li>
+                    <li><strong>Importância:</strong> Por que são essenciais para a vida</li>
+                </ul>
+            </div>
+            
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-number">3000+</div>
+                    <div class="stat-label">Enzimas no Corpo Humano</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Classes Principais</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Coenzimas Conhecidas</div>
+                </div>
+            </div>
+            
+            <div class="info-card definition">
+                <h3>💡 Analogia Simples</h3>
+                <p>Imagine uma <strong>fábrica</strong> (sua célula). As <strong>enzimas</strong> são como máquinas especializadas que fazem produtos específicos. As <strong>coenzimas</strong> são como ferramentas ou peças que essas máquinas precisam para funcionar direito!</p>
+            </div>
+        </div>
+        
+        <!-- Seção: Enzimas -->
+        <div id="enzimas" class="section">
+            <h2>⚗️ O que são Enzimas?</h2>
+            
+            <div class="info-card definition">
+                <h3>📚 Definição Simples</h3>
+                <p>As <strong>enzimas</strong> são <span class="tooltip medical-term">proteínas<span class="tooltiptext">Proteínas: Moléculas grandes feitas de aminoácidos, como blocos de LEGO que formam estruturas complexas no corpo</span></span> especiais que aceleram as reações químicas no nosso corpo. Elas são como "facilitadoras" que fazem as coisas acontecerem mais rápido!</p>
+            </div>
+            
+            <div class="enzyme-3d">
+                <div class="enzyme-model">
+                    <div class="enzyme-part active-site"></div>
+                    <div class="enzyme-part protein-chain" style="top: 20%; left: 20%;"></div>
+                    <div class="enzyme-part protein-chain" style="top: 80%; left: 80%;"></div>
+                    <div class="enzyme-part substrate" style="top: 10%; left: 60%;"></div>
+                    <div class="enzyme-part substrate" style="top: 90%; left: 40%;"></div>
+                </div>
+            </div>
+            
+            <h3>🔧 Como as Enzimas Funcionam?</h3>
+            <div class="reaction-diagram">
+                <div class="reaction-step">Substrato<br><small>(Material inicial)</small></div>
+                <div class="reaction-arrow">→</div>
+                <div class="reaction-step">Enzima + Substrato<br><small>(Encontro)</small></div>
+                <div class="reaction-arrow">→</div>
+                <div class="reaction-step">Produto<br><small>(Resultado final)</small></div>
+            </div>
+            
+            <div class="info-card example">
+                <h3>🍞 Exemplo Prático: Digestão do Pão</h3>
+                <p>Quando você come pão, a enzima <span class="tooltip medical-term">amilase<span class="tooltiptext">Amilase: Enzima que quebra o amido (carboidrato complexo) em açúcares menores que o corpo pode absorver</span></span> na sua saliva quebra o <span class="tooltip medical-term">amido<span class="tooltiptext">Amido: Tipo de carboidrato complexo encontrado em pães, batatas e arroz</span></span> em açúcares menores que seu corpo consegue absorver!</p>
+            </div>
+            
+            <h3>⚡ Características das Enzimas</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div class="info-card">
+                    <h4>🎯 Específicas</h4>
+                    <p>Cada enzima tem um "trabalho" específico, como uma chave que só abre uma fechadura</p>
+                </div>
+                <div class="info-card">
+                    <h4>♻️ Reutilizáveis</h4>
+                    <p>Podem ser usadas muitas vezes sem se "gastar"</p>
+                </div>
+                <div class="info-card">
+                    <h4>🌡️ Sensíveis</h4>
+                    <p>Funcionam melhor em temperatura e pH ideais</p>
+                </div>
+                <div class="info-card">
+                    <h4>⚡ Aceleradoras</h4>
+                    <p>Fazem reações acontecerem milhões de vezes mais rápido</p>
+                </div>
+            </div>
+            
+            <button class="interactive-btn" onclick="showEnzymeAnimation()">🎬 Ver Animação da Enzima</button>
+        </div>
+        
+        <!-- Seção: Tipos de Enzimas -->
+        <div id="tipos-enzimas" class="section">
+            <h2>📊 Tipos de Enzimas</h2>
+            
+            <div class="info-card">
+                <h3>🏷️ As 6 Classes Principais</h3>
+                <p>Os cientistas dividem as enzimas em 6 grupos principais, baseado no tipo de trabalho que fazem:</p>
+            </div>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Classe</th>
+                        <th>O que fazem</th>
+                        <th>Exemplo</th>
+                        <th>Onde encontrar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Oxidorredutases</strong></td>
+                        <td>Transferem elétrons (energia)</td>
+                        <td>Catalase</td>
+                        <td>Fígado, sangue</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Transferases</strong></td>
+                        <td>Movem grupos químicos</td>
+                        <td>ALT, AST</td>
+                        <td>Fígado, músculos</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Hidrolases</strong></td>
+                        <td>Quebram moléculas com água</td>
+                        <td>Pepsina</td>
+                        <td>Estômago, intestino</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. Liases</strong></td>
+                        <td>Quebram ou formam ligações</td>
+                        <td>Aldolase</td>
+                        <td>Músculos, fígado</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5. Isomerases</strong></td>
+                        <td>Reorganizam moléculas</td>
+                        <td>Glicose isomerase</td>
+                        <td>Fígado, músculos</td>
+                    </tr>
+                    <tr>
+                        <td><strong>6. Ligases</strong></td>
+                        <td>Juntam moléculas</td>
+                        <td>DNA ligase</td>
+                        <td>Núcleo das células</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>🔢 Quantidades no Corpo Humano</h3>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-number">~3000</div>
+                    <div class="stat-label">Enzimas Diferentes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">~1000</div>
+                    <div class="stat-label">Enzimas Digestivas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">~500</div>
+                    <div class="stat-label">Enzimas Metabólicas</div>
+                </div>
+            </div>
+            
+            <div class="info-card important">
+                <h3>🚨 Enzimas Importantes para Exames</h3>
+                <ul>
+                    <li><strong><span class="tooltip medical-term">ALT/TGP<span class="tooltiptext">ALT (Alanina Aminotransferase): Enzima do fígado. Quando alta no sangue, pode indicar problema hepático</span></span>:</strong> Indica saúde do fígado</li>
+                    <li><strong><span class="tooltip medical-term">CK/CPK<span class="tooltiptext">CK (Creatina Quinase): Enzima dos músculos. Quando alta, pode indicar lesão muscular ou cardíaca</span></span>:</strong> Mostra lesão muscular</li>
+                    <li><strong><span class="tooltip medical-term">Amilase<span class="tooltiptext">Amilase: Enzima que digere amido. Quando alta no sangue, pode indicar problema no pâncreas</span></span>:</strong> Avalia função do pâncreas</li>
+                    <li><strong><span class="tooltip medical-term">LDH<span class="tooltiptext">LDH (Lactato Desidrogenase): Enzima presente em muitos tecidos. Quando alta, pode indicar lesão celular</span></span>:</strong> Detecta lesão em vários órgãos</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Seção: Coenzimas -->
+        <div id="coenzimas" class="section">
+            <h2>🔬 O que são Coenzimas?</h2>
+            
+            <div class="info-card definition">
+                <h3>📚 Definição Simples</h3>
+                <p>As <strong>coenzimas</strong> são moléculas pequenas que ajudam as enzimas a funcionar. Elas são como "assistentes" ou "ferramentas" que as enzimas precisam para fazer seu trabalho direito!</p>
+            </div>
+            
+            <div class="info-card example">
+                <h3>🔧 Analogia da Oficina</h3>
+                <p>Se a <strong>enzima</strong> fosse um mecânico, a <strong>coenzima</strong> seria sua chave de fenda. O mecânico (enzima) sabe como consertar, mas precisa da ferramenta (coenzima) para fazer o trabalho!</p>
+            </div>
+            
+            <h3>🔄 Como Funcionam Juntas?</h3>
+            <div class="reaction-diagram">
+                <div class="reaction-step">Enzima<br><small>(Sozinha)</small></div>
+                <div class="reaction-arrow">+</div>
+                <div class="reaction-step">Coenzima<br><small>(Assistente)</small></div>
+                <div class="reaction-arrow">→</div>
+                <div class="reaction-step">Enzima Ativa<br><small>(Pronta para trabalhar)</small></div>
+            </div>
+            
+            <h3>⚡ Características das Coenzimas</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div class="info-card">
+                    <h4>🤝 Cooperativas</h4>
+                    <p>Trabalham em equipe com as enzimas</p>
+                </div>
+                <div class="info-card">
+                    <h4>🔄 Recicláveis</h4>
+                    <p>Podem ser reutilizadas muitas vezes</p>
+                </div>
+                <div class="info-card">
+                    <h4>🎯 Específicas</h4>
+                    <p>Cada uma tem funções particulares</p>
+                </div>
+                <div class="info-card">
+                    <h4>💊 Derivadas de Vitaminas</h4>
+                    <p>Muitas vêm das vitaminas que comemos</p>
+                </div>
+            </div>
+            
+            <div class="info-card warning">
+                <h3>⚠️ Diferença Importante</h3>
+                <p><strong>Cofator vs Coenzima:</strong></p>
+                <ul>
+                    <li><strong><span class="tooltip medical-term">Cofator<span class="tooltiptext">Cofator: Qualquer substância não-proteica que ajuda uma enzima (pode ser metal ou molécula orgânica)</span></span>:</strong> Qualquer "ajudante" da enzima (pode ser metal como zinco)</li>
+                    <li><strong>Coenzima:</strong> Cofator orgânico específico (sempre uma molécula orgânica)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Seção: Tipos de Coenzimas -->
+        <div id="tipos-coenzimas" class="section">
+            <h2>📋 Tipos de Coenzimas</h2>
+            
+            <div class="info-card">
+                <h3>🏷️ Principais Grupos</h3>
+                <p>Existem mais de 100 coenzimas conhecidas, mas vamos focar nas mais importantes:</p>
+            </div>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Coenzima</th>
+                        <th>Vem da Vitamina</th>
+                        <th>Função Principal</th>
+                        <th>Onde Atua</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>NAD+/NADH</strong></td>
+                        <td>Vitamina B3 (Niacina)</td>
+                        <td>Transporte de energia</td>
+                        <td>Respiração celular</td>
+                    </tr>
+                    <tr>
+                        <td><strong>FAD/FADH₂</strong></td>
+                        <td>Vitamina B2 (Riboflavina)</td>
+                        <td>Transporte de elétrons</td>
+                        <td>Produção de energia</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CoA</strong></td>
+                        <td>Vitamina B5 (Ácido Pantotênico)</td>
+                        <td>Transporte de grupos acetil</td>
+                        <td>Metabolismo de gorduras</td>
+                    </tr>
+                    <tr>
+                        <td><strong>TPP</strong></td>
+                        <td>Vitamina B1 (Tiamina)</td>
+                        <td>Metabolismo de carboidratos</td>
+                        <td>Sistema nervoso</td>
+                    </tr>
+                    <tr>
+                        <td><strong>PLP</strong></td>
+                        <td>Vitamina B6 (Piridoxina)</td>
+                        <td>Metabolismo de aminoácidos</td>
+                        <td>Síntese de proteínas</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Biotina</strong></td>
+                        <td>Vitamina B7 (Biotina)</td>
+                        <td>Síntese de ácidos graxos</td>
+                        <td>Metabolismo</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Folato</strong></td>
+                        <td>Vitamina B9 (Ácido Fólico)</td>
+                        <td>Síntese de DNA</td>
+                        <td>Divisão celular</td>
+                    </tr>
+                    <tr>
+                        <td><strong>B12</strong></td>
+                        <td>Vitamina B12 (Cobalamina)</td>
+                        <td>Metabolismo de aminoácidos</td>
+                        <td>Sistema nervoso</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>🔢 Quantidades e Importância</h3>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Vitaminas B Essenciais</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Coenzimas Conhecidas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1000s</div>
+                    <div class="stat-label">Reações que Participam</div>
+                </div>
+            </div>
+            
+            <div class="info-card important">
+                <h3>🚨 Deficiências Comuns</h3>
+                <ul>
+                    <li><strong>Falta de B1:</strong> <span class="tooltip medical-term">Beribéri<span class="tooltiptext">Beribéri: Doença causada pela falta de vitamina B1, causa fraqueza muscular e problemas cardíacos</span></span> (fraqueza muscular)</li>
+                    <li><strong>Falta de B3:</strong> <span class="tooltip medical-term">Pelagra<span class="tooltiptext">Pelagra: Doença causada pela falta de vitamina B3, causa problemas de pele, digestivos e mentais</span></span> (problemas de pele)</li>
+                    <li><strong>Falta de B9:</strong> <span class="tooltip medical-term">Anemia megaloblástica<span class="tooltiptext">Anemia megaloblástica: Tipo de anemia onde os glóbulos vermelhos ficam grandes e imaturos</span></span></li>
+                    <li><strong>Falta de B12:</strong> Problemas neurológicos</li>
+                </ul>
+            </div>
+            
+            <button class="interactive-btn" onclick="showVitaminSources()">🥗 Ver Fontes de Vitaminas</button>
+        </div>
+        
+        <!-- Seção: Comparação -->
+        <div id="comparacao" class="section">
+            <h2>⚖️ Enzimas vs Coenzimas</h2>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Característica</th>
+                        <th>Enzimas</th>
+                        <th>Coenzimas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Tamanho</strong></td>
+                        <td>Grandes (proteínas)</td>
+                        <td>Pequenas (moléculas orgânicas)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Função</strong></td>
+                        <td>Catalisam reações</td>
+                        <td>Ajudam as enzimas</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Especificidade</strong></td>
+                        <td>Muito específicas</td>
+                        <td>Podem ajudar várias enzimas</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Origem</strong></td>
+                        <td>Produzidas pelo corpo</td>
+                        <td>Muitas vêm da dieta (vitaminas)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Estabilidade</strong></td>
+                        <td>Sensíveis a temperatura/pH</td>
+                        <td>Geralmente mais estáveis</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reutilização</strong></td>
+                        <td>Sim, muitas vezes</td>
+                        <td>Sim, podem ser recicladas</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>🤝 Trabalho em Equipe</h3>
+            <div class="reaction-diagram">
+                <div class="reaction-step">Substrato<br><small>(Material)</small></div>
+                <div class="reaction-arrow">→</div>
+                <div class="reaction-step">Enzima + Coenzima<br><small>(Equipe)</small></div>
+                <div class="reaction-arrow">→</div>
+                <div class="reaction-step">Produto + Energia<br><small>(Resultado)</small></div>
+            </div>
+            
+            <div class="info-card example">
+                <h3>🏭 Exemplo Prático: Produção de Energia</h3>
+                <p>Na <span class="tooltip medical-term">respiração celular<span class="tooltiptext">Respiração celular: Processo onde as células quebram glicose para produzir energia (ATP)</span></span>:</p>
+                <ul>
+                    <li><strong>Enzimas:</strong> Fazem as reações químicas</li>
+                    <li><strong>Coenzimas (NAD+, FAD):</strong> Transportam elétrons e energia</li>
+                    <li><strong>Resultado:</strong> ATP (energia para o corpo)</li>
+                </ul>
+            </div>
+            
+            <div class="info-card warning">
+                <h3>⚠️ Importância da Parceria</h3>
+                <p>Sem coenzimas, muitas enzimas não conseguem funcionar. É como tentar dirigir um carro sem combustível - o motor (enzima) está lá, mas precisa do combustível (coenzima) para funcionar!</p>
+            </div>
+        </div>
+        
+        <!-- Seção: Metabolismo Celular -->
+        <div id="metabolismo" class="section">
+            <h2>🔬 Metabolismo Celular e Processos Bioquímicos</h2>
+            
+            <div class="info-card">
+                <h3>🎯 Temas Importantes do Metabolismo</h3>
+                <p>Vamos explorar processos fundamentais que acontecem nas nossas células, especialmente relacionados à produção de energia e proteção celular.</p>
+            </div>
+            
+            <!-- Fosforilação Oxidativa Mitocondrial -->
+            <h3>⚡ Fosforilação Oxidativa Mitocondrial</h3>
+            <div class="info-card definition">
+                <h4>📚 Conceito</h4>
+                <p>A <strong>fosforilação oxidativa</strong> é o processo final da respiração celular que acontece nas <span class="tooltip medical-term">mitocôndrias<span class="tooltiptext">Mitocôndrias: Organelas celulares conhecidas como 'usinas de energia' da célula, onde ocorre a maior parte da produção de ATP</span></span>. É como uma "usina elétrica" da célula que produz <span class="tooltip medical-term">ATP<span class="tooltiptext">ATP (Adenosina Trifosfato): Molécula que armazena e fornece energia para todas as atividades celulares</span></span> (energia) usando oxigênio.</p>
+            </div>
+            
+            <div class="reaction-diagram">
+                <div class="reaction-step">Nutrientes<br><small>(Glicose, gorduras)</small></div>
+                <div class="reaction-arrow">→</div>
+                <div class="reaction-step">Cadeia Respiratória<br><small>(Mitocôndria)</small></div>
+                <div class="reaction-arrow">→</div>
+                <div class="reaction-step">ATP<br><small>(Energia celular)</small></div>
+            </div>
+            
+            <div class="info-card example">
+                <h4>🏃‍♂️ Exemplo Prático</h4>
+                <p>Quando você corre, suas células musculares precisam de muita energia. As mitocôndrias trabalham intensamente fazendo fosforilação oxidativa para produzir ATP suficiente para a contração muscular!</p>
+            </div>
+            
+            <!-- Antioxidante Lipossolúvel -->
+            <h3>🛡️ Antioxidante Lipossolúvel</h3>
+            <div class="info-card definition">
+                <h4>📚 Conceito</h4>
+                <p>Os <strong>antioxidantes lipossolúveis</strong> são moléculas que se dissolvem em gordura e protegem as células contra danos. "Lipossolúvel" significa "que se dissolve em gordura". Eles são como "guarda-costas" que protegem as partes gordurosas das células.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div class="info-card">
+                    <h4>🧈 Vitamina E</h4>
+                    <p>Protege membranas celulares da oxidação</p>
+                </div>
+                <div class="info-card">
+                    <h4>🥕 Vitamina A</h4>
+                    <p>Importante para visão e proteção celular</p>
+                </div>
+                <div class="info-card">
+                    <h4>⚡ Coenzima Q10</h4>
+                    <p>Protege mitocôndrias e produz energia</p>
+                </div>
+            </div>
+            
+            <!-- Membranas e Dano Oxidativo -->
+            <h3>🧱 Membranas Celulares e Dano Oxidativo</h3>
+            <div class="info-card definition">
+                <h4>📚 Conceito de Membranas</h4>
+                <p>As <strong>membranas celulares</strong> são como "muros" feitos principalmente de gordura que envolvem e protegem as células. Elas controlam o que entra e sai da célula, como porteiros de um prédio.</p>
+            </div>
+            
+            <div class="info-card warning">
+                <h4>⚠️ Dano Oxidativo</h4>
+                <p>O <strong>dano oxidativo</strong> acontece quando moléculas chamadas <span class="tooltip medical-term">radicais livres<span class="tooltiptext">Radicais Livres: Moléculas instáveis que podem danificar células, como 'ferrugem' no corpo</span></span> atacam as membranas celulares. É como "ferrugem" que pode danificar as células.</p>
+            </div>
+            
+            <div class="reaction-diagram">
+                <div class="reaction-step">Radical Livre<br><small>(Molécula agressiva)</small></div>
+                <div class="reaction-arrow">⚡</div>
+                <div class="reaction-step">Membrana Celular<br><small>(Alvo do ataque)</small></div>
+                <div class="reaction-arrow">→</div>
+                <div class="reaction-step">Antioxidante<br><small>(Protetor)</small></div>
+            </div>
+            
+            <div class="info-card example">
+                <h4>🍎 Exemplo do Dia a Dia</h4>
+                <p>Quando você corta uma maçã e ela fica marrom, isso é oxidação! No nosso corpo, os antioxidantes impedem que nossas células "fiquem marrons" (se danifiquem).</p>
+            </div>
+            
+            <!-- Beta-oxidação -->
+            <h3>🔥 Beta-oxidação</h3>
+            <div class="info-card definition">
+                <h4>📚 Conceito</h4>
+                <p>A <strong>beta-oxidação</strong> é o processo de "quebrar" gorduras para produzir energia. É como cortar lenha em pedaços menores para queimar na lareira e gerar calor.</p>
+            </div>
+            
+            <div class="reaction-diagram">
+                <div class="reaction-step">Ácidos Graxos<br><small>(Gorduras)</small></div>
+                <div class="reaction-arrow">→</div>
+                <div class="reaction-step">Beta-oxidação<br><small>(Quebra)</small></div>
+                <div class="reaction-arrow">→</div>
+                <div class="reaction-step">Acetil-CoA<br><small>(Energia utilizável)</small></div>
+            </div>
+            
+            <div class="info-card example">
+                <h4>🏃‍♀️ Exemplo Prático</h4>
+                <p>Durante exercícios longos (como uma corrida de 1 hora), seu corpo começa a usar beta-oxidação para quebrar gorduras e ter energia quando o açúcar no sangue diminui!</p>
+            </div>
+            
+            <!-- Pirimidinas e Lisossomos -->
+            <h3>🧬 Pirimidinas e Lisossomos</h3>
+            
+            <h4>🔤 Pirimidinas</h4>
+            <div class="info-card definition">
+                <p>As <strong>pirimidinas</strong> são componentes do <span class="tooltip medical-term">DNA<span class="tooltiptext">DNA: Material genético que contém as instruções para construir e manter um organismo</span></span> e <span class="tooltip medical-term">RNA<span class="tooltiptext">RNA: Molécula que ajuda a traduzir as instruções do DNA em proteínas</span></span>. São como "letras" do alfabeto genético. As principais são: <strong>Citosina (C)</strong>, <strong>Timina (T)</strong> e <strong>Uracila (U)</strong>.</p>
+            </div>
+            
+            <h4>🗑️ Lisossomos</h4>
+            <div class="info-card definition">
+                <p>Os <strong>lisossomos</strong> são como "lixeiras" ou "centros de reciclagem" da célula. Eles digerem materiais velhos, quebrados ou desnecessários, mantendo a célula limpa e funcionando bem.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div class="info-card example">
+                    <h4>🔤 Pirimidinas em Ação</h4>
+                    <p>Quando uma célula se divide, ela precisa copiar seu DNA. As pirimidinas são essenciais nesse processo, como letras sendo copiadas em um texto importante!</p>
+                </div>
+                <div class="info-card example">
+                    <h4>🗑️ Lisossomos em Ação</h4>
+                    <p>Quando você se machuca, os lisossomos ajudam a "limpar" células danificadas e reciclar seus componentes para reparar o tecido!</p>
+                </div>
+            </div>
+            
+            <!-- Conexões entre os Processos -->
+            <h3>🔗 Como Tudo se Conecta</h3>
+            <div class="info-card important">
+                <h4>🌟 A Grande Conexão</h4>
+                <p>Todos esses processos trabalham juntos como uma orquestra:</p>
+                <ul>
+                    <li><strong>Fosforilação oxidativa</strong> produz energia (ATP)</li>
+                    <li><strong>Antioxidantes</strong> protegem as membranas durante a produção de energia</li>
+                    <li><strong>Beta-oxidação</strong> fornece combustível quando precisamos</li>
+                    <li><strong>Lisossomos</strong> limpam os "restos" desses processos</li>
+                    <li><strong>Pirimidinas</strong> garantem que as instruções genéticas sejam preservadas</li>
+                </ul>
+            </div>
+            
+            <button class="interactive-btn" onclick="showMetabolismAnimation()">🎬 Ver Animação do Metabolismo</button>
+        </div>
+        
+        <!-- Seção: Quiz -->
+        <div id="quiz" class="section">
+            <div class="quiz-container">
+                <h2>🎯 Quiz: Teste seus Conhecimentos</h2>
+                
+                <div id="question1" class="quiz-question-container">
+                    <div class="quiz-question">1. O que são enzimas?</div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectOption(this, true)">A) Proteínas que aceleram reações químicas</div>
+                        <div class="quiz-option" onclick="selectOption(this, false)">B) Vitaminas que comemos</div>
+                        <div class="quiz-option" onclick="selectOption(this, false)">C) Açúcares que dão energia</div>
+                        <div class="quiz-option" onclick="selectOption(this, false)">D) Gorduras que armazenam energia</div>
+                    </div>
+                </div>
+                
+                <div id="question2" class="quiz-question-container" style="display: none;">
+                    <div class="quiz-question">2. Qual é a função das coenzimas?</div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectOption(this, false)">A) Substituir as enzimas</div>
+                        <div class="quiz-option" onclick="selectOption(this, true)">B) Ajudar as enzimas a funcionar</div>
+                        <div class="quiz-option" onclick="selectOption(this, false)">C) Quebrar proteínas</div>
+                        <div class="quiz-option" onclick="selectOption(this, false)">D) Produzir vitaminas</div>
+                    </div>
+                </div>
+                
+                <div id="question3" class="quiz-question-container" style="display: none;">
+                    <div class="quiz-question">3. De onde vêm muitas coenzimas?</div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectOption(this, false)">A) São produzidas apenas pelo fígado</div>
+                        <div class="quiz-option" onclick="selectOption(this, true)">B) Derivam das vitaminas que comemos</div>
+                        <div class="quiz-option" onclick="selectOption(this, false)">C) Vêm apenas da água</div>
+                        <div class="quiz-option" onclick="selectOption(this, false)">D) São criadas pelos músculos</div>
+                    </div>
+                </div>
+                
+                <div id="question4" class="quiz-question-container" style="display: none;">
+                    <div class="quiz-question">4. Quantas classes principais de enzimas existem?</div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectOption(this, false)">A) 3</div>
+                        <div class="quiz-option" onclick="selectOption(this, false)">B) 4</div>
+                        <div class="quiz-option" onclick="selectOption(this, true)">C) 6</div>
+                        <div class="quiz-option" onclick="selectOption(this, false)">D) 10</div>
+                    </div>
+                </div>
+                
+                <div id="quizResult" style="display: none;">
+                    <h3>🎉 Parabéns! Você completou o quiz!</h3>
+                    <p id="scoreText"></p>
+                    <button class="interactive-btn" onclick="restartQuiz()">🔄 Refazer Quiz</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Variáveis globais para o quiz
+        let currentQuestion = 1;
+        let score = 0;
+        let totalQuestions = 4;
+        
+        // Função para mostrar seções
+        function showSection(sectionId) {
+            // Remover classe active de todos os botões
+            const navBtns = document.querySelectorAll('.nav-btn');
+            navBtns.forEach(btn => btn.classList.remove('active'));
+            
+            // Adicionar classe active ao botão clicado
+            event.target.classList.add('active');
+            
+            // Esconder todas as seções
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Mostrar a seção selecionada
+            document.getElementById(sectionId).classList.add('active');
+        }
+        
+        // Função para mostrar animação da enzima
+        function showEnzymeAnimation() {
+            alert('🎬 Animação da Enzima:\n\n' +
+                  '1. Substrato se aproxima da enzima\n' +
+                  '2. Encaixa no sítio ativo (como chave na fechadura)\n' +
+                  '3. Enzima muda de forma e acelera a reação\n' +
+                  '4. Produto é formado e liberado\n' +
+                  '5. Enzima volta ao estado original\n\n' +
+                  'A enzima pode repetir esse processo milhares de vezes!');
+        }
+        
+        // Função para mostrar fontes de vitaminas
+        function showVitaminSources() {
+            alert('🥗 Principais Fontes de Vitaminas B:\n\n' +
+                  '• B1 (Tiamina): Cereais integrais, carne de porco\n' +
+                  '• B2 (Riboflavina): Leite, ovos, vegetais verdes\n' +
+                  '• B3 (Niacina): Carne, peixe, amendoim\n' +
+                  '• B5: Abacate, brócolis, carne\n' +
+                  '• B6: Banana, batata, frango\n' +
+                  '• B7 (Biotina): Ovos, nozes, sementes\n' +
+                  '• B9 (Folato): Vegetais verdes, feijão\n' +
+                  '• B12: Carne, peixe, laticínios');
+        }
+        
+        // Funções do Quiz
+        function selectOption(element, isCorrect) {
+            // Remover seleção anterior
+            const options = element.parentNode.querySelectorAll('.quiz-option');
+            options.forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            // Selecionar a opção clicada
+            element.classList.add('selected');
+            
+            // Aguardar um pouco e processar resposta
+            setTimeout(() => {
+                if (isCorrect) {
+                    score++;
+                    element.style.background = 'rgba(46, 204, 113, 0.3)';
+                } else {
+                    element.style.background = 'rgba(231, 76, 60, 0.3)';
+                    // Destacar a resposta correta
+                    options.forEach(option => {
+                        if (option.onclick.toString().includes('true')) {
+                            option.style.background = 'rgba(46, 204, 113, 0.3)';
+                        }
+                    });
+                }
+                
+                // Próxima pergunta após 2 segundos
+                setTimeout(() => {
+                    nextQuestion();
+                }, 2000);
+            }, 500);
+        }
+        
+        function nextQuestion() {
+            // Esconder pergunta atual
+            document.getElementById('question' + currentQuestion).style.display = 'none';
+            
+            currentQuestion++;
+            
+            if (currentQuestion <= totalQuestions) {
+                // Mostrar próxima pergunta
+                document.getElementById('question' + currentQuestion).style.display = 'block';
+            } else {
+                // Mostrar resultado final
+                showQuizResult();
+            }
+        }
+        
+        function showQuizResult() {
+            const percentage = Math.round((score / totalQuestions) * 100);
+            let message = '';
+            
+            if (percentage >= 80) {
+                message = '🌟 Excelente! Você entendeu muito bem o assunto!';
+            } else if (percentage >= 60) {
+                message = '👍 Bom trabalho! Continue estudando!';
+            } else {
+                message = '📚 Revise o conteúdo e tente novamente!';
+            }
+            
+            document.getElementById('scoreText').textContent = 
+                `Sua pontuação: ${score}/${totalQuestions} (${percentage}%) - ${message}`;
+            document.getElementById('quizResult').style.display = 'block';
+        }
+        
+        function restartQuiz() {
+            // Resetar variáveis
+            currentQuestion = 1;
+            score = 0;
+            
+            // Esconder resultado
+            document.getElementById('quizResult').style.display = 'none';
+            
+            // Resetar todas as perguntas
+            for (let i = 1; i <= totalQuestions; i++) {
+                const questionDiv = document.getElementById('question' + i);
+                questionDiv.style.display = i === 1 ? 'block' : 'none';
+                
+                // Resetar opções
+                const options = questionDiv.querySelectorAll('.quiz-option');
+                options.forEach(option => {
+                    option.classList.remove('selected');
+                    option.style.background = 'rgba(255,255,255,0.1)';
+                });
+            }
+        }
+        
+        // Animação dos números nas estatísticas
+        function animateNumbers() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                const finalNumber = stat.textContent;
+                const isNumber = !isNaN(parseInt(finalNumber));
+                
+                if (isNumber) {
+                    const target = parseInt(finalNumber);
+                    let current = 0;
+                    const increment = target / 50;
+                    
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            stat.textContent = finalNumber;
+                            clearInterval(timer);
+                        } else {
+                            stat.textContent = Math.floor(current).toString();
+                        }
+                    }, 40);
+                }
+            });
+        }
+        
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🧬 Aula 1: Enzimas e Coenzimas carregada com sucesso!');
+            
+            // Animar números após um pequeno delay
+            setTimeout(animateNumbers, 500);
+        });
+    </script>
+</body>
+</html>

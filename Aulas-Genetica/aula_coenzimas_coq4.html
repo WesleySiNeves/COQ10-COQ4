@@ -315,6 +315,157 @@
             border-color: white;
         }
         
+        /* Estruturas Moleculares */
+        .molecule-structure {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .coq10-structure {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .quinone-ring {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
+        }
+        
+        .benzoquinone {
+            font-size: 12px;
+            text-align: center;
+        }
+        
+        .methoxy-groups {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+        
+        .methoxy {
+            background: #f39c12;
+            padding: 5px 8px;
+            border-radius: 8px;
+            font-size: 10px;
+            color: white;
+        }
+        
+        .isoprenyl-chain {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+        
+        .chain-unit {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .chain-label {
+            background: #95a5a6;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 15px;
+            font-size: 11px;
+            margin-top: 10px;
+        }
+        
+        /* Estrutura do Gene */
+        .gene-structure {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            color: white;
+        }
+        
+        .chromosome {
+            text-align: center;
+        }
+        
+        .chromosome-label {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+        }
+        
+        .gene-location {
+            margin: 20px 0;
+        }
+        
+        .gene-box {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .gene-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .exons-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        
+        .exon {
+            background: linear-gradient(45deg, #27ae60, #229954);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .exon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        
+        .intron {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            opacity: 0.7;
+        }
+        
         /* Responsividade */
         @media (max-width: 768px) {
             .header h1 {
@@ -332,6 +483,15 @@
             
             .pathway-arrow {
                 transform: rotate(90deg);
+            }
+            
+            .coq10-structure {
+                flex-direction: column;
+            }
+            
+            .exons-container {
+                flex-direction: column;
+                gap: 10px;
             }
         }
     </style>
@@ -529,6 +689,35 @@
                     <li>Problemas cardíacos</li>
                 </ul>
             </div>
+            
+            <h3>🧬 Estrutura Molecular da CoQ10</h3>
+            <div class="molecule-structure">
+                <div class="coq10-structure">
+                    <div class="quinone-ring">
+                        <div class="benzoquinone">Anel Benzoquinona</div>
+                        <div class="methoxy-groups">
+                            <span class="methoxy">OCH₃</span>
+                            <span class="methoxy">OCH₃</span>
+                        </div>
+                    </div>
+                    <div class="isoprenyl-chain">
+                        <div class="chain-unit">C₅H₈</div>
+                        <div class="chain-unit">C₅H₈</div>
+                        <div class="chain-unit">C₅H₈</div>
+                        <div class="chain-unit">...</div>
+                        <div class="chain-label">Cadeia Isoprenil (10 unidades)</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-card success">
+                <h4>🔬 Componentes da CoQ10</h4>
+                <ul>
+                    <li><strong>Cabeça Quinona:</strong> Parte ativa que transporta elétrons</li>
+                    <li><strong>Cadeia Isoprenil:</strong> 10 unidades que conferem solubilidade lipídica</li>
+                    <li><strong>Grupos Metoxil:</strong> Estabilizam a molécula</li>
+                </ul>
+            </div>
         </div>
         
         <!-- Seção: Alelos -->
@@ -581,8 +770,79 @@
             <h2>🔧 Gene COQ4</h2>
             
             <div class="info-card">
-                <h3>📍 O que é o COQ4?</h3>
+                <h3>🧬 Conceitos Fundamentais</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                    <div class="info-card success">
+                        <h4>🧬 O que é um Gene?</h4>
+                        <p>Um <strong>gene</strong> é uma sequência específica de DNA que contém as instruções para produzir uma proteína. É como uma "receita" que a célula usa para fabricar moléculas essenciais.</p>
+                        <ul>
+                            <li><strong>Função:</strong> Codifica proteínas</li>
+                            <li><strong>Localização:</strong> No núcleo celular</li>
+                            <li><strong>Composição:</strong> Sequência de nucleotídeos (A, T, G, C)</li>
+                        </ul>
+                    </div>
+                    <div class="info-card warning">
+                        <h4>🧬 O que é um Cromossomo?</h4>
+                        <p>Um <strong>cromossomo</strong> é uma estrutura que contém DNA organizado. Humanos têm 23 pares de cromossomos (46 total).</p>
+                        <ul>
+                            <li><strong>Estrutura:</strong> DNA + proteínas histonas</li>
+                            <li><strong>Função:</strong> Organizar e proteger o DNA</li>
+                            <li><strong>Localização:</strong> Núcleo celular</li>
+                        </ul>
+                    </div>
+                    <div class="info-card">
+                        <h4>📖 O que são Exons?</h4>
+                        <p><strong>Exons</strong> são as partes do gene que contêm informação para fazer a proteína. São as "páginas úteis" do livro de receitas.</p>
+                        <ul>
+                            <li><strong>Função:</strong> Codificam aminoácidos</li>
+                            <li><strong>Processamento:</strong> Mantidos no mRNA maduro</li>
+                            <li><strong>Importância:</strong> Determinam a proteína final</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-card">
+                <h3>📍 O Gene COQ4</h3>
                 <p>O <strong>COQ4</strong> é um gene que codifica uma proteína essencial para a síntese da Coenzima Q10. É como uma "peça da fábrica" que produz CoQ10 nas células.</p>
+            </div>
+            
+            <h3>🧬 Estrutura do Gene COQ4</h3>
+            <div class="gene-structure">
+                <div class="chromosome">
+                    <div class="chromosome-label">Cromossomo 9</div>
+                    <div class="gene-location">
+                        <div class="gene-box">
+                            <div class="gene-name">Gene COQ4</div>
+                            <div class="exons-container">
+                                <div class="exon" data-exon="1">Exon 1</div>
+                                <div class="intron">Intron</div>
+                                <div class="exon" data-exon="2">Exon 2</div>
+                                <div class="intron">Intron</div>
+                                <div class="exon" data-exon="3">Exon 3</div>
+                                <div class="intron">Intron</div>
+                                <div class="exon" data-exon="4">Exon 4</div>
+                                <div class="intron">Intron</div>
+                                <div class="exon" data-exon="5">Exon 5</div>
+                                <div class="intron">Intron</div>
+                                <div class="exon" data-exon="6">Exon 6</div>
+                                <div class="intron">Intron</div>
+                                <div class="exon" data-exon="7">Exon 7</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-card">
+                <h4>📊 Características do Gene COQ4</h4>
+                <ul>
+                    <li><strong>Localização:</strong> Cromossomo 9q34.11</li>
+                    <li><strong>Tamanho:</strong> Aproximadamente 27 kb</li>
+                    <li><strong>Exons:</strong> 7 exons codificantes</li>
+                    <li><strong>Proteína:</strong> 264 aminoácidos</li>
+                    <li><strong>Função:</strong> C1-hydroxylase na síntese de CoQ10</li>
+                </ul>
             </div>
             
             <h3>🔧 Função do COQ4</h3>
