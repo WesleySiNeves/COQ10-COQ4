@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 4: Coenzimas do Complexo B - Guia Completo</title>
+    <style>
+        /* Reset e configurações básicas */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #3498db, #9b59b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+
+        /* Navegação */
+        .nav {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .nav-btn {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        /* Seções */
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .section h3 {
+            color: #34495e;
+            font-size: 1.5em;
+            margin: 25px 0 15px 0;
+            position: relative;
+        }
+
+        .section h3::before {
+            content: "🧬";
+            margin-right: 10px;
+        }
+
+        /* Cards informativos */
+        .info-card {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            box-shadow: 0 8px 25px rgba(116, 185, 255, 0.3);
+        }
+
+        .warning-card {
+            background: linear-gradient(135deg, #fd79a8, #e84393);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            box-shadow: 0 8px 25px rgba(253, 121, 168, 0.3);
+        }
+
+        .success-card {
+            background: linear-gradient(135deg, #00b894, #00a085);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            box-shadow: 0 8px 25px rgba(0, 184, 148, 0.3);
+        }
+
+        /* Tabelas */
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tr:hover {
+            background-color: #e3f2fd;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Destacar coenzimas importantes */
+        .highlight-nad {
+            background: linear-gradient(135deg, #ffd700, #ffb347) !important;
+            font-weight: bold;
+            color: #8b4513;
+        }
+
+        .highlight-fad {
+            background: linear-gradient(135deg, #98fb98, #90ee90) !important;
+            font-weight: bold;
+            color: #006400;
+        }
+
+        .highlight-b12 {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a52) !important;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* Botões interativos */
+        .interactive-btn {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+        }
+
+        .interactive-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+        }
+
+        /* Diagramas e visualizações */
+        .diagram {
+            background: #f8f9fa;
+            border: 2px dashed #3498db;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .coq4-pathway {
+            background: linear-gradient(135deg, #ff9a9e, #fecfef);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .coq4-pathway::before {
+            content: "⚠️ ATENÇÃO: Deficiência COQ4";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: #e74c3c;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        /* Lista de sintomas */
+        .symptoms-list {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .symptoms-list ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .symptoms-list li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .symptoms-list li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            color: #f39c12;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🧬 Aula 4: Coenzimas do Complexo B</h1>
+            <p>Guia Completo sobre Coenzimas, Vitaminas e sua Relação com a Deficiência de CoQ10</p>
+        </div>
+
+        <!-- Navegação -->
+        <div class="nav">
+            <button class="nav-btn" onclick="showSection('introducao')">📚 Introdução</button>
+            <button class="nav-btn" onclick="showSection('diferenca')">🔬 Coenzima vs Vitamina</button>
+            <button class="nav-btn" onclick="showSection('complexo-b')">💊 Complexo B</button>
+            <button class="nav-btn" onclick="showSection('coq4-relacao')">⚠️ Relação COQ4</button>
+            <button class="nav-btn" onclick="showSection('nad-fad-b12')">🧪 NAD+/FAD/B12</button>
+            <button class="nav-btn" onclick="showSection('conclusao')">📋 Conclusão</button>
+        </div>
+
+        <!-- Seção: Introdução -->
+        <div id="introducao" class="section active">
+            <h2>📚 Introdução às Coenzimas do Complexo B</h2>
+            
+            <div class="info-card">
+                <h3>🎯 Objetivos da Aula</h3>
+                <ul>
+                    <li>Compreender a diferença entre coenzimas e vitaminas</li>
+                    <li>Conhecer as principais coenzimas do complexo B</li>
+                    <li>Entender a relação com a deficiência de CoQ10</li>
+                    <li>Analisar a importância do NAD+/NADH, FAD/FADH₂ e B12</li>
+                    <li>Correlacionar com os achados genéticos do COQ4</li>
+                </ul>
+            </div>
+
+            <p>As coenzimas do complexo B são fundamentais para o metabolismo energético celular e estão intimamente relacionadas com a função mitocondrial. Quando há deficiência de CoQ10 causada por mutações no gene COQ4, essas coenzimas assumem papel ainda mais crítico na manutenção da função celular.</p>
+
+            <div class="warning-card">
+                <h3>⚠️ Contexto Clínico</h3>
+                <p>Baseado nos achados genéticos analisados, pacientes com mutações no COQ4 (c.577C>T e c.608C>T) apresentam deficiência na biossíntese de CoQ10, tornando as coenzimas do complexo B essenciais para compensar parcialmente a disfunção mitocondrial.</p>
+            </div>
+        </div>
+
+        <!-- Seção: Diferença entre Coenzima e Vitamina -->
+        <div id="diferenca" class="section">
+            <h2>🔬 Coenzima vs Vitamina: Entendendo as Diferenças</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Aspecto</th>
+                            <th>Vitamina</th>
+                            <th>Coenzima</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Definição</strong></td>
+                            <td>Nutriente essencial obtido da dieta</td>
+                            <td>Molécula ativa que auxilia enzimas</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Origem</strong></td>
+                            <td>Externa (alimentos/suplementos)</td>
+                            <td>Derivada da vitamina no organismo</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Função</strong></td>
+                            <td>Precursor da coenzima</td>
+                            <td>Participação direta nas reações</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Atividade</strong></td>
+                            <td>Inativa até conversão</td>
+                            <td>Biologicamente ativa</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Exemplo</strong></td>
+                            <td>Niacina (Vitamina B3)</td>
+                            <td>NAD+ (derivada da niacina)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="info-card">
+                <h3>🔄 Processo de Conversão</h3>
+                <p><strong>Vitamina → Coenzima → Função Biológica</strong></p>
+                <ul>
+                    <li><strong>Passo 1:</strong> Absorção da vitamina pelo intestino</li>
+                    <li><strong>Passo 2:</strong> Transporte para células-alvo</li>
+                    <li><strong>Passo 3:</strong> Conversão enzimática em coenzima ativa</li>
+                    <li><strong>Passo 4:</strong> Participação em reações metabólicas</li>
+                </ul>
+            </div>
+
+            <div class="diagram">
+                <h3>📊 Exemplo Prático: Niacina → NAD+</h3>
+                <p><strong>Niacina (B3)</strong> → <em>Enzimas de conversão</em> → <strong>NAD+</strong> → <em>Respiração celular</em></p>
+                <p>A niacina é a vitamina inativa, enquanto NAD+ é a coenzima ativa que participa diretamente da produção de ATP.</p>
+            </div>
+        </div>
+
+        <!-- Seção: Complexo B -->
+        <div id="complexo-b" class="section">
+            <h2>💊 Coenzimas do Complexo B: Principais Grupos</h2>
+
+            <p>Existem mais de 100 coenzimas conhecidas, mas vamos focar nas mais importantes do complexo B:</p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Coenzima</th>
+                            <th>Vem da Vitamina</th>
+                            <th>Função Principal</th>
+                            <th>Onde Atua</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="highlight-nad">
+                            <td><strong>NAD+/NADH</strong></td>
+                            <td>Vitamina B3 (Niacina)</td>
+                            <td>Transporte de energia</td>
+                            <td>Respiração celular</td>
+                        </tr>
+                        <tr class="highlight-fad">
+                            <td><strong>FAD/FADH₂</strong></td>
+                            <td>Vitamina B2 (Riboflavina)</td>
+                            <td>Transporte de elétrons</td>
+                            <td>Produção de energia</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CoA</strong></td>
+                            <td>Vitamina B5 (Ácido Pantotênico)</td>
+                            <td>Transporte de grupos acetil</td>
+                            <td>Metabolismo de gorduras</td>
+                        </tr>
+                        <tr>
+                            <td><strong>TPP</strong></td>
+                            <td>Vitamina B1 (Tiamina)</td>
+                            <td>Metabolismo de carboidratos</td>
+                            <td>Sistema nervoso</td>
+                        </tr>
+                        <tr>
+                            <td><strong>PLP</strong></td>
+                            <td>Vitamina B6 (Piridoxina)</td>
+                            <td>Metabolismo de aminoácidos</td>
+                            <td>Síntese de proteínas</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Biotina</strong></td>
+                            <td>Vitamina B7 (Biotina)</td>
+                            <td>Síntese de ácidos graxos</td>
+                            <td>Metabolismo</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Folato</strong></td>
+                            <td>Vitamina B9 (Ácido Fólico)</td>
+                            <td>Síntese de DNA</td>
+                            <td>Divisão celular</td>
+                        </tr>
+                        <tr class="highlight-b12">
+                            <td><strong>B12</strong></td>
+                            <td>Vitamina B12 (Cobalamina)</td>
+                            <td>Metabolismo de aminoácidos</td>
+                            <td>Sistema nervoso</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="success-card">
+                <h3>📈 Quantidades Recomendadas por Kg de Peso</h3>
+                <ul>
+                    <li><strong>NAD+ (via B3):</strong> 0.2-0.3 mg/kg/dia</li>
+                    <li><strong>FAD (via B2):</strong> 0.02-0.03 mg/kg/dia</li>
+                    <li><strong>B12:</strong> 0.04-0.06 mcg/kg/dia</li>
+                    <li><strong>B1 (TPP):</strong> 0.02-0.03 mg/kg/dia</li>
+                    <li><strong>B6 (PLP):</strong> 0.02-0.04 mg/kg/dia</li>
+                </ul>
+                <p><em>Nota: Em casos de deficiência de CoQ10, essas doses podem precisar ser aumentadas em 2-3x.</em></p>
+            </div>
+        </div>
+
+        <!-- Seção: Relação COQ4 -->
+        <div id="coq4-relacao" class="section">
+            <h2>⚠️ Relação com a Deficiência COQ4</h2>
+
+            <div class="coq4-pathway">
+                <h3>🧬 Achados Genéticos Relevantes</h3>
+                <p><strong>Mutações identificadas no gene COQ4:</strong></p>
+                <ul>
+                    <li><strong>c.577C>T (p.Pro193Ser):</strong> Provavelmente patogênica (Classe 4)</li>
+                    <li><strong>c.608C>T (p.Pro203Leu):</strong> Significado incerto (Classe 3)</li>
+                </ul>
+                <p><em>Estas mutações comprometem a biossíntese de CoQ10, essencial para a cadeia respiratória mitocondrial.</em></p>
+            </div>
+
+            <div class="warning-card">
+                <h3>🔗 Como as Coenzimas B Compensam a Deficiência COQ4</h3>
+                <ol>
+                    <li><strong>NAD+/NADH:</strong> Mantém o fluxo de elétrons na cadeia respiratória</li>
+                    <li><strong>FAD/FADH₂:</strong> Fornece elétrons alternativos para produção de ATP</li>
+                    <li><strong>B12:</strong> Protege o sistema nervoso dos danos oxidativos</li>
+                    <li><strong>Outras coenzimas B:</strong> Suportam vias metabólicas alternativas</li>
+                </ol>
+            </div>
+
+            <div class="symptoms-list">
+                <h3>⚡ Sintomas da Deficiência COQ4 que as Coenzimas B Podem Ajudar</h3>
+                <ul>
+                    <li>Ataxia cerebelar progressiva</li>
+                    <li>Atraso no desenvolvimento neurológico</li>
+                    <li>Fadiga e fraqueza muscular</li>
+                    <li>Disfunção mitocondrial</li>
+                    <li>Estresse oxidativo aumentado</li>
+                    <li>Problemas de coordenação motora</li>
+                </ul>
+            </div>
+
+            <button class="interactive-btn" onclick="showCOQ4Details()">🔍 Ver Detalhes da Via COQ4</button>
+        </div>
+
+        <!-- Seção: NAD+/FAD/B12 -->
+        <div id="nad-fad-b12" class="section">
+            <h2>🧪 Importância do NAD+/NADH, FAD/FADH₂ e B12 na Deficiência COQ4</h2>
+
+            <div class="info-card">
+                <h3>🔋 NAD+/NADH - O Transportador Universal de Energia</h3>
+                <p><strong>Por que é crucial na deficiência COQ4:</strong></p>
+                <ul>
+                    <li>Mantém o Complexo I da cadeia respiratória funcionando</li>
+                    <li>Compensa parcialmente a falta de CoQ10</li>
+                    <li>Essencial para a glicólise e ciclo de Krebs</li>
+                    <li>Protege contra danos neurológicos</li>
+                </ul>
+                <p><strong>Dose recomendada em deficiência COQ4:</strong> 0.5-1.0 mg/kg/dia (2-3x normal)</p>
+            </div>
+
+            <div class="success-card">
+                <h3>⚡ FAD/FADH₂ - Suporte à Cadeia Respiratória</h3>
+                <p><strong>Papel específico na deficiência COQ4:</strong></p>
+                <ul>
+                    <li>Alimenta o Complexo II independentemente do CoQ10</li>
+                    <li>Mantém a produção de ATP via succinato</li>
+                    <li>Suporta a β-oxidação de ácidos graxos</li>
+                    <li>Reduz a dependência do Complexo I</li>
+                </ul>
+                <p><strong>Dose recomendada em deficiência COQ4:</strong> 0.05-0.1 mg/kg/dia (2-3x normal)</p>
+            </div>
+
+            <div class="warning-card">
+                <h3>🧠 Vitamina B12 - Proteção Neurológica</h3>
+                <p><strong>Importância crítica na deficiência COQ4:</strong></p>
+                <ul>
+                    <li>Protege a mielina dos nervos</li>
+                    <li>Reduz o estresse oxidativo neuronal</li>
+                    <li>Suporta a síntese de neurotransmissores</li>
+                    <li>Previne a degeneração axonal</li>
+                    <li>Essencial para pacientes com ataxia cerebelar</li>
+                </ul>
+                <p><strong>Dose recomendada em deficiência COQ4:</strong> 0.1-0.2 mcg/kg/dia (3-5x normal)</p>
+            </div>
+
+            <div class="diagram">
+                <h3>🔄 Via Metabólica Compensatória</h3>
+                <p><strong>Quando CoQ10 está deficiente:</strong></p>
+                <p>Glicose → <strong>NAD+</strong> → Piruvato → <strong>FAD</strong> → Acetil-CoA → ATP</p>
+                <p>↓</p>
+                <p><strong>B12</strong> protege os neurônios dos danos causados pela deficiência energética</p>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Coenzima</th>
+                            <th>Função na Deficiência COQ4</th>
+                            <th>Dose Normal</th>
+                            <th>Dose Recomendada COQ4</th>
+                            <th>Benefício Específico</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="highlight-nad">
+                            <td><strong>NAD+/NADH</strong></td>
+                            <td>Mantém Complexo I ativo</td>
+                            <td>0.2-0.3 mg/kg</td>
+                            <td>0.5-1.0 mg/kg</td>
+                            <td>Produção de ATP alternativa</td>
+                        </tr>
+                        <tr class="highlight-fad">
+                            <td><strong>FAD/FADH₂</strong></td>
+                            <td>Ativa Complexo II</td>
+                            <td>0.02-0.03 mg/kg</td>
+                            <td>0.05-0.1 mg/kg</td>
+                            <td>Via independente de CoQ10</td>
+                        </tr>
+                        <tr class="highlight-b12">
+                            <td><strong>B12</strong></td>
+                            <td>Neuroproteção</td>
+                            <td>0.04-0.06 mcg/kg</td>
+                            <td>0.1-0.2 mcg/kg</td>
+                            <td>Previne ataxia progressiva</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <button class="interactive-btn" onclick="showMetabolicPathway()">🔬 Ver Via Metabólica Completa</button>
+        </div>
+
+        <!-- Seção: Conclusão -->
+        <div id="conclusao" class="section">
+            <h2>📋 Conclusões e Recomendações Clínicas</h2>
+
+            <div class="success-card">
+                <h3>✅ Pontos-Chave da Aula</h3>
+                <ul>
+                    <li><strong>Coenzimas vs Vitaminas:</strong> Coenzimas são as formas ativas das vitaminas</li>
+                    <li><strong>Complexo B:</strong> Essencial para metabolismo energético e função neurológica</li>
+                    <li><strong>Deficiência COQ4:</strong> Compromete a biossíntese de CoQ10</li>
+                    <li><strong>Compensação:</strong> NAD+, FAD e B12 podem compensar parcialmente</li>
+                </ul>
+            </div>
+
+            <div class="warning-card">
+                <h3>⚠️ Protocolo Sugerido para Deficiência COQ4</h3>
+                <ol>
+                    <li><strong>Suplementação de CoQ10:</strong> 5-10 mg/kg/dia</li>
+                    <li><strong>NAD+ (via B3):</strong> 0.5-1.0 mg/kg/dia</li>
+                    <li><strong>FAD (via B2):</strong> 0.05-0.1 mg/kg/dia</li>
+                    <li><strong>B12:</strong> 0.1-0.2 mcg/kg/dia</li>
+                    <li><strong>Complexo B completo:</strong> 1-2x dose padrão</li>
+                    <li><strong>Monitoramento:</strong> Função neurológica e níveis séricos</li>
+                </ol>
+            </div>
+
+            <div class="info-card">
+                <h3>🔬 Baseado nos Achados Genéticos</h3>
+                <p>Os achados das mutações COQ4 c.577C>T e c.608C>T indicam:</p>
+                <ul>
+                    <li>Necessidade de suplementação precoce</li>
+                    <li>Monitoramento neurológico regular</li>
+                    <li>Doses aumentadas de coenzimas B</li>
+                    <li>Avaliação da função mitocondrial</li>
+                    <li>Aconselhamento genético familiar</li>
+                </ul>
+            </div>
+
+            <div class="diagram">
+                <h3>🎯 Estratégia Terapêutica Integrada</h3>
+                <p><strong>CoQ10 + Coenzimas B = Proteção Mitocondrial Máxima</strong></p>
+                <p>Esta combinação oferece múltiplas vias de suporte energético e neuroproteção.</p>
+            </div>
+
+            <button class="interactive-btn" onclick="generateReport()">📊 Gerar Relatório Personalizado</button>
+        </div>
+    </div>
+
+    <script>
+        // Função para mostrar seções
+        function showSection(sectionId) {
+            // Esconder todas as seções
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Mostrar a seção selecionada
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        // Função para mostrar detalhes COQ4
+        function showCOQ4Details() {
+            alert('Detalhes da Via COQ4:\n\n' +
+                  '1. COQ4 é essencial para a biossíntese de CoQ10\n' +
+                  '2. Mutações causam deficiência primária de CoQ10 tipo 7\n' +
+                  '3. Resulta em disfunção da cadeia respiratória\n' +
+                  '4. Coenzimas B compensam parcialmente esta deficiência\n' +
+                  '5. Suplementação combinada é essencial');
+        }
+
+        // Função para mostrar via metabólica
+        function showMetabolicPathway() {
+            alert('Via Metabólica Compensatória:\n\n' +
+                  'NAD+ → Complexo I → (CoQ10 deficiente) → Complexo III\n' +
+                  'FAD → Complexo II → (bypass CoQ10) → Complexo III\n' +
+                  'B12 → Proteção neuronal → Prevenção de danos\n\n' +
+                  'Esta estratégia mantém a produção de ATP mesmo com deficiência de CoQ10.');
+        }
+
+        // Função para gerar relatório
+        function generateReport() {
+            const report = `
+RELATÓRIO PERSONALIZADO - COENZIMAS DO COMPLEXO B
+
+Paciente com mutações COQ4:
+- c.577C>T (p.Pro193Ser) - Classe 4
+- c.608C>T (p.Pro203Leu) - Classe 3
+
+RECOMENDAÇÕES:
+✓ CoQ10: 5-10 mg/kg/dia
+✓ NAD+ (B3): 0.5-1.0 mg/kg/dia
+✓ FAD (B2): 0.05-0.1 mg/kg/dia
+✓ B12: 0.1-0.2 mcg/kg/dia
+✓ Complexo B: 1-2x dose padrão
+
+MONITORAMENTO:
+- Função neurológica mensal
+- Níveis séricos trimestrais
+- Avaliação mitocondrial semestral
+            `;
+            
+            // Criar elemento para download
+            const element = document.createElement('a');
+            const file = new Blob([report], {type: 'text/plain'});
+            element.href = URL.createObjectURL(file);
+            element.download = 'relatorio_coenzimas_complexo_b.txt';
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+        }
+
+        // Animação de entrada
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.info-card, .warning-card, .success-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>

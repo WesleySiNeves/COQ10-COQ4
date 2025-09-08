@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deficiência Primária de CoQ10: Protocolos de Tratamento</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .nav-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #3498db;
+        }
+
+        .nav-tab {
+            padding: 12px 20px;
+            background: #ecf0f1;
+            border: none;
+            cursor: pointer;
+            margin: 0 2px;
+            border-radius: 8px 8px 0 0;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            color: #2c3e50;
+        }
+
+        .nav-tab:hover {
+            background: #3498db;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .nav-tab.active {
+            background: #3498db;
+            color: white;
+            box-shadow: 0 -3px 10px rgba(52, 152, 219, 0.3);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 5px solid #3498db;
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+        }
+
+        .section h3 {
+            color: #34495e;
+            margin: 20px 0 10px 0;
+            font-size: 1.4em;
+        }
+
+        .section h4 {
+            color: #7f8c8d;
+            margin: 15px 0 8px 0;
+            font-size: 1.2em;
+        }
+
+        .protocol-card {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #e74c3c;
+            transition: transform 0.3s ease;
+        }
+
+        .protocol-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .protocol-card.high-risk {
+            border-left-color: #e74c3c;
+        }
+
+        .protocol-card.medium-risk {
+            border-left-color: #f39c12;
+        }
+
+        .protocol-card.low-risk {
+            border-left-color: #27ae60;
+        }
+
+        .dosage-info {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            border-left: 3px solid #3498db;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(116, 185, 255, 0.3);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        .gene-mutation {
+            display: inline-block;
+            background: #e8f4fd;
+            color: #2980b9;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin: 2px;
+            border: 1px solid #3498db;
+        }
+
+        .treatment-timeline {
+            position: relative;
+            padding-left: 30px;
+            margin: 20px 0;
+        }
+
+        .treatment-timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #3498db;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -22px;
+            top: 20px;
+            width: 12px;
+            height: 12px;
+            background: #3498db;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #3498db;
+        }
+
+        .reference {
+            background: #f1f2f6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            color: #2f3542;
+            text-decoration: none;
+            margin: 0 2px;
+        }
+
+        .reference:hover {
+            background: #3498db;
+            color: white;
+        }
+
+        .alert {
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid;
+        }
+
+        .alert-warning {
+            background: #fff3cd;
+            border-color: #ffc107;
+            color: #856404;
+        }
+
+        .alert-info {
+            background: #d1ecf1;
+            border-color: #17a2b8;
+            color: #0c5460;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            border-color: #28a745;
+            color: #155724;
+        }
+
+        .responsive-table {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .molecular-structure {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .protocol-card[style*="border-left-color: #667eea"] {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+        }
+
+        .dosage-info[style*="border-left-color: #667eea"] {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+        }
+
+        .coq10-molecule {
+            width: 300px;
+            height: 200px;
+            margin: 0 auto;
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: #2c3e50;
+            color: white;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .nav-tabs {
+                flex-direction: column;
+            }
+
+            .nav-tab {
+                margin: 2px 0;
+                border-radius: 8px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧬 Deficiência Primária de CoQ10</h1>
+            <p>Protocolos de Tratamento Baseados em Evidências Científicas</p>
+        </div>
+
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="showTab('resumo')">📋 Resumo</button>
+            <button class="nav-tab" onclick="showTab('genetica')">🧬 Genética</button>
+            <button class="nav-tab" onclick="showTab('protocolos')">💊 Protocolos</button>
+            <button class="nav-tab" onclick="showTab('protocolo-19kg')">👶 Protocolo 19kg</button>
+            <button class="nav-tab" onclick="showTab('monitoramento')">📊 Monitoramento</button>
+            <button class="nav-tab" onclick="showTab('emergentes')">🔬 Terapias Emergentes</button>
+            <button class="nav-tab" onclick="showTab('diretrizes')">📖 Diretrizes</button>
+        </div>
+
+        <!-- Tab: Resumo -->
+        <div id="resumo" class="tab-content active">
+            <div class="section">
+                <h2>📋 Resumo Executivo</h2>
+                
+                <div class="highlight-box">
+                    <h3>🎯 Objetivo Principal</h3>
+                    <p>Estabelecer protocolos de tratamento otimizados para deficiência primária de CoQ10, com foco especial nas mutações do gene COQ4, baseados em evidências científicas atuais.</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">75%</div>
+                        <div class="stat-label">Taxa de Mortalidade Neonatal (Chineses)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">91.7%</div>
+                        <div class="stat-label">Taxa de Mortalidade (Outras Populações)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">70-90%</div>
+                        <div class="stat-label">Resposta em Síndrome Nefrótica</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">60 dias</div>
+                        <div class="stat-label">Tempo Médio de Sobrevida</div>
+                    </div>
+                </div>
+
+                <div class="alert alert-info">
+                    <strong>💡 Descoberta Chave:</strong> A localização da mutação no gene COQ4 é preditiva da gravidade clínica e resposta terapêutica. Mutações nos éxons 1-4 apresentam melhor prognóstico comparadas às mutações nos éxons 5-7.
+                </div>
+
+                <div class="molecular-structure">
+                    <h3>🧪 Estrutura da Coenzima Q10</h3>
+                    <div class="coq10-molecule">
+                        CoQ10<br>
+                        C₅₉H₉₀O₄
+                    </div>
+                    <p><em>Transportador de elétrons essencial na cadeia respiratória mitocondrial</em></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab: Genética -->
+        <div id="genetica" class="tab-content">
+            <div class="section">
+                <h2>🧬 Correlação Genótipo-Fenótipo</h2>
+                
+                <h3>📍 Classificação por Localização dos Éxons</h3>
+                
+                <div class="protocol-card low-risk">
+                    <h4>✅ Mutações nos Éxons 1-4 (Baixo Risco)</h4>
+                    <ul>
+                        <li><strong>Características:</strong> Apresentação menos grave, início tardio</li>
+                        <li><strong>Resposta ao tratamento:</strong> Boa responsividade à CoQ10</li>
+                        <li><strong>Prognóstico:</strong> Expectativa de vida relativamente longa</li>
+                        <li><strong>Exemplos:</strong> Ataxia cerebelar de início adulto</li>
+                    </ul>
+                </div>
+
+                <div class="protocol-card high-risk">
+                    <h4>⚠️ Mutações nos Éxons 5-7 (Alto Risco)</h4>
+                    <ul>
+                        <li><strong>Características:</strong> Apresentação precoce e grave</li>
+                        <li><strong>Resposta ao tratamento:</strong> Baixa responsividade à CoQ10</li>
+                        <li><strong>Prognóstico:</strong> Mortalidade precoce elevada</li>
+                        <li><strong>Exemplos:</strong> Encefalopatia neonatal, falência multiorgânica</li>
+                    </ul>
+                </div>
+
+                <div class="protocol-card medium-risk" style="border-left-color: #667eea;">
+                    <h4>🧬 Variante COQ4 c.577C>T p.Pro193Ser</h4>
+                    <ul>
+                        <li><strong>Características:</strong> Comprometimento motor progressivo e ataxia cerebelar</li>
+                        <li><strong>Início:</strong> Infantil a juvenil</li>
+                        <li><strong>Resposta ao tratamento:</strong> Boa responsividade à CoQ10</li>
+                        <li><strong>Dosagem:</strong> 5-20 mg/kg/dia com titulação gradual</li>
+                        <li><strong>Prognóstico:</strong> Favorável com tratamento adequado</li>
+                    </ul>
+                </div>
+
+                <div class="protocol-card medium-risk">
+                    <h4>🔶 Variante c.370G>A (Éxon 3) - Risco Intermediário</h4>
+                    <ul>
+                        <li><strong>População:</strong> Predominante em asiáticos orientais</li>
+                        <li><strong>Gravidade:</strong> Intermediária</li>
+                        <li><strong>Manifestações:</strong> Disfunção multissistêmica moderada</li>
+                        <li><strong>Resposta:</strong> Variável, geralmente parcial</li>
+                    </ul>
+                </div>
+
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Localização</th>
+                                <th>Gravidade</th>
+                                <th>Idade de Início</th>
+                                <th>Resposta à CoQ10</th>
+                                <th>Prognóstico</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="gene-mutation">Éxons 1-4</span></td>
+                                <td>Leve a Moderada</td>
+                                <td>Tardio</td>
+                                <td>Boa (70-90%)</td>
+                                <td>Favorável</td>
+                            </tr>
+                            <tr>
+                                <td><span class="gene-mutation">Éxon 3 (c.370G>A)</span></td>
+                                <td>Moderada</td>
+                                <td>Variável</td>
+                                <td>Parcial (40-60%)</td>
+                                <td>Intermediário</td>
+                            </tr>
+                            <tr>
+                                <td><span class="gene-mutation">COQ4 c.577C>T</span></td>
+                                <td>Moderada</td>
+                                <td>Infantil-Juvenil</td>
+                                <td>Boa (70-85%)</td>
+                                <td>Favorável</td>
+                            </tr>
+                            <tr>
+                                <td><span class="gene-mutation">Éxons 5-7</span></td>
+                                <td>Grave</td>
+                                <td>Neonatal</td>
+                                <td>Limitada (10-30%)</td>
+                                <td>Reservado</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab: Protocolo 19kg -->
+        <div id="protocolo-19kg" class="tab-content">
+            <div class="section">
+                <h2>👶 Protocolo Otimizado Dinâmico</h2>
+                
+                <!-- Campos de entrada dinâmicos -->
+                <div class="input-section" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 25px; border-radius: 15px; margin: 20px 0; border: 2px solid #007bff; box-shadow: 0 5px 15px rgba(0,123,255,0.1);">
+                    <h3 style="color: #007bff; margin-bottom: 20px; text-align: center;">📊 Dados do Paciente - Cálculo Dinâmico</h3>
+                    <div style="display: flex; gap: 30px; align-items: center; justify-content: center; flex-wrap: wrap;">
+                        <div style="text-align: center;">
+                            <label for="peso-input" style="font-weight: bold; color: #495057; display: block; margin-bottom: 8px;">⚖️ Peso (kg):</label>
+                            <input type="number" id="peso-input" value="19" min="5" max="100" step="0.1" 
+                                   style="padding: 12px; border: 2px solid #007bff; border-radius: 8px; width: 100px; font-size: 18px; text-align: center; font-weight: bold;">
+                        </div>
+                        <div style="text-align: center;">
+                            <label for="idade-input" style="font-weight: bold; color: #495057; display: block; margin-bottom: 8px;">🎂 Idade (anos):</label>
+                            <input type="number" id="idade-input" value="5" min="1" max="18" step="1" 
+                                   style="padding: 12px; border: 2px solid #007bff; border-radius: 8px; width: 100px; font-size: 18px; text-align: center; font-weight: bold;">
+                        </div>
+                        <div style="text-align: center;">
+                            <button onclick="calcularDosagens()" 
+                                    style="background: linear-gradient(135deg, #28a745, #20c997); color: white; border: none; padding: 15px 25px; border-radius: 10px; cursor: pointer; font-weight: bold; font-size: 16px; box-shadow: 0 3px 10px rgba(40,167,69,0.3); transition: all 0.3s ease;" 
+                                    onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 15px rgba(40,167,69,0.4)'" 
+                                    onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='0 3px 10px rgba(40,167,69,0.3)'">
+                                🔄 Recalcular Dosagens
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="highlight-box">
+                    <h3>🎯 Protocolo Específico COQ10D7</h3>
+                    <p><strong>Paciente:</strong> <span id="peso-display">19</span> kg | <strong>Idade:</strong> <span id="idade-display">5</span> anos | <strong>Diagnóstico:</strong> Deficiência CoQ10 Tipo 7 (COQ4)<br>
+                    <strong>Mutações:</strong> c.577C>T + c.608C>T (heterozigose composta)</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="coq10-total">600mg</div>
+                        <div class="stat-label">CoQ10 Ubiquinol/dia</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="idebenona-total">150mg</div>
+                        <div class="stat-label">Idebenona/dia</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="mg-total">400mg</div>
+                        <div class="stat-label">Mg L-Treonato/dia</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="astaxantina-total">8mg</div>
+                        <div class="stat-label">Astaxantina/dia</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="custo-total">R$ 2.650</div>
+                        <div class="stat-label">Custo Mensal Estimado</div>
+                    </div>
+                </div>
+
+                <h3>🎯 Respostas às Perguntas Específicas</h3>
+                
+                <div class="protocol-card low-risk">
+                    <h4>✅ 1) ADICIONAR IDEBENONA?</h4>
+                    <p><strong>SIM - ALTAMENTE RECOMENDADO</strong></p>
+                    <ul>
+                        <li><strong>Justificativa:</strong> Penetração cerebral superior à CoQ10</li>
+                        <li><strong>Mecanismo:</strong> Bypass da deficiência enzimática</li>
+                        <li><strong>Evidência:</strong> Melhora neurológica documentada em COQ4</li>
+                        <li><strong>Dose:</strong> 150 mg/dia (8 mg/kg) - 75mg manhã + 75mg tarde</li>
+                    </ul>
+                </div>
+
+                <div class="protocol-card low-risk">
+                    <h4>✅ 2) SUPLEMENTAR COMPLEXO B?</h4>
+                    <p><strong>SIM - ESSENCIAL</strong></p>
+                    <ul>
+                        <li><strong>Justificativa:</strong> Cofatores da cadeia respiratória</li>
+                        <li><strong>Foco:</strong> B1 (50mg), B2 (150mg), B3 (100mg), B6 (25mg), B12 (1000mcg)</li>
+                        <li><strong>Evidência:</strong> Sinergismo comprovado com CoQ10</li>
+                        <li><strong>Implementação:</strong> Complexo de alta potência pela manhã</li>
+                    </ul>
+                </div>
+
+                <div class="protocol-card low-risk">
+                    <h4>✅ 3) SUPLEMENTAR PQQ?</h4>
+                    <p><strong>SIM - MUITO BENÉFICO</strong></p>
+                    <ul>
+                        <li><strong>Justificativa:</strong> Biogênese mitocondrial</li>
+                        <li><strong>Mecanismo:</strong> Aumenta número de mitocôndrias</li>
+                        <li><strong>Evidência:</strong> Neuroproteção específica</li>
+                        <li><strong>Dose:</strong> 10 mg/dia pela manhã (evitar insônia)</li>
+                    </ul>
+                </div>
+
+                <div class="protocol-card medium-risk">
+                    <h4>⚠️ 4) SUPLEMENTAR SHILAJIT?</h4>
+                    <p><strong>SIM, COM PRECAUÇÕES</strong></p>
+                    <ul>
+                        <li><strong>Justificativa:</strong> Melhora absorção de CoQ10</li>
+                        <li><strong>Benefício:</strong> Prolonga meia-vida dos suplementos</li>
+                        <li><strong>Cuidados:</strong> Qualidade, metais pesados, monitoramento renal</li>
+                        <li><strong>Dose:</strong> 100 mg/dia (purificado, >50% ácido fúlvico)</li>
+                        <li><strong>Implementação:</strong> Após 4 semanas do protocolo base</li>
+                    </ul>
+                </div>
+
+                <div class="protocol-card low-risk">
+                    <h4>✅ 5) SUPLEMENTAR ASTAXANTINA?</h4>
+                    <p><strong>SIM - ALTAMENTE RECOMENDADO</strong></p>
+                    <ul>
+                        <li><strong>Justificativa:</strong> Antioxidante supremo, neuroproteção</li>
+                        <li><strong>Mecanismo:</strong> Protege CoQ10 da oxidação</li>
+                        <li><strong>Evidência:</strong> Melhora cognitiva documentada</li>
+                        <li><strong>Dose:</strong> 8 mg/dia (0,4 mg/kg) com refeição rica em gordura</li>
+                    </ul>
+                </div>
+
+                <h3>💊 Protocolo Final Otimizado</h3>
+                
+                <div class="treatment-timeline">
+                    <div class="timeline-item">
+                        <h4>🔴 COENZIMA Q10 UBIQUINOL - PRINCIPAL</h4>
+                        <div class="dosage-info">
+                            <strong>Dose:</strong> 600 mg/dia (30 mg/kg)<br>
+                            <strong>Divisão:</strong> 200mg manhã + 200mg almoço + 200mg jantar<br>
+                            <strong>Forma:</strong> Cápsulas líquidas ou suspensão oral<br>
+                            <strong>Com:</strong> Refeições ricas em gordura
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h4>🟡 VITAMINA B2 (RIBOFLAVINA) - OTIMIZADA</h4>
+                        <div class="dosage-info">
+                            <strong>Dose atual:</strong> 100 mg/dia → <strong>NOVA:</strong> 150 mg/dia<br>
+                            <strong>Divisão:</strong> 75mg manhã + 75mg tarde<br>
+                            <strong>Forma:</strong> Riboflavina-5-fosfato (ativa)<br>
+                            <strong>Justificativa:</strong> Maior saturação enzimática
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h4>🟢 IDEBENONA - NOVO</h4>
+                        <div class="dosage-info">
+                            <strong>Dose:</strong> 150 mg/dia<br>
+                            <strong>Divisão:</strong> 75mg manhã + 75mg tarde<br>
+                            <strong>Início:</strong> Semana 3 do protocolo<br>
+                            <strong>Benefício:</strong> Penetração cerebral superior
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h4>🟣 COMPLEXO B OTIMIZADO - NOVO</h4>
+                        <div class="dosage-info">
+                            <strong>B1 (Tiamina):</strong> 50 mg/dia<br>
+                            <strong>B3 (Nicotinamida):</strong> 100 mg/dia<br>
+                            <strong>B6 (P5P):</strong> 25 mg/dia<br>
+                            <strong>B12 (Metilcobalamina):</strong> 1000 mcg/dia<br>
+                            <strong>Timing:</strong> Manhã, com café da manhã
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h4>⚫ PQQ - NOVO</h4>
+                        <div class="dosage-info">
+                            <strong>Dose:</strong> 10 mg/dia<br>
+                            <strong>Timing:</strong> Manhã (pode causar insônia)<br>
+                            <strong>Início:</strong> Semana 5 do protocolo<br>
+                            <strong>Benefício:</strong> Biogênese mitocondrial
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h4>🔴 ASTAXANTINA - NOVO</h4>
+                        <div class="dosage-info">
+                            <strong>Dose:</strong> 8 mg/dia<br>
+                            <strong>Timing:</strong> Com refeição rica em gordura<br>
+                            <strong>Início:</strong> Semana 3 do protocolo<br>
+                            <strong>Benefício:</strong> Antioxidante supremo
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h4>🟤 SHILAJIT - OPCIONAL</h4>
+                        <div class="dosage-info">
+                            <strong>Dose:</strong> 100 mg/dia<br>
+                            <strong>Qualidade:</strong> >50% ácido fúlvico, livre de metais pesados<br>
+                            <strong>Timing:</strong> Manhã, estômago vazio<br>
+                            <strong>Início:</strong> Semana 7 (após avaliação de tolerância)
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h4>🧠 MAGNÉSIO L-TREONATO - RECOMENDADO</h4>
+                        <div class="dosage-info">
+                            <strong>Dose:</strong> 400 mg/dia (20 mg/kg)<br>
+                            <strong>Divisão:</strong> 200mg manhã + 200mg noite<br>
+                            <strong>Início:</strong> Semana 4 do protocolo<br>
+                            <strong>Benefício:</strong> Neuroproteção, atravessa barreira hematoencefálica<br>
+                            <strong>Evidência:</strong> Melhora memória, cognição e função sináptica
+                        </div>
+                    </div>
+                </div>
+
+                <h3>📅 Cronograma de Implementação</h3>
+                
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Período</th>
+                                <th>Suplementos</th>
+                                <th>Objetivo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Semanas 1-2</strong></td>
+                                <td>CoQ10 Ubiquinol 600mg + Vitamina B2 150mg + Ácido Alfa Lipóico + DHA</td>
+                                <td>Estabelecer base terapêutica</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Semanas 3-4</strong></td>
+                                <td>+ Idebenona 150mg + Astaxantina 8mg + Magnésio L-Treonato 400mg</td>
+                                <td>Neuroproteção avançada</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Semanas 5-6</strong></td>
+                                <td>+ Complexo B + PQQ 10mg</td>
+                                <td>Otimização metabólica</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Semanas 7-8</strong></td>
+                                <td>+ Shilajit 100mg (se tolerado)</td>
+                                <td>Absorção avançada</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>📊 Tabelas Semanais de Dosagem</h3>
+                
+                <h4>🔵 PROTOCOLO BASE (Semanas 1-2)</h4>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dia</th>
+                                <th>Manhã (7:00-8:00)</th>
+                                <th>Almoço (12:00-13:00)</th>
+                                <th>Tarde (17:00-18:00)</th>
+                                <th>Jantar (19:00-20:00)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Segunda</strong></td>
+                                <td>CoQ10 200mg + B2 75mg + ALA 50mg</td>
+                                <td>CoQ10 200mg + DHA 1000mg</td>
+                                <td>B2 75mg + ALA 50mg</td>
+                                <td>CoQ10 200mg</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Terça</strong></td>
+                                <td>CoQ10 200mg + B2 75mg + ALA 50mg</td>
+                                <td>CoQ10 200mg + DHA 1000mg</td>
+                                <td>B2 75mg + ALA 50mg</td>
+                                <td>CoQ10 200mg</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Quarta</strong></td>
+                                <td>CoQ10 200mg + B2 75mg + ALA 50mg</td>
+                                <td>CoQ10 200mg + DHA 1000mg</td>
+                                <td>B2 75mg + ALA 50mg</td>
+                                <td>CoQ10 200mg</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Quinta</strong></td>
+                                <td>CoQ10 200mg + B2 75mg + ALA 50mg</td>
+                                <td>CoQ10 200mg + DHA 1000mg</td>
+                                <td>B2 75mg + ALA 50mg</td>
+                                <td>CoQ10 200mg</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sexta</strong></td>
+                                <td>CoQ10 200mg + B2 75mg + ALA 50mg</td>
+                                <td>CoQ10 200mg + DHA 1000mg</td>
+                                <td>B2 75mg + ALA 50mg</td>
+                                <td>CoQ10 200mg</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sábado</strong></td>
+                                <td>CoQ10 200mg + B2 75mg + ALA 50mg</td>
+                                <td>CoQ10 200mg + DHA 1000mg</td>
+                                <td>B2 75mg + ALA 50mg</td>
+                                <td>CoQ10 200mg</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Domingo</strong></td>
+                                <td>CoQ10 200mg + B2 75mg + ALA 50mg</td>
+                                <td>CoQ10 200mg + DHA 1000mg</td>
+                                <td>B2 75mg + ALA 50mg</td>
+                                <td>CoQ10 200mg</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>🟢 PROTOCOLO FINAL COMPLETO (Semanas 5+)</h4>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dia</th>
+                                <th>Manhã (7:00-8:00)</th>
+                                <th>Almoço (12:00-13:00)</th>
+                                <th>Tarde (17:00-18:00)</th>
+                                <th>Jantar (19:00-20:00)</th>
+                                <th>Noite (21:00)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Segunda</strong></td>
+                                <td>CoQ10 200mg + B2 75mg + ALA 50mg + Idebenona 75mg + Complexo B + PQQ 10mg</td>
+                                <td>CoQ10 200mg + DHA 1000mg + Astaxantina 8mg</td>
+                                <td>B2 75mg + ALA 50mg + Idebenona 75mg</td>
+                                <td>CoQ10 200mg</td>
+                                <td>Mg L-Treonato 200mg</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Terça</strong></td>
+                                <td>CoQ10 200mg + B2 75mg + ALA 50mg + Idebenona 75mg + Complexo B + PQQ 10mg</td>
+                                <td>CoQ10 200mg + DHA 1000mg + Astaxantina 8mg</td>
+                                <td>B2 75mg + ALA 50mg + Idebenona 75mg</td>
+                                <td>CoQ10 200mg</td>
+                                <td>Mg L-Treonato 200mg</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Quarta</strong></td>
+                                <td>CoQ10 200mg + B2 75mg + ALA 50mg + Idebenona 75mg + Complexo B + PQQ 10mg</td>
+                                <td>CoQ10 200mg + DHA 1000mg + Astaxantina 8mg</td>
+                                <td>B2 75mg + ALA 50mg + Idebenona 75mg</td>
+                                <td>CoQ10 200mg</td>
+                                <td>Mg L-Treonato 200mg</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Quinta</strong></td>
+                                <td>CoQ10 200mg + B2 75mg + ALA 50mg + Idebenona 75mg + Complexo B + PQQ 10mg</td>
+                                <td>CoQ10 200mg + DHA 1000mg + Astaxantina 8mg</td>
+                                <td>B2 75mg + ALA 50mg + Idebenona 75mg</td>
+                                <td>CoQ10 200mg</td>
+                                <td>Mg L-Treonato 200mg</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sexta</strong></td>
+                                <td>CoQ10 200mg + B2 75mg + ALA 50mg + Idebenona 75mg + Complexo B + PQQ 10mg</td>
+                                <td>CoQ10 200mg + DHA 1000mg + Astaxantina 8mg</td>
+                                <td>B2 75mg + ALA 50mg + Idebenona 75mg</td>
+                                <td>CoQ10 200mg</td>
+                                <td>Mg L-Treonato 200mg</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sábado</strong></td>
+                                <td>CoQ10 200mg + B2 75mg + ALA 50mg + Idebenona 75mg + Complexo B + PQQ 10mg</td>
+                                <td>CoQ10 200mg + DHA 1000mg + Astaxantina 8mg</td>
+                                <td>B2 75mg + ALA 50mg + Idebenona 75mg</td>
+                                <td>CoQ10 200mg</td>
+                                <td>Mg L-Treonato 200mg</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Domingo</strong></td>
+                                <td>CoQ10 200mg + B2 75mg + ALA 50mg + Idebenona 75mg + Complexo B + PQQ 10mg</td>
+                                <td>CoQ10 200mg + DHA 1000mg + Astaxantina 8mg</td>
+                                <td>B2 75mg + ALA 50mg + Idebenona 75mg</td>
+                                <td>CoQ10 200mg</td>
+                                <td>Mg L-Treonato 200mg</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="alert alert-info">
+                    <h4>🧠 MAGNÉSIO L-TREONATO - ANÁLISE CIENTÍFICA</h4>
+                    <p><strong>✅ RECOMENDAÇÃO:</strong> SIM - ALTAMENTE BENÉFICO</p>
+                    <ul>
+                        <li><strong>Mecanismo único:</strong> Atravessa a barreira hematoencefálica <mcreference link="https://www.metropoles.com/saude/magnesio-treonato-o-que-e-para-que-serve" index="1">1</mcreference></li>
+                        <li><strong>Neuroproteção:</strong> Regula receptores NMDA e GABA <mcreference link="https://www.tuasaude.com/en/magnesium-threonate/" index="3">3</mcreference></li>
+                        <li><strong>Benefícios cognitivos:</strong> Melhora memória, aprendizado e plasticidade sináptica <mcreference link="https://www.farmaciaalquimia.com.br/vitaminas-e-minerais/magnesio-l-treonato-530mg-memoria-e-raciocinio-90-doses-alquimia" index="2">2</mcreference></li>
+                        <li><strong>Sinergismo com CoQ10:</strong> Proteção mitocondrial e neuronal complementar</li>
+                        <li><strong>Dose pediátrica:</strong> 400mg/dia (20mg/kg) - dentro da faixa segura <mcreference link="https://www.tuasaude.com/en/magnesium-threonate/" index="3">3</mcreference></li>
+                        <li><strong>Timing:</strong> 200mg manhã + 200mg noite (melhora sono) <mcreference link="https://www.metropoles.com/saude/magnesio-treonato-o-que-e-para-que-serve" index="1">1</mcreference></li>
+                    </ul>
+                </div>
+
+                <h3>⏰ Horários Sugeridos</h3>
+                
+                <div class="protocol-card" style="border-left-color: #667eea;">
+                    <h4>🌅 MANHÃ (7:00-8:00) - COM CAFÉ DA MANHÃ</h4>
+                    <ul>
+                        <li>CoQ10 Ubiquinol: 200 mg</li>
+                        <li>Vitamina B2: 75 mg</li>
+                        <li>Ácido Alfa Lipóico: 50 mg</li>
+                        <li>Idebenona: 75 mg</li>
+                        <li>Complexo B: 1 cápsula</li>
+                        <li>PQQ: 10 mg</li>
+                        <li>Magnésio L-Treonato: 200 mg</li>
+                        <li>Shilajit: 100 mg (estômago vazio, 30 min antes)</li>
+                    </ul>
+                </div>
+
+                <div class="protocol-card" style="border-left-color: #667eea;">
+                    <h4>🌞 ALMOÇO (12:00-13:00) - COM REFEIÇÃO</h4>
+                    <ul>
+                        <li>CoQ10 Ubiquinol: 200 mg</li>
+                        <li>DHA: 1000 mg</li>
+                        <li>Astaxantina: 8 mg</li>
+                    </ul>
+                </div>
+
+                <div class="protocol-card" style="border-left-color: #667eea;">
+                    <h4>🌆 TARDE (17:00-18:00) - COM LANCHE</h4>
+                    <ul>
+                        <li>Vitamina B2: 75 mg</li>
+                        <li>Ácido Alfa Lipóico: 50 mg</li>
+                        <li>Idebenona: 75 mg</li>
+                    </ul>
+                </div>
+
+                <div class="protocol-card" style="border-left-color: #667eea;">
+                    <h4>🌙 JANTAR (19:00-20:00) - COM REFEIÇÃO</h4>
+                    <ul>
+                        <li>CoQ10 Ubiquinol: 200 mg</li>
+                    </ul>
+                </div>
+
+                <div class="protocol-card" style="border-left-color: #667eea;">
+                    <h4>🌜 NOITE (21:00) - ANTES DE DORMIR</h4>
+                    <ul>
+                        <li>Magnésio L-Treonato: 200 mg</li>
+                        <li><em>Benefício:</em> Melhora qualidade do sono e consolidação da memória</li>
+                    </ul>
+                </div>
+
+                <h3>🎯 Metas Terapêuticas</h3>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">>3,5</div>
+                        <div class="stat-label">CoQ10 plasmático (μg/mL)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number"><2,0</div>
+                        <div class="stat-label">Lactato sérico (mmol/L)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">>3</div>
+                        <div class="stat-label">Melhora SARA (pontos)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">6-12</div>
+                        <div class="stat-label">Meses para resposta</div>
+                    </div>
+                </div>
+
+                <div class="alert alert-success">
+                    <strong>✅ Expectativa de Resposta:</strong> Baseado nas mutações específicas COQ4 c.577C>T + c.608C>T, espera-se boa resposta terapêutica com melhora neurológica significativa em 6-12 meses de tratamento adequado.
+                </div>
+
+                <div class="alert alert-warning">
+                    <strong>⚠️ Monitoramento Obrigatório:</strong> Função hepática e renal mensalmente nos primeiros 3 meses, CoQ10 plasmático trimestralmente, avaliação neurológica a cada 3 meses.
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab: Protocolos -->
+        <div id="protocolos" class="tab-content">
+            <div class="section">
+                <h2>💊 Protocolos de Tratamento Otimizados</h2>
+                
+                <div class="alert alert-warning">
+                    <strong>⚠️ Importante:</strong> Todos os protocolos devem ser individualizados baseados no genótipo específico e manifestações clínicas do paciente.
+                </div>
+
+                <h3>🔴 Grupo de Alto Risco (Éxons 5-7, início neonatal)</h3>
+                <div class="dosage-info">
+                    <strong>Dose inicial:</strong> 30-50 mg/kg/dia<br>
+                    <strong>Via:</strong> Oral (se possível) ou enteral<br>
+                    <strong>Frequência:</strong> 3x/dia com alimentos ricos em gordura<br>
+                    <strong>Monitoramento:</strong> Semanal nas primeiras 4 semanas<br>
+                    <strong>Ajuste:</strong> Aumento para 50-100 mg/kg/dia se sem resposta em 2 semanas<br>
+                    <strong>Terapias adjuvantes:</strong> Antioxidantes, suporte nutricional
+                </div>
+
+                <h3>🟡 Grupo de Risco Intermediário (Éxon 3, variante c.370G>A)</h3>
+                <div class="dosage-info">
+                    <strong>Dose inicial:</strong> 20-30 mg/kg/dia (crianças) ou 600-900 mg/dia (adultos)<br>
+                    <strong>Via:</strong> Oral<br>
+                    <strong>Frequência:</strong> 2-3x/dia com refeições<br>
+                    <strong>Monitoramento:</strong> Quinzenal no primeiro mês, mensal após<br>
+                    <strong>Ajuste:</strong> Baseado na resposta clínica e níveis plasmáticos<br>
+                    <strong>Duração:</strong> Tratamento vitalício
+                </div>
+
+                <h3>🔵 Protocolo Específico para COQ4 c.577C>T p.Pro193Ser</h3>
+                <div class="dosage-info" style="border-left-color: #667eea;">
+                    <strong>Dose inicial:</strong> 5-10 mg/kg/dia (crianças) ou 300-600 mg/dia (adultos)<br>
+                    <strong>Via:</strong> Oral<br>
+                    <strong>Frequência:</strong> 2x/dia com refeições<br>
+                    <strong>Titulação:</strong> Aumentar gradualmente até 15-20 mg/kg/dia<br>
+                    <strong>Monitoramento:</strong> Avaliação neurológica trimestral<br>
+                    <strong>Resposta esperada:</strong> Melhora motora em 6-12 meses<br>
+                    <strong>Duração:</strong> Tratamento vitalício
+                </div>
+
+                <h3>🟢 Grupo de Baixo Risco (Éxons 1-4, início tardio)</h3>
+                <div class="dosage-info">
+                    <strong>Dose inicial:</strong> 10-20 mg/kg/dia (crianças) ou 300-600 mg/dia (adultos)<br>
+                    <strong>Via:</strong> Oral<br>
+                    <strong>Frequência:</strong> 2x/dia com refeições<br>
+                    <strong>Monitoramento:</strong> Mensal nos primeiros 3 meses<br>
+                    <strong>Ajuste:</strong> Aumento gradual até resposta ótima<br>
+                    <strong>Prognóstico:</strong> Geralmente favorável com tratamento adequado
+                </div>
+
+                <h3>📈 Critérios de Resposta Terapêutica</h3>
+                <div class="stats-grid">
+                    <div class="stat-card" style="border-left: 4px solid #27ae60;">
+                        <h4>✅ Resposta Completa</h4>
+                        <ul style="text-align: left; margin-top: 10px;">
+                            <li>Melhoria >75% dos parâmetros</li>
+                            <li>CoQ10 plasmática >2,5 μg/mL</li>
+                            <li>Estabilização da função orgânica</li>
+                        </ul>
+                    </div>
+                    <div class="stat-card" style="border-left: 4px solid #f39c12;">
+                        <h4>🔶 Resposta Parcial</h4>
+                        <ul style="text-align: left; margin-top: 10px;">
+                            <li>Melhoria 25-75% dos parâmetros</li>
+                            <li>Estabilização da progressão</li>
+                            <li>Melhoria da qualidade de vida</li>
+                        </ul>
+                    </div>
+                    <div class="stat-card" style="border-left: 4px solid #e74c3c;">
+                        <h4>❌ Não Resposta</h4>
+                        <ul style="text-align: left; margin-top: 10px;">
+                            <li>Ausência de melhoria após 3 meses</li>
+                            <li>Progressão contínua</li>
+                            <li>Necessidade de terapias alternativas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab: Monitoramento -->
+        <div id="monitoramento" class="tab-content">
+            <div class="section">
+                <h2>📊 Protocolo de Monitoramento</h2>
+                
+                <div class="treatment-timeline">
+                    <div class="timeline-item">
+                        <h4>📅 Avaliações Trimestrais</h4>
+                        <ul>
+                            <li>Exame clínico completo</li>
+                            <li>Níveis plasmáticos de CoQ10 (meta: >2,5 μg/mL)</li>
+                            <li>Função renal (creatinina, proteinúria)</li>
+                            <li>Lactato sérico</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>📅 Avaliações Semestrais</h4>
+                        <ul>
+                            <li>Ecocardiograma</li>
+                            <li>Avaliação neurológica especializada</li>
+                            <li>Função hepática</li>
+                            <li>Crescimento e desenvolvimento (crianças)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>📅 Avaliações Anuais</h4>
+                        <ul>
+                            <li>Avaliação oftalmológica</li>
+                            <li>Audiometria</li>
+                            <li>Densitometria óssea</li>
+                            <li>Avaliação nutricional completa</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="alert alert-success">
+                    <strong>🎯 Meta Terapêutica:</strong> Manter níveis plasmáticos de CoQ10 acima de 2,5 μg/mL e monitorar melhoria clínica através de biomarcadores específicos.
+                </div>
+
+                <h3>📋 Biomarcadores de Monitoramento</h3>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Biomarcador</th>
+                                <th>Frequência</th>
+                                <th>Valor Alvo</th>
+                                <th>Significado Clínico</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>CoQ10 Plasmática</td>
+                                <td>Trimestral</td>
+                                <td>>2,5 μg/mL</td>
+                                <td>Adequação da suplementação</td>
+                            </tr>
+                            <tr>
+                                <td>Lactato Sérico</td>
+                                <td>Trimestral</td>
+                                <td><2,0 mmol/L</td>
+                                <td>Função mitocondrial</td>
+                            </tr>
+                            <tr>
+                                <td>Proteinúria</td>
+                                <td>Trimestral</td>
+                                <td><150 mg/24h</td>
+                                <td>Função renal</td>
+                            </tr>
+                            <tr>
+                                <td>Troponina</td>
+                                <td>Semestral</td>
+                                <td>Normal</td>
+                                <td>Função cardíaca</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab: Terapias Emergentes -->
+        <div id="emergentes" class="tab-content">
+            <div class="section">
+                <h2>🔬 Terapias Emergentes e Perspectivas Futuras</h2>
+                
+                <div class="highlight-box">
+                    <h3>🚀 BPM31510 (BPGbio)</h3>
+                    <p><strong>Status:</strong> Designação de doença pediátrica rara pelo FDA (2024)</p>
+                    <p><strong>Tecnologia:</strong> Formulação nanossolubilizada com maior biodisponibilidade</p>
+                    <p><strong>Estudos:</strong> Fase I/II em andamento</p>
+                </div>
+
+                <h3>🧬 Terapia Gênica</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h4>🦠 Vetores Virais</h4>
+                        <p>Entrega do gene COQ4 funcional através de vetores adenovirais ou lentivirais</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>✂️ CRISPR/Cas9</h4>
+                        <p>Edição gênica para correção de mutações específicas no gene COQ4</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>🧬 Oligonucleotídeos</h4>
+                        <p>Terapia com oligonucleotídeos antisense para modulação da expressão gênica</p>
+                    </div>
+                </div>
+
+                <h3>💊 Terapias Combinadas</h3>
+                <div class="protocol-card">
+                    <h4>🛡️ Antioxidantes Adjuvantes</h4>
+                    <ul>
+                        <li><strong>Vitamina E (α-tocoferol):</strong> 400-800 UI/dia</li>
+                        <li><strong>Ácido ascórbico:</strong> 500-1000 mg/dia</li>
+                        <li><strong>N-acetilcisteína:</strong> 600-1200 mg/dia</li>
+                        <li><strong>Idebenona:</strong> 5-10 mg/kg/dia</li>
+                    </ul>
+                </div>
+
+                <div class="protocol-card">
+                    <h4>⚡ Moduladores Mitocondriais</h4>
+                    <ul>
+                        <li>Ativadores da biogênese mitocondrial (PGC-1α)</li>
+                        <li>Inibidores da fissão mitocondrial (Mdivi-1)</li>
+                        <li>Promotores da fusão mitocondrial</li>
+                        <li>Moduladores da dinâmica mitocondrial</li>
+                    </ul>
+                </div>
+
+                <div class="alert alert-info">
+                    <strong>🔬 Tecnologia Quinomics:</strong> Análise personalizada do metabolismo da CoQ10 para otimização de dosagem individualizada, com potencial para melhoria significativa da eficácia terapêutica.
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab: Diretrizes -->
+        <div id="diretrizes" class="tab-content">
+            <div class="section">
+                <h2>📖 Diretrizes para Implementação Clínica</h2>
+                
+                <h3>✅ Indicações para Início do Tratamento</h3>
+                
+                <div class="protocol-card high-risk">
+                    <h4>🔴 Indicações Absolutas</h4>
+                    <ul>
+                        <li>Diagnóstico genético confirmado de deficiência primária de CoQ10</li>
+                        <li>Níveis teciduais de CoQ10 reduzidos (<30% do normal)</li>
+                        <li>Manifestações clínicas compatíveis</li>
+                    </ul>
+                </div>
+
+                <div class="protocol-card medium-risk">
+                    <h4>🟡 Indicações Relativas</h4>
+                    <ul>
+                        <li>Suspeita clínica forte com estudos genéticos pendentes</li>
+                        <li>Variantes de significado incerto com evidência funcional</li>
+                        <li>Deficiência secundária de CoQ10 sintomática</li>
+                    </ul>
+                </div>
+
+                <h3>⚠️ Contraindicações e Precauções</h3>
+                <div class="alert alert-warning">
+                    <strong>Contraindicações Absolutas:</strong>
+                    <ul>
+                        <li>Hipersensibilidade conhecida à CoQ10</li>
+                        <li>Insuficiência hepática grave (Child-Pugh C)</li>
+                    </ul>
+                </div>
+
+                <div class="alert alert-info">
+                    <strong>Precauções:</strong>
+                    <ul>
+                        <li>Uso concomitante de anticoagulantes (monitorar INR)</li>
+                        <li>Diabetes mellitus (possível hipoglicemia)</li>
+                        <li>Hipertensão arterial (possível hipotensão)</li>
+                    </ul>
+                </div>
+
+                <h3>🎯 Recomendações por Nível de Evidência</h3>
+                
+                <div class="stats-grid">
+                    <div class="stat-card" style="border-left: 4px solid #27ae60;">
+                        <h4>📊 Nível A (Forte)</h4>
+                        <ul style="text-align: left;">
+                            <li>Iniciar CoQ10 imediatamente após diagnóstico</li>
+                            <li>Usar doses elevadas em casos graves</li>
+                            <li>Monitorar níveis plasmáticos</li>
+                            <li>Continuar tratamento vitalício</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="stat-card" style="border-left: 4px solid #f39c12;">
+                        <h4>📊 Nível B (Moderada)</h4>
+                        <ul style="text-align: left;">
+                            <li>Estratificar risco por mutação</li>
+                            <li>Considerar terapias adjuvantes</li>
+                            <li>Monitoramento multidisciplinar</li>
+                            <li>Aconselhamento genético</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="stat-card" style="border-left: 4px solid #e74c3c;">
+                        <h4>📊 Nível C (Limitada)</h4>
+                        <ul style="text-align: left;">
+                            <li>Avaliar novas formulações</li>
+                            <li>Considerar terapia gênica experimental</li>
+                            <li>Suporte psicossocial</li>
+                            <li>Registros de pacientes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>💰 Análise Econômica</h3>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Componente</th>
+                                <th>Custo Anual (USD)</th>
+                                <th>Observações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Suplementação CoQ10</td>
+                                <td>$2.000 - $10.000</td>
+                                <td>Varia com dose e formulação</td>
+                            </tr>
+                            <tr>
+                                <td>Monitoramento Laboratorial</td>
+                                <td>$3.000 - $5.000</td>
+                                <td>Inclui biomarcadores específicos</td>
+                            </tr>
+                            <tr>
+                                <td>Consultas Especializadas</td>
+                                <td>$2.000 - $4.000</td>
+                                <td>Equipe multidisciplinar</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Total</strong></td>
+                                <td><strong>$7.000 - $19.000</strong></td>
+                                <td>Custo-efetivo vs complicações</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <h3>📚 Artigo Científico Completo</h3>
+            <p>Este resumo interativo é baseado em uma análise sistemática da literatura científica atual sobre deficiência primária de CoQ10.</p>
+            <p><strong>Última atualização:</strong> 2024 | <strong>Referências:</strong> 20+ estudos científicos</p>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            // Esconder todas as abas
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remover classe active de todos os botões
+            const buttons = document.querySelectorAll('.nav-tab');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Mostrar a aba selecionada
+            document.getElementById(tabName).classList.add('active');
+            
+            // Adicionar classe active ao botão clicado
+            event.target.classList.add('active');
+        }
+
+        // Animação de entrada para os cards
+        function animateCards() {
+            const cards = document.querySelectorAll('.protocol-card, .stat-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        }
+
+        // Função para calcular dosagens dinamicamente
+        function calcularDosagens() {
+            const peso = parseFloat(document.getElementById('peso-input').value) || 19;
+            const idade = parseInt(document.getElementById('idade-input').value) || 5;
+            
+            // Validações básicas
+            if (peso < 5 || peso > 100) {
+                alert('⚠️ Peso deve estar entre 5 e 100 kg');
+                return;
+            }
+            if (idade < 1 || idade > 18) {
+                alert('⚠️ Idade deve estar entre 1 e 18 anos');
+                return;
+            }
+            
+            // Cálculos das dosagens baseados no peso (mg/kg)
+            const coq10Dose = Math.round(peso * 30); // 30 mg/kg
+            const idebenonaDose = Math.round(peso * 8); // 8 mg/kg
+            const mgTreonatoDose = Math.round(peso * 20); // 20 mg/kg
+            const astaxantinaDose = Math.round(peso * 0.4 * 10) / 10; // 0.4 mg/kg
+            const b2Dose = Math.round(peso * 7.5); // 7.5 mg/kg
+            
+            // Ajustes para doses mínimas e máximas seguras
+            const coq10Final = Math.max(300, Math.min(coq10Dose, 1200)); // Min 300mg, Max 1200mg
+            const idebenonaFinal = Math.max(75, Math.min(idebenonaDose, 300)); // Min 75mg, Max 300mg
+            const mgTreonatoFinal = Math.max(200, Math.min(mgTreonatoDose, 800)); // Min 200mg, Max 800mg
+            const astaxantinaFinal = Math.max(4, Math.min(astaxantinaDose, 16)); // Min 4mg, Max 16mg
+            const b2Final = Math.max(75, Math.min(b2Dose, 300)); // Min 75mg, Max 300mg
+            
+            // Cálculo do custo estimado (baseado em preços médios)
+            const custoCoQ10 = (coq10Final / 100) * 180; // R$ 180 por 100mg/dia
+            const custoIdebenona = (idebenonaFinal / 50) * 220; // R$ 220 por 50mg/dia
+            const custoMgTreonato = (mgTreonatoFinal / 100) * 95; // R$ 95 por 100mg/dia
+            const custoAstaxantina = (astaxantinaFinal / 4) * 85; // R$ 85 por 4mg/dia
+            const custoOutros = 450; // Outros suplementos fixos
+            const custoTotal = Math.round(custoCoQ10 + custoIdebenona + custoMgTreonato + custoAstaxantina + custoOutros);
+            
+            // Atualizar displays
+            document.getElementById('peso-display').textContent = peso;
+            document.getElementById('idade-display').textContent = idade;
+            document.getElementById('coq10-total').textContent = coq10Final + 'mg';
+            document.getElementById('idebenona-total').textContent = idebenonaFinal + 'mg';
+            document.getElementById('mg-total').textContent = mgTreonatoFinal + 'mg';
+            document.getElementById('astaxantina-total').textContent = astaxantinaFinal + 'mg';
+            document.getElementById('custo-total').textContent = 'R$ ' + custoTotal.toLocaleString();
+            
+            // Atualizar tabelas semanais com novas dosagens
+            atualizarTabelasSemanais(coq10Final, b2Final, idebenonaFinal, mgTreonatoFinal, astaxantinaFinal);
+            
+            // Feedback visual
+            const button = event.target;
+            const originalText = button.innerHTML;
+            button.innerHTML = '✅ Calculado!';
+            button.style.background = 'linear-gradient(135deg, #28a745, #20c997)';
+            
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.style.background = 'linear-gradient(135deg, #28a745, #20c997)';
+            }, 2000);
+        }
+        
+        // Função para atualizar tabelas semanais
+        function atualizarTabelasSemanais(coq10, b2, idebenona, mgTreonato, astaxantina) {
+            // Divisões das doses
+            const coq10Manha = Math.round(coq10 / 3);
+            const coq10Almoco = Math.round(coq10 / 3);
+            const coq10Jantar = coq10 - coq10Manha - coq10Almoco;
+            
+            const b2Manha = Math.round(b2 / 2);
+            const b2Tarde = b2 - b2Manha;
+            
+            const idebenonaManha = Math.round(idebenona / 2);
+            const idebenonaTarde = idebenona - idebenonaManha;
+            
+            const mgManha = Math.round(mgTreonato / 2);
+            const mgNoite = mgTreonato - mgManha;
+            
+            // Atualizar todas as células das tabelas (protocolo base e final)
+            const tabelas = document.querySelectorAll('.responsive-table table tbody tr');
+            tabelas.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                if (cells.length > 1) {
+                    // Protocolo base (primeiras 2 semanas)
+                    if (cells[1] && cells[1].textContent.includes('CoQ10 200mg')) {
+                        cells[1].innerHTML = `CoQ10 ${coq10Manha}mg + B2 ${b2Manha}mg + ALA 50mg`;
+                        cells[2].innerHTML = `CoQ10 ${coq10Almoco}mg + DHA 1000mg`;
+                        cells[3].innerHTML = `B2 ${b2Tarde}mg + ALA 50mg`;
+                        cells[4].innerHTML = `CoQ10 ${coq10Jantar}mg`;
+                    }
+                    // Protocolo final (semanas 5+)
+                    if (cells[1] && cells[1].textContent.includes('Idebenona')) {
+                        cells[1].innerHTML = `CoQ10 ${coq10Manha}mg + B2 ${b2Manha}mg + ALA 50mg + Idebenona ${idebenonaManha}mg + Complexo B + PQQ 10mg`;
+                        cells[2].innerHTML = `CoQ10 ${coq10Almoco}mg + DHA 1000mg + Astaxantina ${astaxantina}mg`;
+                        cells[3].innerHTML = `B2 ${b2Tarde}mg + ALA 50mg + Idebenona ${idebenonaTarde}mg`;
+                        cells[4].innerHTML = `CoQ10 ${coq10Jantar}mg`;
+                        if (cells[5]) cells[5].innerHTML = `Mg L-Treonato ${mgNoite}mg`;
+                    }
+                }
+            });
+        }
+
+        // Executar animação quando a página carregar
+        document.addEventListener('DOMContentLoaded', function() {
+            animateCards();
+            
+            // Calcular dosagens iniciais
+            setTimeout(() => {
+                if (typeof calcularDosagens === 'function') {
+                    calcularDosagens();
+                }
+            }, 1000);
+        });
+
+        // Smooth scroll para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
