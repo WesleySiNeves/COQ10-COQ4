@@ -586,7 +586,7 @@
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-number" id="coq10-total">600mg</div>
-                        <div class="stat-label">CoQ10 Ubiquinol/dia</div>
+                        <div class="stat-label">CoQ10 Líquida Ubiquinol/dia</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number" id="idebenona-total">150mg</div>
@@ -668,11 +668,11 @@
                 
                 <div class="treatment-timeline">
                     <div class="timeline-item">
-                        <h4>🔴 COENZIMA Q10 UBIQUINOL - PRINCIPAL</h4>
+                        <h4>🔴 COENZIMA Q10 LÍQUIDA UBIQUINOL - PRINCIPAL</h4>
                         <div class="dosage-info">
                             <strong>Dose:</strong> 600 mg/dia (30 mg/kg)<br>
                             <strong>Divisão:</strong> 200mg manhã + 200mg almoço + 200mg jantar<br>
-                            <strong>Forma:</strong> Cápsulas líquidas ou suspensão oral<br>
+                            <strong>Forma:</strong> Exclusivamente líquida (formulação magistral)<br>
                             <strong>Com:</strong> Refeições ricas em gordura
                         </div>
                     </div>
@@ -764,7 +764,7 @@
                         <tbody>
                             <tr>
                                 <td><strong>Semanas 1-2</strong></td>
-                                <td>CoQ10 Ubiquinol 600mg + Vitamina B2 150mg + Ácido Alfa Lipóico + DHA</td>
+                                <td>CoQ10 Líquida Ubiquinol 600mg + Vitamina B2 150mg + Ácido Alfa Lipóico + DHA</td>
                                 <td>Estabelecer base terapêutica</td>
                             </tr>
                             <tr>
@@ -803,10 +803,10 @@
                         <tbody>
                             <tr>
                                 <td><strong>Segunda</strong></td>
-                                <td>CoQ10 200mg + B2 75mg + ALA 50mg</td>
-                                <td>CoQ10 200mg + DHA 1000mg</td>
+                                <td>CoQ10 Líquida 200mg + B2 75mg + ALA 50mg</td>
+                                <td>CoQ10 Líquida 200mg + DHA 1000mg</td>
                                 <td>B2 75mg + ALA 50mg</td>
-                                <td>CoQ10 200mg</td>
+                                <td>CoQ10 Líquida 200mg</td>
                             </tr>
                             <tr>
                                 <td><strong>Terça</strong></td>
@@ -946,7 +946,7 @@
                 <div class="protocol-card" style="border-left-color: #667eea;">
                     <h4>🌅 MANHÃ (7:00-8:00) - COM CAFÉ DA MANHÃ</h4>
                     <ul>
-                        <li>CoQ10 Ubiquinol: 200 mg</li>
+                        <li>CoQ10 Líquida Ubiquinol: 200 mg</li>
                         <li>Vitamina B2: 75 mg</li>
                         <li>Ácido Alfa Lipóico: 50 mg</li>
                         <li>Idebenona: 75 mg</li>
@@ -1479,18 +1479,18 @@
                 const cells = row.querySelectorAll('td');
                 if (cells.length > 1) {
                     // Protocolo base (primeiras 2 semanas)
-                    if (cells[1] && cells[1].textContent.includes('CoQ10 200mg')) {
-                        cells[1].innerHTML = `CoQ10 ${coq10Manha}mg + B2 ${b2Manha}mg + ALA 50mg`;
-                        cells[2].innerHTML = `CoQ10 ${coq10Almoco}mg + DHA 1000mg`;
-                        cells[3].innerHTML = `B2 ${b2Tarde}mg + ALA 50mg`;
-                        cells[4].innerHTML = `CoQ10 ${coq10Jantar}mg`;
+                    if (cells[1] && cells[1].textContent.includes('CoQ10 Líquida 200mg')) {
+                cells[1].innerHTML = `CoQ10 Líquida ${coq10Manha}mg + B2 ${b2Manha}mg + ALA 50mg`;
+                cells[2].innerHTML = `CoQ10 Líquida ${coq10Almoco}mg + DHA 1000mg`;
+                cells[3].innerHTML = `B2 ${b2Tarde}mg + ALA 50mg`;
+                cells[4].innerHTML = `CoQ10 Líquida ${coq10Jantar}mg`;
                     }
                     // Protocolo final (semanas 5+)
                     if (cells[1] && cells[1].textContent.includes('Idebenona')) {
-                        cells[1].innerHTML = `CoQ10 ${coq10Manha}mg + B2 ${b2Manha}mg + ALA 50mg + Idebenona ${idebenonaManha}mg + Complexo B + PQQ 10mg`;
-                        cells[2].innerHTML = `CoQ10 ${coq10Almoco}mg + DHA 1000mg + Astaxantina ${astaxantina}mg`;
-                        cells[3].innerHTML = `B2 ${b2Tarde}mg + ALA 50mg + Idebenona ${idebenonaTarde}mg`;
-                        cells[4].innerHTML = `CoQ10 ${coq10Jantar}mg`;
+                        cells[1].innerHTML = `CoQ10 Líquida ${coq10Manha}mg + B2 ${b2Manha}mg + ALA 50mg + Idebenona ${idebenonaManha}mg + Complexo B + PQQ 10mg`;
+                cells[2].innerHTML = `CoQ10 Líquida ${coq10Almoco}mg + DHA 1000mg + Astaxantina ${astaxantina}mg`;
+                cells[3].innerHTML = `B2 ${b2Tarde}mg + ALA 50mg + Idebenona ${idebenonaTarde}mg`;
+                cells[4].innerHTML = `CoQ10 Líquida ${coq10Jantar}mg`;
                         if (cells[5]) cells[5].innerHTML = `Mg L-Treonato ${mgNoite}mg`;
                     }
                 }

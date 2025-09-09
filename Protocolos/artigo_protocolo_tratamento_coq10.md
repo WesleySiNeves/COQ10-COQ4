@@ -1,12 +1,12 @@
-# Deficiência Primária de Coenzima Q10: Análise Crítica dos Protocolos de Tratamento e Diretrizes Terapêuticas Baseadas em Evidências
+# Deficiência Primária de Coenzima Q10 Líquida: Análise Crítica dos Protocolos de Tratamento e Diretrizes Terapêuticas Baseadas em Evidências
 
 ## Resumo
 
-**Objetivo:** Analisar sistematicamente os protocolos de tratamento para deficiência primária de coenzima Q10 (CoQ10), com foco especial nas mutações do gene COQ4, para estabelecer diretrizes terapêuticas otimizadas baseadas em evidências científicas atuais.
+**Objetivo:** Analisar sistematicamente os protocolos de tratamento para deficiência primária de coenzima Q10 líquida (CoQ10), com foco especial nas mutações do gene COQ4, para estabelecer diretrizes terapêuticas otimizadas baseadas em evidências científicas atuais.
 
 **Métodos:** Revisão sistemática da literatura científica incluindo estudos clínicos, relatos de caso e análises genético-funcionais de pacientes com deficiência primária de CoQ10, particularmente COQ10D7 (deficiência tipo 7 causada por mutações COQ4).
 
-**Resultados:** A suplementação com CoQ10 demonstra eficácia variável dependente do tipo de mutação, localização no gene e idade de início do tratamento. Mutações nos éxons 1-4 do COQ4 apresentam melhor resposta terapêutica comparadas às mutações nos éxons 5-7.
+**Resultados:** A suplementação com CoQ10 líquida demonstra eficácia variável dependente do tipo de mutação, localização no gene e idade de início do tratamento. Mutações nos éxons 1-4 do COQ4 apresentam melhor resposta terapêutica comparadas às mutações nos éxons 5-7.
 
 **Conclusões:** O protocolo de tratamento deve ser personalizado baseado no genótipo específico, com início precoce da terapia sendo crucial para preservação da função orgânica.
 
@@ -77,7 +77,7 @@ Um estudo abrangente de casos neonatais com mutações COQ4 revelou: <mcreferenc
 
 ## 3. Protocolos de Tratamento Atuais
 
-### 3.1 Suplementação com CoQ10: Fundamentos Farmacológicos
+### 3.1 Suplementação com CoQ10 Líquida: Fundamentos Farmacológicos
 
 #### **Mecanismo de Ação:**
 - Restauração parcial dos níveis teciduais de CoQ10
@@ -91,7 +91,7 @@ Um estudo abrangente de casos neonatais com mutações COQ4 revelou: <mcreferenc
 - **Ubiquinol vs Ubiquinona:** Ubiquinol apresenta melhor biodisponibilidade
 
 #### **Considerações Específicas para COQ4 c.577C>T:**
-- **Formulação preferencial:** Ubiquinol para melhor biodisponibilidade
+- **Formulação preferencial:** Ubiquinol líquido para melhor biodisponibilidade
 - **Administração:** Com refeições ricas em gordura
 - **Monitoramento:** Níveis plasmáticos e avaliação motora trimestral
 
@@ -231,7 +231,7 @@ Prognóstico: Geralmente favorável com tratamento adequado
 **Cálculos de Dosagem (baseados em mg/kg):**
 
 ```
-CoQ10 Ubiquinol: 600mg/dia (31.6 mg/kg)
+CoQ10 Líquida Ubiquinol: 600mg/dia (31.6 mg/kg)
 - Manhã: 200mg
 - Almoço: 200mg  
 - Jantar: 200mg
@@ -264,7 +264,7 @@ Vitamina B2: 150mg/dia (7.9 mg/kg)
 
 | Período | Suplementos Introduzidos |
 |---------|-------------------------|
-| **Semanas 1-2** | CoQ10, Vitamina B2, Ácido Alfa Lipóico |
+| **Semanas 1-2** | CoQ10 Líquida, Vitamina B2, Ácido Alfa Lipóico |
 | **Semanas 3-4** | + DHA, Complexo B |
 | **Semanas 5+** | + Idebenona, PQQ, Astaxantina, Magnésio L-Treonato |
 
@@ -274,25 +274,25 @@ Vitamina B2: 150mg/dia (7.9 mg/kg)
 
 | Dia | Manhã (7:00) | Almoço (12:00) | Tarde (17:00) | Jantar (19:00) |
 |-----|--------------|----------------|---------------|----------------|
-| **Segunda** | CoQ10 200mg + B2 75mg + ALA 50mg | CoQ10 200mg + DHA 1000mg | B2 75mg + ALA 50mg | CoQ10 200mg |
-| **Terça** | CoQ10 200mg + B2 75mg + ALA 50mg | CoQ10 200mg + DHA 1000mg | B2 75mg + ALA 50mg | CoQ10 200mg |
-| **Quarta** | CoQ10 200mg + B2 75mg + ALA 50mg | CoQ10 200mg + DHA 1000mg | B2 75mg + ALA 50mg | CoQ10 200mg |
-| **Quinta** | CoQ10 200mg + B2 75mg + ALA 50mg | CoQ10 200mg + DHA 1000mg | B2 75mg + ALA 50mg | CoQ10 200mg |
-| **Sexta** | CoQ10 200mg + B2 75mg + ALA 50mg | CoQ10 200mg + DHA 1000mg | B2 75mg + ALA 50mg | CoQ10 200mg |
-| **Sábado** | CoQ10 200mg + B2 75mg + ALA 50mg | CoQ10 200mg + DHA 1000mg | B2 75mg + ALA 50mg | CoQ10 200mg |
-| **Domingo** | CoQ10 200mg + B2 75mg + ALA 50mg | CoQ10 200mg + DHA 1000mg | B2 75mg + ALA 50mg | CoQ10 200mg |
+| **Segunda** | CoQ10 Líquida 200mg + B2 75mg + ALA 50mg | CoQ10 Líquida 200mg + DHA 1000mg | B2 75mg + ALA 50mg | CoQ10 Líquida 200mg |
+| **Terça** | CoQ10 Líquida 200mg + B2 75mg + ALA 50mg | CoQ10 Líquida 200mg + DHA 1000mg | B2 75mg + ALA 50mg | CoQ10 Líquida 200mg |
+| **Quarta** | CoQ10 Líquida 200mg + B2 75mg + ALA 50mg | CoQ10 Líquida 200mg + DHA 1000mg | B2 75mg + ALA 50mg | CoQ10 Líquida 200mg |
+| **Quinta** | CoQ10 Líquida 200mg + B2 75mg + ALA 50mg | CoQ10 Líquida 200mg + DHA 1000mg | B2 75mg + ALA 50mg | CoQ10 Líquida 200mg |
+| **Sexta** | CoQ10 Líquida 200mg + B2 75mg + ALA 50mg | CoQ10 Líquida 200mg + DHA 1000mg | B2 75mg + ALA 50mg | CoQ10 Líquida 200mg |
+| **Sábado** | CoQ10 Líquida 200mg + B2 75mg + ALA 50mg | CoQ10 Líquida 200mg + DHA 1000mg | B2 75mg + ALA 50mg | CoQ10 Líquida 200mg |
+| **Domingo** | CoQ10 Líquida 200mg + B2 75mg + ALA 50mg | CoQ10 Líquida 200mg + DHA 1000mg | B2 75mg + ALA 50mg | CoQ10 Líquida 200mg |
 
 **PROTOCOLO FINAL COMPLETO (Semanas 5+):**
 
 | Dia | Manhã (7:00) | Almoço (12:00) | Tarde (17:00) | Jantar (19:00) | Noite (21:00) |
 |-----|--------------|----------------|---------------|----------------|---------------|
-| **Segunda** | CoQ10 200mg + B2 75mg + ALA 50mg + Idebenona 75mg + Complexo B + PQQ 10mg | CoQ10 200mg + DHA 1000mg + Astaxantina 8mg | B2 75mg + ALA 50mg + Idebenona 75mg | CoQ10 200mg | Mg L-Treonato 200mg |
-| **Terça** | CoQ10 200mg + B2 75mg + ALA 50mg + Idebenona 75mg + Complexo B + PQQ 10mg | CoQ10 200mg + DHA 1000mg + Astaxantina 8mg | B2 75mg + ALA 50mg + Idebenona 75mg | CoQ10 200mg | Mg L-Treonato 200mg |
-| **Quarta** | CoQ10 200mg + B2 75mg + ALA 50mg + Idebenona 75mg + Complexo B + PQQ 10mg | CoQ10 200mg + DHA 1000mg + Astaxantina 8mg | B2 75mg + ALA 50mg + Idebenona 75mg | CoQ10 200mg | Mg L-Treonato 200mg |
-| **Quinta** | CoQ10 200mg + B2 75mg + ALA 50mg + Idebenona 75mg + Complexo B + PQQ 10mg | CoQ10 200mg + DHA 1000mg + Astaxantina 8mg | B2 75mg + ALA 50mg + Idebenona 75mg | CoQ10 200mg | Mg L-Treonato 200mg |
-| **Sexta** | CoQ10 200mg + B2 75mg + ALA 50mg + Idebenona 75mg + Complexo B + PQQ 10mg | CoQ10 200mg + DHA 1000mg + Astaxantina 8mg | B2 75mg + ALA 50mg + Idebenona 75mg | CoQ10 200mg | Mg L-Treonato 200mg |
-| **Sábado** | CoQ10 200mg + B2 75mg + ALA 50mg + Idebenona 75mg + Complexo B + PQQ 10mg | CoQ10 200mg + DHA 1000mg + Astaxantina 8mg | B2 75mg + ALA 50mg + Idebenona 75mg | CoQ10 200mg | Mg L-Treonato 200mg |
-| **Domingo** | CoQ10 200mg + B2 75mg + ALA 50mg + Idebenona 75mg + Complexo B + PQQ 10mg | CoQ10 200mg + DHA 1000mg + Astaxantina 8mg | B2 75mg + ALA 50mg + Idebenona 75mg | CoQ10 200mg | Mg L-Treonato 200mg |
+| **Segunda** | CoQ10 Líquida 200mg + B2 75mg + ALA 50mg + Idebenona 75mg + Complexo B + PQQ 10mg | CoQ10 Líquida 200mg + DHA 1000mg + Astaxantina 8mg | B2 75mg + ALA 50mg + Idebenona 75mg | CoQ10 Líquida 200mg | Mg L-Treonato 200mg |
+| **Terça** | CoQ10 Líquida 200mg + B2 75mg + ALA 50mg + Idebenona 75mg + Complexo B + PQQ 10mg | CoQ10 Líquida 200mg + DHA 1000mg + Astaxantina 8mg | B2 75mg + ALA 50mg + Idebenona 75mg | CoQ10 Líquida 200mg | Mg L-Treonato 200mg |
+| **Quarta** | CoQ10 Líquida 200mg + B2 75mg + ALA 50mg + Idebenona 75mg + Complexo B + PQQ 10mg | CoQ10 Líquida 200mg + DHA 1000mg + Astaxantina 8mg | B2 75mg + ALA 50mg + Idebenona 75mg | CoQ10 Líquida 200mg | Mg L-Treonato 200mg |
+| **Quinta** | CoQ10 Líquida 200mg + B2 75mg + ALA 50mg + Idebenona 75mg + Complexo B + PQQ 10mg | CoQ10 Líquida 200mg + DHA 1000mg + Astaxantina 8mg | B2 75mg + ALA 50mg + Idebenona 75mg | CoQ10 Líquida 200mg | Mg L-Treonato 200mg |
+| **Sexta** | CoQ10 Líquida 200mg + B2 75mg + ALA 50mg + Idebenona 75mg + Complexo B + PQQ 10mg | CoQ10 Líquida 200mg + DHA 1000mg + Astaxantina 8mg | B2 75mg + ALA 50mg + Idebenona 75mg | CoQ10 Líquida 200mg | Mg L-Treonato 200mg |
+| **Sábado** | CoQ10 Líquida 200mg + B2 75mg + ALA 50mg + Idebenona 75mg + Complexo B + PQQ 10mg | CoQ10 Líquida 200mg + DHA 1000mg + Astaxantina 8mg | B2 75mg + ALA 50mg + Idebenona 75mg | CoQ10 Líquida 200mg | Mg L-Treonato 200mg |
+| **Domingo** | CoQ10 Líquida 200mg + B2 75mg + ALA 50mg + Idebenona 75mg + Complexo B + PQQ 10mg | CoQ10 Líquida 200mg + DHA 1000mg + Astaxantina 8mg | B2 75mg + ALA 50mg + Idebenona 75mg | CoQ10 Líquida 200mg | Mg L-Treonato 200mg |
 
 #### **🧠 MAGNÉSIO L-TREONATO - ANÁLISE CIENTÍFICA DETALHADA**
 
@@ -331,7 +331,7 @@ Vitamina B2: 150mg/dia (7.9 mg/kg)
 #### **⏰ Horários Sugeridos para Administração**
 
 **🌅 MANHÃ (7:00-8:00) - COM CAFÉ DA MANHÃ:**
-- CoQ10 Ubiquinol: 190mg
+- CoQ10 Líquida Ubiquinol: 190mg
 - Vitamina B2: 71mg
 - Ácido Alfa Lipóico: 50mg
 - Idebenona: 76mg

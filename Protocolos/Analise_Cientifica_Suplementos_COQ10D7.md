@@ -31,16 +31,16 @@ COQ4 deficiente → ↓ Síntese CoQ10 → ↓ Cadeia respiratória →
 
 ## 💊 Análise Científica dos Suplementos
 
-### 🔴 **COENZIMA Q10 (UBIQUINOL) - EVIDÊNCIAS**
+### 🔴 **COENZIMA Q10 LÍQUIDA (UBIQUINOL) - EVIDÊNCIAS**
 
 #### **Base Científica:**
 - **Estudos clínicos:** Múltiplos casos de COQ4 c.577C>T com resposta positiva
-- **Biodisponibilidade:** Ubiquinol 489% superior à ubiquinona (Hosoe et al., 2007)
-- **Penetração tecidual:** Melhora significativa em músculo e cérebro
-- **Dosagem ótima:** 30-50 mg/kg/dia para deficiências primárias
+- **Biodisponibilidade:** Forma líquida com ubiquinol 489% superior à ubiquinona (Hosoe et al., 2007)
+- **Penetração tecidual:** Melhora significativa em músculo e cérebro com formulação líquida
+- **Dosagem ótima:** 30-50 mg/kg/dia para deficiências primárias em forma líquida
 
 #### **Mecanismo de Ação:**
-1. **Compensação direta:** Fornece CoQ10 exógena para cadeia respiratória
+1. **Compensação direta:** Fornece CoQ10 exógena líquida para cadeia respiratória
 2. **Antioxidante:** Reduz estresse oxidativo mitocondrial
 3. **Estabilização membranar:** Protege integridade mitocondrial
 4. **Melhora ATP:** Restaura parcialmente produção energética
@@ -355,23 +355,24 @@ Maximização da biodisponibilidade
 
 ### **FORMULAÇÕES MAGISTRAIS:**
 
-#### **CoQ10 Ubiquinol Líquido:**
+#### **CoQ10 Ubiquinol Líquido - Formulação Otimizada:**
 ```
-Fórmula sugerida:
+Fórmula magistral líquida:
 - Ubiquinol: 100 mg/mL
-- Óleo de girassol: q.s.p.
+- Óleo TCM (triglicerídeos de cadeia média): q.s.p.
 - Lecitina de soja: 2%
 - Vitamina E: 0,1% (antioxidante)
-- Aroma natural: q.s.
+- Aroma frutas vermelhas: q.s.
+- Conservante natural: q.s.
 ```
 
-#### **Complexo Sinérgico:**
+#### **Complexo Sinérgico Líquido:**
 ```
-Cápsula combinada:
-- CoQ10 Ubiquinol: 100 mg
-- Idebenona: 25 mg
-- Astaxantina: 4 mg
-- PQQ: 5 mg
+Formulação líquida combinada:
+- CoQ10 Ubiquinol líquido: 100 mg/mL
+- Idebenona em suspensão: 25 mg/mL
+- Astaxantina líquida: 4 mg/mL
+- PQQ em solução: 5 mg/mL
 ```
 
 ### **OTIMIZAÇÃO DE CUSTOS:**

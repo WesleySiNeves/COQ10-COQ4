@@ -1,6 +1,6 @@
-# RESUMO EXECUTIVO - PROTOCOLO OTIMIZADO COQ10D7
+# RESUMO EXECUTIVO - PROTOCOLO OTIMIZADO COQ10D7 LÍQUIDA
 
-**Paciente:** 19 kg | **Diagnóstico:** Deficiência CoQ10 Tipo 7 (COQ4)  
+**Paciente:** 19 kg | **Diagnóstico:** Deficiência CoQ10 Líquida Tipo 7 (COQ4)  
 **Mutações:** c.577C>T + c.608C>T (heterozigose composta)  
 **Data:** Janeiro 2025
 
@@ -10,7 +10,7 @@
 
 ### **1) ADICIONAR IDEBENONA?**
 ✅ **SIM - ALTAMENTE RECOMENDADO**
-- **Justificativa:** Penetração cerebral superior à CoQ10
+- **Justificativa:** Penetração cerebral superior à CoQ10 líquida
 - **Mecanismo:** Bypass da deficiência enzimática
 - **Evidência:** Melhora neurológica documentada em COQ4
 - **Dose:** 150 mg/dia (8 mg/kg)
@@ -20,7 +20,7 @@
 ✅ **SIM - ESSENCIAL**
 - **Justificativa:** Cofatores da cadeia respiratória
 - **Foco:** B1, B2 (aumentar), B3, B6, B12
-- **Evidência:** Sinergismo comprovado com CoQ10
+- **Evidência:** Sinergismo comprovado com CoQ10 líquida
 - **Implementação:** Complexo de alta potência
 
 ### **3) SUPLEMENTAR PQQ?**
@@ -33,7 +33,7 @@
 
 ### **4) SUPLEMENTAR SHILAJIT?**
 ⚠️ **SIM, COM PRECAUÇÕES**
-- **Justificativa:** Melhora absorção de CoQ10
+- **Justificativa:** Melhora absorção de CoQ10 líquida
 - **Benefício:** Prolonga meia-vida dos suplementos
 - **Cuidados:** Qualidade, metais pesados, monitoramento renal
 - **Dose:** 100 mg/dia (purificado, >50% ácido fúlvico)
@@ -42,7 +42,7 @@
 ### **5) SUPLEMENTAR ASTAXANTINA?**
 ✅ **SIM - ALTAMENTE RECOMENDADO**
 - **Justificativa:** Antioxidante supremo, neuroproteção
-- **Mecanismo:** Protege CoQ10 da oxidação
+- **Mecanismo:** Protege CoQ10 líquida da oxidação
 - **Evidência:** Melhora cognitiva documentada
 - **Dose:** 8 mg/dia (0,4 mg/kg)
 - **Timing:** Com refeição rica em gordura
@@ -53,7 +53,7 @@
 
 ### **SUPLEMENTAÇÃO PRINCIPAL:**
 
-#### **🔴 COENZIMA Q10 UBIQUINOL**
+#### **🔴 COENZIMA Q10 LÍQUIDA UBIQUINOL**
 - **Dose atual:** Não especificada → **NOVA: 600 mg/dia**
 - **Cálculo:** 30 mg/kg (dose terapêutica para COQ4)
 - **Divisão:** 200 mg (manhã) + 200 mg (almoço) + 200 mg (jantar)
@@ -114,7 +114,7 @@
 
 ### **SEMANAS 1-2: BASE**
 ```
-✓ CoQ10 Ubiquinol 600 mg/dia
+✓ CoQ10 Líquida Ubiquinol 600 mg/dia
 ✓ Vitamina B2 150 mg/dia  
 ✓ Ácido Alfa Lipóico 100 mg/dia
 ✓ DHA 1000 mg/dia
@@ -168,7 +168,7 @@
 ## 💰 ESTIMATIVA DE CUSTOS (MENSAL)
 
 ### **SUPLEMENTOS ESSENCIAIS:**
-- CoQ10 Ubiquinol 600mg: R$ 800-1200
+- CoQ10 Líquida Ubiquinol 600mg: R$ 800-1200
 - Vitamina B2 150mg: R$ 80-120
 - Idebenona 150mg: R$ 400-600
 - Astaxantina 8mg: R$ 150-200
@@ -180,7 +180,7 @@
 - Shilajit 100mg: R$ 150-250
 - **Subtotal:** R$ 450-700
 
-### **TOTAL MENSAL:** R$ 1.880-2.820
+### **TOTAL MENSAL:** R$ 1.880-2.820 (CoQ10 líquida representa 42-43% do custo)
 ### **TOTAL ANUAL:** R$ 22.560-33.840
 
 ---
@@ -317,4 +317,4 @@
 
 ---
 
-*Protocolo desenvolvido com base nas melhores evidências científicas disponíveis para deficiência de CoQ10 tipo 7 (COQ4). Versão 1.0 - Janeiro 2025.*
+*Protocolo desenvolvido com base nas melhores evidências científicas disponíveis para deficiência de CoQ10 líquida tipo 7 (COQ4). Versão 1.0 - Janeiro 2025.*

@@ -1,4 +1,4 @@
-# Protocolo Otimizado de Suplementação - Deficiência CoQ10 Tipo 7
+# Protocolo Otimizado de Suplementação - Deficiência CoQ10 Líquida Tipo 7
 
 **Paciente:** Criança de 19 kg  
 **Diagnóstico:** Deficiência Primária de Coenzima Q10 Tipo 7 (COQ4 c.577C>T + c.608C>T)  
@@ -9,7 +9,7 @@
 
 ## 📋 Protocolo Principal de Suplementação
 
-### 🔴 COENZIMA Q10 (UBIQUINOL) - SUPLEMENTO PRINCIPAL
+### 🔴 COENZIMA Q10 LÍQUIDA (UBIQUINOL) - SUPLEMENTO PRINCIPAL
 
 #### **Dosagem Otimizada:**
 - **Dose recomendada:** 30-40 mg/kg/dia
@@ -18,14 +18,14 @@
 - **Dose alvo:** 760 mg/dia (40 mg/kg)
 
 #### **Formulação Preferencial:**
-**OPÇÃO 1 - UBIQUINOL LÍQUIDO (RECOMENDADO):**
+**OPÇÃO ÚNICA - UBIQUINOL LÍQUIDO (EXCLUSIVO):**
 - **Vantagens:** Biodisponibilidade 489% superior à ubiquinona
 - **Concentração sugerida:** 50-100 mg/mL
 - **Volume diário:** 5,7-7,6 mL/dia
 - **Divisão:** 3x ao dia (190-253 mg por dose)
 - **Horários:** Café da manhã, almoço e jantar
 
-**OPÇÃO 2 - CÁPSULAS DE UBIQUINOL:**
+**OPÇÃO DESCONTINUADA - CÁPSULAS DE UBIQUINOL:**
 - **Concentração:** 100 mg por cápsula
 - **Quantidade:** 6-8 cápsulas/dia
 - **Divisão:** 2-3 cápsulas por refeição
@@ -47,7 +47,7 @@
 **OTIMIZAÇÃO PROPOSTA:**
 - **Nova dosagem:** 150 mg/dia
 - **Divisão:** 50 mg (manhã) + 50 mg (almoço) + 50 mg (jantar)
-- **Justificativa:** B2 é cofator essencial para síntese de CoQ10
+- **Justificativa:** B2 é cofator essencial para síntese de CoQ10 líquida
 - **Formulação:** Comprimidos ou cápsulas
 
 #### **ÁCIDO ALFA LIPÓICO**
@@ -56,7 +56,7 @@
 **OTIMIZAÇÃO PROPOSTA:**
 - **Nova dosagem:** 200 mg/dia (10 mg/kg)
 - **Divisão:** 100 mg (manhã) + 100 mg (tarde)
-- **Justificativa:** Potente antioxidante, protege CoQ10 da oxidação
+- **Justificativa:** Potente antioxidante, protege CoQ10 líquida da oxidação
 - **Formulação:** Cápsulas com liberação sustentada
 
 #### **DHA (ÔMEGA-3)**
@@ -83,9 +83,9 @@
 - **Dose alvo:** 150 mg/dia (50 mg 3x/dia)
 
 **Justificativa:**
-- Análogo sintético da CoQ10 com melhor penetração cerebral
+- Análogo sintético da CoQ10 líquida com melhor penetração cerebral
 - Eficaz em ataxias mitocondriais
-- Complementa a ação da CoQ10
+- Complementa a ação da CoQ10 líquida
 - Evidências específicas para mutações COQ4
 
 **Administração:**
@@ -125,7 +125,7 @@
 
 **Justificativa:**
 - Estimula biogênese mitocondrial
-- Potencializa efeitos da CoQ10
+- Potencializa efeitos da CoQ10 líquida
 - Neuroproteção
 - Melhora função cognitiva
 
@@ -140,7 +140,7 @@
 
 **Justificativa:**
 - Rico em ácido fúlvico e minerais
-- Melhora absorção de CoQ10
+- Melhora absorção de CoQ10 líquida
 - Suporte mitocondrial
 - Propriedades adaptogênicas
 
@@ -235,7 +235,7 @@
 ## 💊 Resumo do Protocolo Diário
 
 ### **MANHÃ (COM CAFÉ DA MANHÃ):**
-- CoQ10 Ubiquinol: 190-253 mg
+- CoQ10 Líquida Ubiquinol: 190-253 mg
 - Vitamina B2: 50 mg
 - Ácido Alfa Lipóico: 100 mg
 - DHA: 500 mg
@@ -302,7 +302,7 @@
 ## 💰 Estimativa de Custos Mensais
 
 ### **SUPLEMENTOS PRINCIPAIS:**
-- CoQ10 Ubiquinol: R$ 800-1.200
+- CoQ10 Líquida Ubiquinol: R$ 800-1.200
 - Idebenona: R$ 400-600
 - Complexo B: R$ 50-80
 - Outros suplementos: R$ 300-500
@@ -359,4 +359,4 @@
 
 ---
 
-*Protocolo desenvolvido com base nas melhores evidências científicas disponíveis para deficiência primária de CoQ10 tipo 7 causada por mutações COQ4.*
+*Protocolo desenvolvido com base nas melhores evidências científicas disponíveis para deficiência primária de CoQ10 líquida tipo 7 causada por mutações COQ4.*
