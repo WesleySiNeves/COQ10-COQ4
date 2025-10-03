@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função Mitocondrial e Produção de ATP</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 3em;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 10px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: rgba(255, 255, 255, 0.9);
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        .section {
+            background: white;
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .section h2 {
+            color: #4a5568;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .mitochondria-diagram {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(45deg, #f0f8ff, #e6f3ff);
+            border-radius: 15px;
+            position: relative;
+            margin: 30px 0;
+            overflow: hidden;
+            border: 2px solid #667eea;
+        }
+
+        .mitochondria {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 150px;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            border-radius: 50px;
+            border: 3px solid #c44569;
+            animation: pulse 3s infinite;
+        }
+
+        .inner-membrane {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            background: linear-gradient(135deg, #feca57, #ff9ff3);
+            border-radius: 30px;
+            border: 2px solid #ff6348;
+        }
+
+        .cristae {
+            position: absolute;
+            width: 80%;
+            height: 2px;
+            background: #ff4757;
+            top: 30%;
+            left: 10%;
+            animation: wave 2s infinite;
+        }
+
+        .cristae:nth-child(2) {
+            top: 50%;
+            animation-delay: 0.5s;
+        }
+
+        .cristae:nth-child(3) {
+            top: 70%;
+            animation-delay: 1s;
+        }
+
+        .atp-molecule {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #2ed573;
+            border-radius: 50%;
+            animation: float 2s infinite ease-in-out;
+        }
+
+        .atp-1 { top: 20%; left: 20%; animation-delay: 0s; }
+        .atp-2 { top: 60%; left: 70%; animation-delay: 0.7s; }
+        .atp-3 { top: 80%; left: 30%; animation-delay: 1.4s; }
+
+        .electron-transport {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            color: white;
+        }
+
+        .complex {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .complex:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .complex h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .electron {
+            width: 15px;
+            height: 15px;
+            background: #feca57;
+            border-radius: 50%;
+            margin: 5px auto;
+            animation: bounce 1s infinite;
+        }
+
+        .arrow {
+            font-size: 2em;
+            color: #feca57;
+            animation: pulse 1.5s infinite;
+        }
+
+        .interactive-button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .interactive-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .atp-counter {
+            text-align: center;
+            font-size: 2em;
+            color: #2ed573;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .step {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .step:hover {
+            transform: scale(1.02);
+        }
+
+        .step h4 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+        .quiz-section {
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .quiz-question {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .quiz-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .quiz-option {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .quiz-option:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+        }
+
+        .quiz-option.correct {
+            background: #2ed573;
+            color: white;
+        }
+
+        .quiz-option.incorrect {
+            background: #ff4757;
+            color: white;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.05); }
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: scaleX(1); }
+            50% { transform: scaleX(1.2); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #2ed573, #1e90ff);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .mitochondria {
+                width: 250px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Cabeçalho -->
+        <div class="header">
+            <h1>🧬 Função Mitocondrial e Produção de ATP</h1>
+            <p>Uma jornada interativa pela usina energética da célula</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+        </div>
+
+        <!-- Seção 1: Introdução -->
+        <div class="section" data-section="1">
+            <h2>🔬 Introdução às Mitocôndrias</h2>
+            <p>As mitocôndrias são organelas fundamentais presentes em células eucarióticas, conhecidas como as "usinas energéticas" da célula. Elas são responsáveis pela produção da maior parte do ATP (adenosina trifosfato) necessário para os processos celulares.</p>
+            
+            <div class="mitochondria-diagram">
+                <div class="mitochondria">
+                    <div class="inner-membrane">
+                        <div class="cristae"></div>
+                        <div class="cristae"></div>
+                        <div class="cristae"></div>
+                    </div>
+                </div>
+                <div class="atp-molecule atp-1"></div>
+                <div class="atp-molecule atp-2"></div>
+                <div class="atp-molecule atp-3"></div>
+            </div>
+
+            <h3>🏗️ Estrutura Mitocondrial:</h3>
+            <ul>
+                <li><strong>Membrana Externa:</strong> Permeável a pequenas moléculas</li>
+                <li><strong>Membrana Interna:</strong> Altamente seletiva, contém as cristas</li>
+                <li><strong>Cristas:</strong> Dobras da membrana interna que aumentam a superfície</li>
+                <li><strong>Matriz:</strong> Espaço interno onde ocorre o ciclo de Krebs</li>
+                <li><strong>Espaço Intermembranar:</strong> Entre as duas membranas</li>
+            </ul>
+        </div>
+
+        <!-- Seção 2: Cadeia Transportadora de Elétrons -->
+        <div class="section" data-section="2">
+            <h2>⚡ Cadeia Transportadora de Elétrons</h2>
+            <p>A cadeia transportadora de elétrons é um conjunto de complexos proteicos localizados na membrana interna mitocondrial, responsável pela transferência de elétrons e bombeamento de prótons.</p>
+            
+            <div class="electron-transport">
+                <div class="complex" onclick="showComplexInfo(1)">
+                    <h3>Complexo I</h3>
+                    <div class="electron"></div>
+                    <p>NADH Desidrogenase</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="complex" onclick="showComplexInfo(2)">
+                    <h3>Complexo II</h3>
+                    <div class="electron"></div>
+                    <p>Succinato Desidrogenase</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="complex" onclick="showComplexInfo(3)">
+                    <h3>Complexo III</h3>
+                    <div class="electron"></div>
+                    <p>Citocromo bc1</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="complex" onclick="showComplexInfo(4)">
+                    <h3>Complexo IV</h3>
+                    <div class="electron"></div>
+                    <p>Citocromo c Oxidase</p>
+                </div>
+            </div>
+
+            <div id="complexInfo" style="display: none; margin-top: 20px; padding: 20px; background: rgba(255,255,255,0.9); border-radius: 10px;">
+                <!-- Informações dos complexos serão inseridas aqui via JavaScript -->
+            </div>
+        </div>
+
+        <!-- Seção 3: Fosforilação Oxidativa -->
+        <div class="section" data-section="3">
+            <h2>🔄 Fosforilação Oxidativa</h2>
+            <p>A fosforilação oxidativa é o processo pelo qual a energia liberada pela transferência de elétrons é utilizada para sintetizar ATP a partir de ADP + Pi.</p>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <h4>1️⃣ Oxidação</h4>
+                    <p>NADH e FADH₂ são oxidados, liberando elétrons e prótons</p>
+                </div>
+                <div class="step">
+                    <h4>2️⃣ Transporte</h4>
+                    <p>Elétrons passam pela cadeia transportadora, liberando energia</p>
+                </div>
+                <div class="step">
+                    <h4>3️⃣ Bombeamento</h4>
+                    <p>Prótons são bombeados para o espaço intermembranar</p>
+                </div>
+                <div class="step">
+                    <h4>4️⃣ Gradiente</h4>
+                    <p>Forma-se um gradiente eletroquímico de prótons</p>
+                </div>
+                <div class="step">
+                    <h4>5️⃣ ATP Sintase</h4>
+                    <p>Prótons retornam através da ATP sintase, gerando ATP</p>
+                </div>
+                <div class="step">
+                    <h4>6️⃣ Produto Final</h4>
+                    <p>ATP é produzido e disponibilizado para a célula</p>
+                </div>
+            </div>
+
+            <button class="interactive-button" onclick="startAtpProduction()">🚀 Iniciar Produção de ATP</button>
+            <div class="atp-counter" id="atpCounter">ATP Produzido: 0 moléculas</div>
+        </div>
+
+        <!-- Seção 4: Rendimento Energético -->
+        <div class="section" data-section="4">
+            <h2>📊 Rendimento Energético</h2>
+            <p>O rendimento da respiração celular varia dependendo das condições e do substrato utilizado:</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0;">
+                <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 20px; border-radius: 15px; text-align: center;">
+                    <h3>🍬 Glicose</h3>
+                    <p style="font-size: 2em; font-weight: bold;">32-38 ATP</p>
+                    <p>Por molécula de glicose</p>
+                </div>
+                <div style="background: linear-gradient(135deg, #f093fb, #f5576c); color: white; padding: 20px; border-radius: 15px; text-align: center;">
+                    <h3>🥑 Ácidos Graxos</h3>
+                    <p style="font-size: 2em; font-weight: bold;">129 ATP</p>
+                    <p>Por molécula de palmitato</p>
+                </div>
+                <div style="background: linear-gradient(135deg, #a8edea, #fed6e3); color: #2c3e50; padding: 20px; border-radius: 15px; text-align: center;">
+                    <h3>🧬 Aminoácidos</h3>
+                    <p style="font-size: 2em; font-weight: bold;">Variável</p>
+                    <p>Depende do aminoácido</p>
+                </div>
+            </div>
+
+            <h3>⚖️ Balanço Energético da Glicose:</h3>
+            <ul>
+                <li><strong>Glicólise:</strong> 2 ATP (líquido) + 2 NADH</li>
+                <li><strong>Ciclo de Krebs:</strong> 2 ATP + 6 NADH + 2 FADH₂</li>
+                <li><strong>Cadeia Respiratória:</strong> ~28-32 ATP (via NADH e FADH₂)</li>
+                <li><strong>Total:</strong> 32-38 ATP por glicose</li>
+            </ul>
+        </div>
+
+        <!-- Seção 5: Regulação e Fatores -->
+        <div class="section" data-section="5">
+            <h2>🎛️ Regulação da Função Mitocondrial</h2>
+            <p>A função mitocondrial é regulada por diversos fatores internos e externos:</p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 20px 0;">
+                <div>
+                    <h3 style="color: #2ed573;">✅ Fatores Estimulantes:</h3>
+                    <ul>
+                        <li>Baixos níveis de ATP</li>
+                        <li>Altos níveis de ADP</li>
+                        <li>Presença de Ca²⁺</li>
+                        <li>Exercício físico</li>
+                        <li>Hormônios tireoidianos</li>
+                        <li>Coenzima Q10</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: #ff4757;">❌ Fatores Inibidores:</h3>
+                    <ul>
+                        <li>Altos níveis de ATP</li>
+                        <li>Baixos níveis de ADP</li>
+                        <li>Cianeto (bloqueia Complexo IV)</li>
+                        <li>Rotenona (bloqueia Complexo I)</li>
+                        <li>Estresse oxidativo excessivo</li>
+                        <li>Deficiências enzimáticas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção 6: Quiz Interativo -->
+        <div class="section quiz-section" data-section="6">
+            <h2>🧠 Quiz Interativo</h2>
+            <div id="quizContainer">
+                <div class="quiz-question" id="questionText">Carregando pergunta...</div>
+                <div class="quiz-options" id="optionsContainer">
+                    <!-- Opções serão inseridas via JavaScript -->
+                </div>
+                <button class="interactive-button" onclick="nextQuestion()" id="nextBtn" style="display: none;">Próxima Pergunta</button>
+            </div>
+            <div id="quizResults" style="display: none; text-align: center; margin-top: 20px;">
+                <h3>🎉 Quiz Concluído!</h3>
+                <p id="finalScore"></p>
+                <button class="interactive-button" onclick="restartQuiz()">Reiniciar Quiz</button>
+            </div>
+        </div>
+
+        <!-- Seção 7: Aplicações Clínicas -->
+        <div class="section" data-section="7">
+            <h2>🏥 Aplicações Clínicas e Patologias</h2>
+            <p>Disfunções mitocondriais estão associadas a diversas condições clínicas:</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                <div style="background: #fff5f5; border-left: 5px solid #ff4757; padding: 20px; border-radius: 10px;">
+                    <h4>🧠 Doenças Neurológicas</h4>
+                    <ul>
+                        <li>Doença de Parkinson</li>
+                        <li>Doença de Alzheimer</li>
+                        <li>Ataxias mitocondriais</li>
+                        <li>Epilepsia mitocondrial</li>
+                    </ul>
+                </div>
+                <div style="background: #f0fff4; border-left: 5px solid #2ed573; padding: 20px; border-radius: 10px;">
+                    <h4>💓 Doenças Cardíacas</h4>
+                    <ul>
+                        <li>Cardiomiopatias</li>
+                        <li>Insuficiência cardíaca</li>
+                        <li>Arritmias</li>
+                        <li>Isquemia miocárdica</li>
+                    </ul>
+                </div>
+                <div style="background: #f0f8ff; border-left: 5px solid #667eea; padding: 20px; border-radius: 10px;">
+                    <h4>🔬 Deficiências Enzimáticas</h4>
+                    <ul>
+                        <li>Deficiência de CoQ10</li>
+                        <li>Deficiência de Complexos I-IV</li>
+                        <li>Síndrome de Leigh</li>
+                        <li>MELAS, MERRF</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Variáveis globais
+        let atpCount = 0;
+        let currentQuestion = 0;
+        let score = 0;
+        let sectionsViewed = 0;
+
+        // Perguntas do quiz
+        const quizQuestions = [
+            {
+                question: "Qual é a principal função das mitocôndrias?",
+                options: ["Síntese de proteínas", "Produção de ATP", "Digestão celular", "Armazenamento de lipídios"],
+                correct: 1
+            },
+            {
+                question: "Quantos complexos principais compõem a cadeia transportadora de elétrons?",
+                options: ["3", "4", "5", "6"],
+                correct: 1
+            },
+            {
+                question: "Onde ocorre o ciclo de Krebs?",
+                options: ["Citoplasma", "Membrana externa", "Matriz mitocondrial", "Espaço intermembranar"],
+                correct: 2
+            },
+            {
+                question: "Qual coenzima é essencial para o funcionamento da cadeia respiratória?",
+                options: ["Coenzima A", "Coenzima Q10", "Biotina", "Ácido fólico"],
+                correct: 1
+            },
+            {
+                question: "Quantas moléculas de ATP podem ser produzidas a partir de uma molécula de glicose?",
+                options: ["2-4", "10-15", "32-38", "50-60"],
+                correct: 2
+            }
+        ];
+
+        // Informações dos complexos
+        const complexInfo = {
+            1: {
+                name: "Complexo I - NADH Desidrogenase",
+                description: "Primeiro complexo da cadeia respiratória. Oxida NADH e bombeia 4 prótons para o espaço intermembranar. Contém flavina e centros ferro-enxofre.",
+                electrons: "NADH → NAD+ + H+ + 2e-",
+                protons: "4 H+ bombeados"
+            },
+            2: {
+                name: "Complexo II - Succinato Desidrogenase",
+                description: "Único complexo que não bombeia prótons. Oxida succinato a fumarato e reduz FAD a FADH₂. Também participa do ciclo de Krebs.",
+                electrons: "FADH₂ → FAD + 2H+ + 2e-",
+                protons: "0 H+ bombeados"
+            },
+            3: {
+                name: "Complexo III - Citocromo bc1",
+                description: "Transfere elétrons do coenzima Q para o citocromo c. Bombeia 4 prótons através do ciclo Q. Contém citocromos b e c1.",
+                electrons: "CoQH₂ → CoQ + 2H+ + 2e-",
+                protons: "4 H+ bombeados"
+            },
+            4: {
+                name: "Complexo IV - Citocromo c Oxidase",
+                description: "Complexo terminal que transfere elétrons para o oxigênio, formando água. Bombeia 2 prótons e consome 4 prótons na redução do O₂.",
+                electrons: "4 Cit c²⁺ + O₂ + 4H+ → 4 Cit c³⁺ + 2H₂O",
+                protons: "2 H+ bombeados + 4 H+ consumidos"
+            }
+        };
+
+        // Função para mostrar informações dos complexos
+        function showComplexInfo(complexNumber) {
+            const info = complexInfo[complexNumber];
+            const infoDiv = document.getElementById('complexInfo');
+            
+            infoDiv.innerHTML = `
+                <h3 style="color: #667eea; margin-bottom: 15px;">${info.name}</h3>
+                <p style="margin-bottom: 10px;"><strong>Descrição:</strong> ${info.description}</p>
+                <p style="margin-bottom: 10px;"><strong>Reação:</strong> ${info.electrons}</p>
+                <p style="margin-bottom: 10px;"><strong>Prótons:</strong> ${info.protons}</p>
+            `;
+            
+            infoDiv.style.display = 'block';
+            infoDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // Função para iniciar produção de ATP
+        function startAtpProduction() {
+            const counter = document.getElementById('atpCounter');
+            const interval = setInterval(() => {
+                atpCount += Math.floor(Math.random() * 5) + 1;
+                counter.textContent = `ATP Produzido: ${atpCount} moléculas`;
+                counter.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    counter.style.transform = 'scale(1)';
+                }, 200);
+                
+                if (atpCount >= 100) {
+                    clearInterval(interval);
+                    counter.innerHTML += ' <span style="color: #667eea;">🎉 Meta Atingida!</span>';
+                }
+            }, 500);
+        }
+
+        // Funções do Quiz
+        function loadQuestion() {
+            if (currentQuestion >= quizQuestions.length) {
+                showResults();
+                return;
+            }
+
+            const question = quizQuestions[currentQuestion];
+            document.getElementById('questionText').textContent = question.question;
+            
+            const optionsContainer = document.getElementById('optionsContainer');
+            optionsContainer.innerHTML = '';
+            
+            question.options.forEach((option, index) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = 'quiz-option';
+                optionDiv.textContent = option;
+                optionDiv.onclick = () => selectOption(index, optionDiv);
+                optionsContainer.appendChild(optionDiv);
+            });
+        }
+
+        function selectOption(selectedIndex, optionElement) {
+            const question = quizQuestions[currentQuestion];
+            const options = document.querySelectorAll('.quiz-option');
+            
+            // Desabilita todas as opções
+            options.forEach(option => {
+                option.style.pointerEvents = 'none';
+            });
+            
+            // Marca a resposta correta e incorreta
+            if (selectedIndex === question.correct) {
+                optionElement.classList.add('correct');
+                score++;
+            } else {
+                optionElement.classList.add('incorrect');
+                options[question.correct].classList.add('correct');
+            }
+            
+            // Mostra botão para próxima pergunta
+            document.getElementById('nextBtn').style.display = 'inline-block';
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            document.getElementById('nextBtn').style.display = 'none';
+            loadQuestion();
+        }
+
+        function showResults() {
+            document.getElementById('quizContainer').style.display = 'none';
+            document.getElementById('quizResults').style.display = 'block';
+            
+            const percentage = Math.round((score / quizQuestions.length) * 100);
+            let message = '';
+            
+            if (percentage >= 80) {
+                message = '🏆 Excelente! Você domina o assunto!';
+            } else if (percentage >= 60) {
+                message = '👍 Bom trabalho! Continue estudando!';
+            } else {
+                message = '📚 Revise o conteúdo e tente novamente!';
+            }
+            
+            document.getElementById('finalScore').innerHTML = `
+                Pontuação: ${score}/${quizQuestions.length} (${percentage}%)<br>
+                ${message}
+            `;
+        }
+
+        function restartQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById('quizContainer').style.display = 'block';
+            document.getElementById('quizResults').style.display = 'none';
+            loadQuestion();
+        }
+
+        // Função para atualizar barra de progresso
+        function updateProgress() {
+            const sections = document.querySelectorAll('.section');
+            const progressBar = document.getElementById('progressBar');
+            
+            // Observador de interseção para detectar seções visualizadas
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const sectionNumber = entry.target.getAttribute('data-section');
+                        if (sectionNumber) {
+                            sectionsViewed = Math.max(sectionsViewed, parseInt(sectionNumber));
+                            const progress = (sectionsViewed / sections.length) * 100;
+                            progressBar.style.width = progress + '%';
+                        }
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        }
+
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', function() {
+            loadQuestion();
+            updateProgress();
+            
+            // Adiciona efeitos de scroll suave
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Adiciona efeitos de partículas no fundo
+        function createParticles() {
+            const particlesContainer = document.createElement('div');
+            particlesContainer.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: -1;
+            `;
+            
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.style.cssText = `
+                    position: absolute;
+                    width: 4px;
+                    height: 4px;
+                    background: rgba(255, 255, 255, 0.5);
+                    border-radius: 50%;
+                    animation: float ${Math.random() * 3 + 2}s infinite ease-in-out;
+                    left: ${Math.random() * 100}%;
+                    top: ${Math.random() * 100}%;
+                    animation-delay: ${Math.random() * 2}s;
+                `;
+                particlesContainer.appendChild(particle);
+            }
+            
+            document.body.appendChild(particlesContainer);
+        }
+
+        // Cria partículas de fundo
+        createParticles();
+    </script>
+</body>
+</html>
