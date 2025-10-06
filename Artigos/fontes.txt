@@ -1,16 +1,22 @@
-https://www.mdpi.com/2076-3921/12/8/1652 (1.Primary Coenzyme Q10 Deficiency An Update.md)
+ 0.
+ https://www.mdpi.com/2076-3921/12/8/1652 (1.Primary Coenzyme Q10 Deficiency An Update.md)
+
 
 1. New pathogenic variants in COQ4 cause ataxia and neurodevelopmental disorder
 Resumo: Este artigo relata pacientes que apresentam variantes bi-alélicas no gene COQ4, incluindo c.577C>T (p.Pro193Ser), sem deficiência detectável de CoQ10. Um dos pacientes apresentou espasticidade progressiva e foi encontrado com variantes compostas (c.577C>T/p.Pro193Ser e c.718C>T/p.Arg240Cys). Foram realizados estudos funcionais em fibroblastos e modelos animais, mostrando comprometimento motor e ataxia, além de investigar o papel de COQ4 no desenvolvimento cerebral.
-
-URL: https://pubmed.ncbi.nlm.nih.gov/33704555/
+URL: https://pubmed.ncbi.nlm.nih.gov/33704555/(2.New pathogenic variants in COQ4 cause ataxia and neurodevelopmental disorder without detectable CoQ10 deficiency in muscle or skin fibroblasts)
 
 2. COQ4 is required for the oxidative decarboxylation in Coenzyme Q biosynthesis
 Resumo: Este estudo demonstra que COQ4 catalisa uma etapa essencial na biossíntese da coenzima Q (CoQ), desvendando o papel exato dessa enzima. Entre os modelos investigados, fibroblastos humanos com a mutação c.577C>T/p.Pro193Ser em trans com c.718C>T/p.Arg240Cys foram analisados. Os resultados elucidam como mutações nesse gene afetam a produção de CoQ, impactando o metabolismo celular e auxiliando na compreensão da patofisiologia da deficiência primária de CoQ10.
-
 URL: https://pmc.ncbi.nlm.nih.gov/articles/PMC7616408/
 
-3. Ataxias relacionadas à deficiência primária de coenzima Q10
+
+
+3.[Primary coenzyme Q10 deficiency-7: a case report and literature review]
+URL: https://pubmed.ncbi.nlm.nih.gov/33120466/
+
+
+4. Ataxias relacionadas à deficiência primária de coenzima Q10
 Resumo: Revisão sobre ataxias associadas à deficiência de CoQ10, mencionando a mutação composta c.577C>T (p.Pro193Ser), frequentemente encontrada em associação com c.718C>T (p.Arg240Cys). O artigo explica o impacto dessas mutações em quadros neurológicos e detalha os avanços em sequenciamento genético para diagnóstico.
 
 URL: https://translate.google.com/translate?u=https%3A%2F%2Fwww.mdpi.com%2F2077-0383%2F13%2F8%2F2391&hl=pt&sl=en&tl=pt&client=srp
